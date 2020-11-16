@@ -12,4 +12,4 @@ jobs:
         with:
           project: "Support Triage Board"
           column: "Needs Triage"
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.CLOUD_PLATFORM_MOJ_GITHUB_TOKEN }}
