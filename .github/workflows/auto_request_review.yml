@@ -3,7 +3,10 @@ name: "Auto Request Review"
 
 on:
   pull_request:
-    types: [opened, ready_for_review, synchronize, reopened]
+    types: [opened, ready_for_review, reopened]
+
+permissions:
+  pull-requests: write
 
 jobs:
   auto-request-review:
