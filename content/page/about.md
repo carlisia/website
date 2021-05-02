@@ -18,6 +18,8 @@ author = "Carlisia Thompson"
 
 ### As guest
 
+* <b>Go Time</b> - [When distributed systems Go wrong](https://changelog.com/gotime/156) with Kelsey Hightower, Carlisia Thompson, & Stevenson Jean-Pierre
+* <b>if/else Podcast</b> - [Bonus Episode: Kelsey Hightower on Kubernetes](https://ifelsepodcast.com/episodes/bonus-episode-kelsey-hightower-on-kubernetes-IxJUAcvi) - contributor
 * <b>Virtually Speaking Podcast</b> - [Velero](https://blogs.vmware.com/virtualblocks/2019/08/02/vspeaking-podcast-velero/)
 * <b>PodCTL Podcast</b> - [Understanding Project Velero (formerly Ark)](http://podcast.podctl.com/110399/986641-understanding-project-velero-formerly-ark/)
 * <b>Getup Cloud Podcast</b> - (Portuguese) [KubeCon Day 3 — A Importância de Contribuir](https://blog.getupcloud.com/kubicast-21-ba50753c7b80)
