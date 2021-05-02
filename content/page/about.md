@@ -4,7 +4,7 @@ description = "OSS Developer"
 date = 2019-08-26T02:13:50Z
 author = "Carlisia Thompson"
 +++
-# Beyond coding
+# Talks
 <img src="/images/headshot-square.png" alt="Carlisia Thompson" title="Carlisia Thompson" width="250" height="200" align="right"/>
 
 ## Podcasting
