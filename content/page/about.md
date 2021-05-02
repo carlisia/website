@@ -1,6 +1,6 @@
 +++
 title = "OSS developer"
-description = "Maintainer of Velero.io at VMWare"
+description = "Maintainer of Velero.io at VMware"
 date = 2019-08-26T02:13:50Z
 author = "Carlisia Thompson"
 +++
@@ -11,7 +11,8 @@ author = "Carlisia Thompson"
 
 ### As host
 
-* I am currently recording a podcast that covers cloud native technology and concepts. We will be laundhing it in the coming weeks. Stay tuned!
+* When I started learning Kubernetes and didn't find a podcast show that explained Kubernetes concepts, features, and how it mapped to existing technologies, I created one. An effort that started at Heptio and launched via VMware, I am grateful for having had the support from many people who also thought it was a great idea. If you'd like to listen and subscribe, check out [The Podlets Podcast](https://thepodlets.io/).
+
 * I co-hosted the **[Go Time](https://changelog.com/gotime)** podcast show alongside the wonderful human beings [Erik St. Martin](https://twitter.com/erikstmartin) and [Brian Ketelsen](https://twitter.com/bketelsen) from 2016 until 2018 (episodes 1 to 79).
 </br>
 
