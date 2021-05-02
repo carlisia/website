@@ -1,6 +1,6 @@
 +++
-title = "OSS developer"
-description = "Maintainer of Velero.io at VMware"
+title = "Carlisia Thompson"
+description = "OSS Developer"
 date = 2019-08-26T02:13:50Z
 author = "Carlisia Thompson"
 +++
