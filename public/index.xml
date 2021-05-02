@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>grokkingtech.io</title>
@@ -18,17 +18,16 @@
       <pubDate>Mon, 26 Aug 2019 02:13:50 +0000</pubDate>
       
       <guid>https://grokkingtech.io/page/about/</guid>
-      <description>Beyond coding Podcasting As host  Currently working on launching a podcast about cloud native technology and concepts. Will be out second half of 2019, stay tuned. I co-hosted the Go Time podcast show alongside the wonderful human beings Erik St. Martin and Brian Ketelsen from 2016 until 2018 (episodes 1 to 79).   As guest  Virtually Speaking Podcast - Velero PodCTL Podcast - Understanding Project Velero (formerly Ark) Getup Cloud Podcast - (Portuguese) KubeCon Day 3 — A Importância de Contribuir</description>
+      <description>Beyond coding Podcasting As host   When I started learning Kubernetes and didn&amp;rsquo;t find a podcast show that explained Kubernetes concepts, features, and how it mapped to existing technologies, I created one. An effort that started at Heptio and launched via VMware, I am grateful for having had the support from many people who also thought it was a great idea. If you&amp;rsquo;d like to listen and subscribe, check out The Podlets Podcast.</description>
     </item>
     
     <item>
-      <title>Creating a New Post</title>
+      <title>Placeholder</title>
       <link>https://grokkingtech.io/my-first-post/</link>
-      <pubDate>Sun, 28 Sep 2014 02:13:50 +0000</pubDate>
+      <pubDate>Mon, 26 Aug 2019 02:13:50 +0000</pubDate>
       
       <guid>https://grokkingtech.io/my-first-post/</guid>
-      <description>Introduction This tutorial will show you how to create a simple theme in Hugo. I assume that you are familiar with HTML, the bash command line, and that you are comfortable using Markdown to format content. I&amp;rsquo;ll explain how Hugo uses templates and how you can organize your templates to create a theme. I won&amp;rsquo;t cover using CSS to style your theme.
-We&amp;rsquo;ll start with creating a new site with a very basic template.</description>
+      <description></description>
     </item>
     
   </channel>
