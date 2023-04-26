@@ -1,11 +1,11 @@
 +++
-title = "Carlisia Thompson"
+title = "Carlisia Campos"
 description = "OSS Developer"
 date = 2019-08-26T02:13:50Z
-author = "Carlisia Thompson"
+author = "Carlisia Campos"
 +++
 # Talks
-<img src="/images/headshot-square.png" alt="Carlisia Thompson" title="Carlisia Thompson" width="250" height="200" align="right"/>
+<img src="/images/headshot-square.png" alt="Carlisia Campos" title="Carlisia Campos" width="250" height="200" align="right"/>
 
 ## Podcasting
 
@@ -18,7 +18,7 @@ author = "Carlisia Thompson"
 
 ### As guest
 
-* <b>Go Time</b> - [When distributed systems Go wrong](https://changelog.com/gotime/156) with Kelsey Hightower, Carlisia Thompson, & Stevenson Jean-Pierre
+* <b>Go Time</b> - [When distributed systems Go wrong](https://changelog.com/gotime/156) with Kelsey Hightower, Carlisia Campos, & Stevenson Jean-Pierre
 * <b>if/else Podcast</b> - [Bonus Episode: Kelsey Hightower on Kubernetes](https://ifelsepodcast.com/episodes/bonus-episode-kelsey-hightower-on-kubernetes-IxJUAcvi) - show contributor
 * <b>Virtually Speaking Podcast</b> - [Velero](https://blogs.vmware.com/virtualblocks/2019/08/02/vspeaking-podcast-velero/)
 * <b>PodCTL Podcast</b> - [Understanding Project Velero (formerly Ark)](http://podcast.podctl.com/110399/986641-understanding-project-velero-formerly-ark/)

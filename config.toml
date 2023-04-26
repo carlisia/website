@@ -1,11 +1,11 @@
 baseURL = "https://grokkingtech.io/"
 languageCode = "en-us"
 title = "grokkingtech.io"
-copyright = "Carlisia Thompson"
+copyright = "Carlisia Campos"
 theme = "ghostwriter2"
 
 [Author]
-    name = "Carlisia Thompson"
+    name = "Carlisia Campos"
     profile = "/page/about/"
 
 [Permalinks]
