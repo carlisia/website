@@ -8,5 +8,3 @@ title: GrokkingTech
 ---
 
 ## Contact
-
-## Contact
