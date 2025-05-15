@@ -18,9 +18,10 @@ interface Options {
 }
 
 const defaultOptions = (cfg: GlobalConfiguration): Options => ({
+  title: "My Recent Notes",
   limit: 3,
   linkToMore: false,
-  showTags: true,
+  showTags: false,
   filter: () => true,
   sort: byDateAndAlphabetical(cfg),
 })

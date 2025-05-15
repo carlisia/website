@@ -8,7 +8,7 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "Quartz 4",
+    pageTitle: "Carlisia Campos",
     pageTitleSuffix: "",
     enableSPA: true,
     enablePopovers: true,
@@ -16,39 +16,41 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: "grokkingtech.io",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
-        code: "IBM Plex Mono",
+        header: {
+          name: "Inter",
+        },
+        body: "IBM Plex Mono",
+        code: "Fira Code",
       },
       colors: {
         lightMode: {
-          light: "#faf8f8",
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688",
+          light: "#ffffff",             // Clean background
+          lightgray: "#f4f4f4",         // Subtle section contrast
+          gray: "#b8b8b8",              // Light neutral elements
+          darkgray: "#707070",          // Stronger neutral
+          dark: "#2b2b2b",              // For dark text on cards
+          secondary: "#825ce5",         // Main accent (vibrant violet)
+          tertiary: "#487f89",          // Oceanic balance
+          highlight: "rgba(168, 51, 130, 0.10)",  // Soft pink overlay
+          textHighlight: "#cb6ce688",   // Bright pink text background
         },
         darkMode: {
-          light: "#161618",
-          lightgray: "#393639",
-          gray: "#646464",
-          darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#7b97aa",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#b3aa0288",
+          light: "#1a1a1d",             // Dark base
+          lightgray: "#2a2a2d",         // Subtle dark sections
+          gray: "#4f4f4f",              // Muted UI elements
+          darkgray: "#dcdcdc",          // Light text
+          dark: "#ffffff",              // Brightest elements
+          secondary: "#a83382",         // Main accent (deep pink)
+          tertiary: "#5f81ff",          // Periwinkle balance
+          highlight: "rgba(130, 92, 229, 0.10)",  // Violet tone overlay
+          textHighlight: "#487f8988",   // Teal text background
         },
       },
     },
@@ -66,7 +68,7 @@ const config: QuartzConfig = {
         },
         keepBackground: false,
       }),
-      Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: false }),
+      Plugin.ObsidianFlavoredMarkdown({ enableInHtmlEmbed: true}),
       Plugin.GitHubFlavoredMarkdown(),
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
