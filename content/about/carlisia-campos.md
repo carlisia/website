@@ -5,6 +5,7 @@ tags: []
 comments: false
 description: this is about me
 title: GrokkingTech
+draft: true
 ---
 
 ## Contact
