@@ -219,6 +219,9 @@ export function renderPage(
       {left.map((BodyComponent) => (
         <BodyComponent {...componentData} />
       ))}
+      <div class="tag-page" >
+        <a href="/tags/">🏷️ tags</a>
+      </div>
     </div>
   )
 
