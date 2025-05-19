@@ -38,7 +38,7 @@ TagList.css = `
 .section-li > .section > .tags {
   grid-column: 1 / -1;
   justify-content: flex-start;
-  margin-top: 0.3rem;
+  margin-top: 0.2rem;
   gap: 0.1rem;
 }
   
@@ -63,6 +63,9 @@ a.internal.tag-link {
 h2.tag-header > a.internal.tag-link {
   background-color: var(--highlight);
   font-size: 1.2rem;
+}
+h2.tag-header.bottom{
+  margin-bottom: 0.2rem;
 }
 `
 

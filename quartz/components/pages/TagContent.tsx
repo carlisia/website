@@ -54,9 +54,6 @@ export default ((opts?: Partial<TagContentOptions>) => {
       }
       return (
         <div class="popover-hint">
-          <article class={classes}>
-            <p>{content}</p>
-          </article>
           <div>
             {tags.map((tag) => {
               const pages = tagItemMap.get(tag)!
@@ -78,25 +75,13 @@ export default ((opts?: Partial<TagContentOptions>) => {
 
               return (
                 <div>
-                  <h2 class="tag-header">
+                  <h2 class="tag-header bottom">
                     <a class="internal tag-link"  href={href}>
                       {tag}
                     </a>
                   </h2>
                   {content && <p>{content}</p>}
                   <div class="page-listing">
-                    <p>
-                      {pages.length > options.numPages && (
-                        <>
-                          {" "}
-                          <span>
-                            {i18n(cfg.locale).pages.tagContent.showingFirst({
-                              count: options.numPages,
-                            })}
-                          </span>
-                        </>
-                      )}
-                    </p>
                     <PageList limit={options.numPages} {...listProps} sort={options?.sort} />
                   </div>
                 </div>
@@ -114,7 +99,6 @@ export default ((opts?: Partial<TagContentOptions>) => {
 
       return (
         <div class="popover-hint">
-          <article class={classes}>{content}</article>
           <div class="page-listing">
             <div>
               <PageList {...listProps} sort={options?.sort} />

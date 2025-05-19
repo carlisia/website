@@ -24,7 +24,7 @@ export const defaultContentPageLayout: PageLayout = {
         showCurrentPage: false,
       }),
       condition: (page) => 
-        page.fileData.slug !== "index" && !page.fileData.slug.startsWith("thoughts/"), 
+        !page.fileData.slug.startsWith("thoughts/"), 
     }),
     Component.ArticleTitle(),
     Component.ContentMeta(),
@@ -63,7 +63,7 @@ export const defaultContentPageLayout: PageLayout = {
       title: "Recent Thinking",
       limit: 3,
       filter: (f) =>
-        f.slug!.startsWith("thoughts/"),
+        f.slug!.startsWith("thoughts/") && f.slug !== "thoughts/index",
       linkToMore: "thoughts/" as SimpleSlug,
     }),
     Component.ConditionalRender({
@@ -71,7 +71,7 @@ export const defaultContentPageLayout: PageLayout = {
         filterFn: (node) => {
           const slug = node.slug?.toLowerCase() ?? ""
 
-          return !slug.startsWith("thoughts/") && !slug.startsWith("images/")
+          return !slug.startsWith("thoughts/") && !slug.startsWith("assets/") && !slug.startsWith("tags/")
         },
         }),
       condition: (page) => !page.fileData.slug.startsWith("thoughts/"),
@@ -117,7 +117,7 @@ export const defaultListPageLayout: PageLayout = {
       component: Component.RecentNotes({
         title: "Recent Thinking",
         limit: 3,
-        filter: (f) => f.slug!.startsWith("thoughts/"),
+        filter: (f) => f.slug!.startsWith("thoughts/") && f.slug !== "thoughts/index",
         linkToMore: "thoughts/" as SimpleSlug,
       }),
       condition: (page) => page.fileData.slug !== "thoughts/index",
@@ -126,11 +126,10 @@ export const defaultListPageLayout: PageLayout = {
      component: Component.Explorer({
         filterFn: (node) => {
           const slug = node.slug?.toLowerCase() ?? ""
-          return !slug.startsWith("thoughts/") && !slug.startsWith("images/")
+          return !slug.startsWith("thoughts/") && !slug.startsWith("assets/") && !slug.startsWith("tags/")
         },
         }),
       condition: (page) => !page.fileData.slug.startsWith("thoughts/"),
-
     }),
   ],
   right: [
