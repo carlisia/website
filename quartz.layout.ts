@@ -89,6 +89,7 @@ export const defaultContentPageLayout: PageLayout = {
 
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
+
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
     Component.PageTitle(),
@@ -102,12 +103,24 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.RecentNotes({
-      title: "Recent Thinking",
-      limit: 3,
-      filter: (f) =>
-        f.slug!.startsWith("thoughts/"),
-      linkToMore: "thoughts/" as SimpleSlug,
+    // Without linkToMore (only for thoughts/index)
+    Component.ConditionalRender({
+      component: Component.RecentNotes({
+        title: "Recent Thinking",
+        limit: 8,
+        filter: (f) => f.slug!.startsWith("thoughts/") && f.slug !== "thoughts/index",
+      }),
+      condition: (page) => page.fileData.slug === "thoughts/index",
+    }),
+    // With linkToMore
+    Component.ConditionalRender({
+      component: Component.RecentNotes({
+        title: "Recent Thinking",
+        limit: 3,
+        filter: (f) => f.slug!.startsWith("thoughts/"),
+        linkToMore: "thoughts/" as SimpleSlug,
+      }),
+      condition: (page) => page.fileData.slug !== "thoughts/index",
     }),
     Component.ConditionalRender({
      component: Component.Explorer({
