@@ -1,6 +1,7 @@
 import { FullSlug, resolveRelative } from "../util/path"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { classNames } from "../util/lang"
+import style from "./styles/custom.scss"
 
 const TagList: QuartzComponent = ({ fileData, displayClass }: QuartzComponentProps) => {
   const tags = fileData.frontmatter?.tags
@@ -35,7 +36,10 @@ TagList.css = `
 }
 
 .section-li > .section > .tags {
-  justify-content: flex-end;
+  grid-column: 1 / -1;
+  justify-content: flex-start;
+  margin-top: 0.3rem;
+  gap: 0.1rem;
 }
   
 .tags > li {
@@ -46,10 +50,19 @@ TagList.css = `
 }
 
 a.internal.tag-link {
+  color: var(--tag-color);
+  font-weight: normal;
+  font-size: 0.9rem;
+  opacity: 0.8;
   border-radius: 8px;
-  background-color: var(--highlight);
+  background-color: transparent;
   padding: 0.2rem 0.4rem;
   margin: 0 0.1rem;
+}
+
+h2.tag-header > a.internal.tag-link {
+  background-color: var(--highlight);
+  font-size: 1.2rem;
 }
 `
 

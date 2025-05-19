@@ -3,6 +3,7 @@ import { QuartzPluginData } from "../plugins/vfile"
 import { Date, getDate } from "./Date"
 import { QuartzComponent, QuartzComponentProps } from "./types"
 import { GlobalConfiguration } from "../cfg"
+import style from "./styles/custom.scss"
 
 export type SortFn = (f1: QuartzPluginData, f2: QuartzPluginData) => number
 
@@ -109,6 +110,10 @@ PageList.css = `
 }
 
 .section > .tags {
-  margin: 0;
+  margin: 5;
+}
+
+.section h3 a[href*="thoughts/"] {
+  color: var(--sidebar-title);
 }
 `

@@ -1,0 +1,13 @@
+@use "sass:map";
+
+/* Default (light mode) */
+:root {
+  --tag-color: #b77a22;
+  --sidebar-title: #c23b4b;
+}
+
+/* Dark mode overrides */
+[saved-theme="dark"] {
+  --tag-color: #8ab4f8;
+  --sidebar-title: #3ca5b4;
+}

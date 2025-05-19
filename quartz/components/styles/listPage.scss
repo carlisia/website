@@ -1,17 +1,33 @@
 @use "../../styles/variables.scss" as *;
+@use "./custom.scss" as *;
 
 ul.section-ul {
   list-style: none;
-  margin-top: 2em;
+  margin-top: 1em;
   padding-left: 0;
 }
 
 li.section-li {
-  margin-bottom: 1em;
+  position: relative;
+  padding-left: 1em;
+  margin-left: 0.5em;
+  margin-bottom: 0.5em;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.5em;
+    bottom: 0.5em;
+    width: 3px;
+    background-color: var(--tag-color);
+    border-radius: 2px;
+  }
 
   & > .section {
     display: grid;
-    grid-template-columns: fit-content(8em) 3fr 1fr;
+    grid-template-columns: auto 1fr; // date takes only what it needs, title gets the rest
+    column-gap: 0.75rem;
 
     @media all and ($mobile) {
       & > .tags {
@@ -24,8 +40,10 @@ li.section-li {
     }
 
     & .meta {
-      margin: 0 1em 0 0;
+      margin: 0;
+      font-size: 1rem;
       opacity: 0.6;
+      white-space: nowrap;
     }
   }
 }

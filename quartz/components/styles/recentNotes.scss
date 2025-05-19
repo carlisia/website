@@ -1,3 +1,6 @@
+@use "../../styles/variables.scss" as *;
+@use "./custom.scss" as *;
+
 .recent-notes {
   & > h3 {
     margin: 0.5rem 0 0 0;
@@ -6,13 +9,21 @@
 
   & > ul.recent-ul {
     list-style: none;
-    margin-top: 1rem;
+    margin-top: 0.4rem;
+    margin-bottom: 0.4rem;
     padding-left: 0;
 
     & > li {
-      margin: 1rem 0;
-      .section > .desc > h3 > a {
+      margin: 0.1rem 0; // Reduce vertical spacing between list items
+
+      .section > .desc > a {
+        font-size: 0.9rem;         // Smaller text for links
+        line-height: 1.2;          // Tighter vertical spacing
+        color: var(--sidebar-title);
         background-color: transparent;
+        display: inline-block;     // Ensures margin/padding applies cleanly
+        margin: 0;
+        padding: 0;
       }
 
       .section > .meta {
@@ -20,5 +31,19 @@
         opacity: 0.6;
       }
     }
+  }
+
+  // Style the "see more" link inside <p>
+  p > a {
+    color: var(--sidebar-title);
+    font-size: 1rem;
+    margin-top: 0.1rem; // Use smaller top margin
+    display: inline-block; // Ensures margin applies
+  }
+
+  // Optionally reduce space above the paragraph
+  & > p {
+    margin-top: 0rem; // Adjust as needed
+    margin-bottom: 5;
   }
 }
