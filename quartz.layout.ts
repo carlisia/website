@@ -35,13 +35,9 @@ export const defaultContentPageLayout: PageLayout = {
       component: Component.Comments({
         provider: 'giscus',
         options: {
-          // from data-repo
           repo: "carlisia/website",
-          // from data-repo-id
           repoId: "MDEwOlJlcG9zaXRvcnkyMDQzNDYzOTU=",
-          // from data-category
           category: "💭 Comments",
-          // from data-category-id
           categoryId: "DIC_kwDODC4UG84CqHE9",
           reactionsEnabled: true,
           inputPosition: "bottom",
@@ -64,10 +60,10 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.RecentNotes({
-      title: "Recent Thoughts",
+      title: "Recent Thinking",
       limit: 3,
       filter: (f) =>
-        f.slug!.startsWith("thoughts/") && f.slug! !== "thoughts/index" && !f.frontmatter?.noindex,
+        f.slug!.startsWith("thoughts/"),
       linkToMore: "thoughts/" as SimpleSlug,
     }),
     Component.ConditionalRender({
@@ -106,18 +102,17 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.ReaderMode() },
       ],
     }),
-    Component.ConditionalRender({
-      component: Component.RecentNotes({
-        title: "Recent Thinking",
-        limit: 3,
-      }),
-      condition: (page) => page.fileData.slug.startsWith("thoughts/"),
+    Component.RecentNotes({
+      title: "Recent Thinking",
+      limit: 3,
+      filter: (f) =>
+        f.slug!.startsWith("thoughts/"),
+      linkToMore: "thoughts/" as SimpleSlug,
     }),
     Component.ConditionalRender({
      component: Component.Explorer({
         filterFn: (node) => {
           const slug = node.slug?.toLowerCase() ?? ""
-
           return !slug.startsWith("thoughts/") && !slug.startsWith("images/")
         },
         }),
@@ -125,5 +120,13 @@ export const defaultListPageLayout: PageLayout = {
 
     }),
   ],
-  right: [],
+  right: [
+    Component.ConditionalRender({
+      component: Component.Graph(),
+      condition: (page) =>
+        (page.fileData.slug ?? "").startsWith("tags/") &&
+        page.fileData.slug !== "tags" &&
+        page.fileData.slug !== "tags/index",
+      }),
+  ],
 }
