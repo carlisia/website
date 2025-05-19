@@ -57,7 +57,6 @@ export default ((opts?: Partial<TagContentOptions>) => {
           <article class={classes}>
             <p>{content}</p>
           </article>
-          <p>{i18n(cfg.locale).pages.tagContent.totalTags({ count: tags.length })}</p>
           <div>
             {tags.map((tag) => {
               const pages = tagItemMap.get(tag)!
@@ -79,15 +78,14 @@ export default ((opts?: Partial<TagContentOptions>) => {
 
               return (
                 <div>
-                  <h2>
-                    <a class="internal tag-link" href={href}>
+                  <h2 class="tag-header">
+                    <a class="internal tag-link"  href={href}>
                       {tag}
                     </a>
                   </h2>
                   {content && <p>{content}</p>}
                   <div class="page-listing">
                     <p>
-                      {i18n(cfg.locale).pages.tagContent.itemsUnderTag({ count: pages.length })}
                       {pages.length > options.numPages && (
                         <>
                           {" "}
@@ -118,7 +116,6 @@ export default ((opts?: Partial<TagContentOptions>) => {
         <div class="popover-hint">
           <article class={classes}>{content}</article>
           <div class="page-listing">
-            <p>{i18n(cfg.locale).pages.tagContent.itemsUnderTag({ count: pages.length })}</p>
             <div>
               <PageList {...listProps} sort={options?.sort} />
             </div>
