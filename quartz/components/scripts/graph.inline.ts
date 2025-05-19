@@ -19,6 +19,7 @@ import { Group as TweenGroup, Tween as Tweened } from "@tweenjs/tween.js"
 import { registerEscapeHandler, removeAllChildren } from "./util"
 import { FullSlug, SimpleSlug, getFullSlug, resolveRelative, simplifySlug } from "../../util/path"
 import { D3Config } from "../Graph"
+import style from "../styles/custom.scss"
 
 type GraphicsInfo = {
   color: string
@@ -208,6 +209,7 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
     "--dark",
     "--darkgray",
     "--bodyFont",
+    "--sidebar-title",
   ] as const
   const computedStyleMap = cssVars.reduce(
     (acc, key) => {
@@ -220,10 +222,21 @@ async function renderGraph(graph: HTMLElement, fullSlug: FullSlug) {
   // calculate color
   const color = (d: NodeData) => {
     const isCurrent = d.id === slug
+
     if (isCurrent) {
-      return computedStyleMap["--secondary"]
-    } else if (visited.has(d.id) || d.id.startsWith("tags/")) {
-      return computedStyleMap["--tertiary"]
+      if (d.id.startsWith("thoughts/")) {
+        return computedStyleMap["--sidebar-title"]
+      } else {
+        return computedStyleMap["--secondary"]
+      }
+    } else if (visited.has(d.id)) {
+      if (d.id.startsWith("tags/")) {
+        return computedStyleMap["--tertiary"]
+      } else if (d.id.startsWith("thoughts/")) {
+        return computedStyleMap["--sidebar-title"]
+      } else {
+        return computedStyleMap["--secondary"]
+      }
     } else {
       return computedStyleMap["--gray"]
     }
