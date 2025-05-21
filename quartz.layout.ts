@@ -12,6 +12,7 @@ export const sharedPageComponents: SharedLayout = {
       linkedIn: "https://www.linkedin.com/in/carlisia",
       Bluesky: "https://bsky.app/profile/carlisia.com",
       X: "https://x.com/carlisia",
+      stackoverflow: "https://stackoverflow.com/users/3389881/carlisia",
     },
   }),
 }
