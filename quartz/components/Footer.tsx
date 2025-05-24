@@ -9,19 +9,25 @@ interface Options {
 
 export default ((opts?: Options) => {
   const Footer: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
-    const year = new Date().getFullYear()
     const links = opts?.links ?? []
     return (
       <footer class={`${displayClass ?? ""}`}>
-        <p>
-          
-        </p>
-        <ul>
+        <hr />
+        <ul class="footer-links">
           {Object.entries(links).map(([text, link]) => (
             <li>
               <a href={link}>{text}</a>
             </li>
           ))}
+        </ul>
+        <p></p>
+        <ul>
+          <li>
+            <p></p>
+            <a href="#">
+            Scroll to top ↑
+            </a>
+          </li>
         </ul>
       </footer>
     )

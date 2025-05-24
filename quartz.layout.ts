@@ -10,6 +10,7 @@ export const sharedPageComponents: SharedLayout = {
     links: {
       GitHub: "https://github.com/carlisia",
       linkedIn: "https://www.linkedin.com/in/carlisia",
+      YouTube: "https://www.youtube.com/@carlisia.campos",
       Bluesky: "https://bsky.app/profile/carlisia.com",
       X: "https://x.com/carlisia",
       stackoverflow: "https://stackoverflow.com/users/3389881/carlisia",

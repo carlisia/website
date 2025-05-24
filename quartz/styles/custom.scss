@@ -35,6 +35,12 @@
 }
 
 .tagslink-container {
+  .tags-link {
+    a {
+      color: var(--tag-color);
+    }
+  }
+
   .thoughts-link {
     a {
       color: var(--sidebar-title);

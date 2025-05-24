@@ -35,6 +35,8 @@ export default ((opts: Options) => {
     }
 
     return (
+      <>
+      <hr />
       <div
         class={classNames(displayClass, "giscus")}
         data-repo={opts.options.repo}
@@ -48,6 +50,7 @@ export default ((opts: Options) => {
         data-light-theme={opts.options.lightTheme ?? "light_high_contrast"}
         data-dark-theme={opts.options.darkTheme ?? "dark_protanopia"}
       ></div>
+      </>
     )
   }
 
