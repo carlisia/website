@@ -46,7 +46,6 @@ export const defaultContentPageLayout: PageLayout = {
       }),
       condition: (page) => page.fileData.slug !== "index",
     }),
-
   ],
   left: [
     Component.PageTitle(),
@@ -57,16 +56,18 @@ export const defaultContentPageLayout: PageLayout = {
         {
           Component: Component.Darkmode(),
         },
-        { Component: Component.ReaderMode() },
+        { Component: Component.DesktopOnly(Component.ReaderMode()) },
       ],
     }),
-    Component.RecentNotes({
-      title: "Recent Thinking",
-      limit: 3,
-      filter: (f) =>
-        f.slug!.startsWith("thoughts/") && f.slug !== "thoughts/index",
-      linkToMore: "thoughts/" as SimpleSlug,
-    }),
+    Component.DesktopOnly(
+      Component.RecentNotes({
+        title: "Recent Thinking",
+        limit: 3,
+        filter: (f) =>
+          f.slug!.startsWith("thoughts/") && f.slug !== "thoughts/index",
+        linkToMore: "thoughts/" as SimpleSlug,
+      }),
+    ),
     Component.ConditionalRender({
      component: Component.Explorer({
         filterFn: (node) => {
@@ -97,28 +98,30 @@ export const defaultListPageLayout: PageLayout = {
         {
           Component: Component.Darkmode(),
         },
-        { Component: Component.ReaderMode() },
+        { Component: Component.DesktopOnly(Component.ReaderMode()) },
       ],
     }),
-    // Without linkToMore (only for thoughts/index)
-    Component.ConditionalRender({
-      component: Component.RecentNotes({
-        title: "Recent Thinking",
-        limit: 8,
-        filter: (f) => f.slug!.startsWith("thoughts/") && f.slug !== "thoughts/index",
+    Component.DesktopOnly(
+      // Without linkToMore (only for thoughts/index)
+      Component.ConditionalRender({
+        component: Component.RecentNotes({
+          title: "Recent Thinking",
+          limit: 8,
+          filter: (f) => f.slug!.startsWith("thoughts/") && f.slug !== "thoughts/index",
+        }),
+        condition: (page) => page.fileData.slug === "thoughts/index",
       }),
-      condition: (page) => page.fileData.slug === "thoughts/index",
-    }),
-    // With linkToMore
-    Component.ConditionalRender({
-      component: Component.RecentNotes({
-        title: "Recent Thinking",
-        limit: 3,
-        filter: (f) => f.slug!.startsWith("thoughts/") && f.slug !== "thoughts/index",
-        linkToMore: "thoughts/" as SimpleSlug,
+      // With linkToMore
+      Component.ConditionalRender({
+        component: Component.RecentNotes({
+          title: "Recent Thinking",
+          limit: 3,
+          filter: (f) => f.slug!.startsWith("thoughts/") && f.slug !== "thoughts/index",
+          linkToMore: "thoughts/" as SimpleSlug,
+        }),
+        condition: (page) => page.fileData.slug !== "thoughts/index",
       }),
-      condition: (page) => page.fileData.slug !== "thoughts/index",
-    }),
+    ),
     Component.ConditionalRender({
      component: Component.Explorer({
         filterFn: (node) => {
