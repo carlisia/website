@@ -8,7 +8,7 @@ comments: false
 
 > [!success] _Just a small town girl, livin’ in a lonely world…_ 🎶 🎼
 
-...trying to live [[Life]] in the most meaningful, fun, genuine, and helpful way possible.
+...trying to live [[life]] in the most meaningful, fun, genuine, and helpful way possible.
 
 ## 🌿 What I’m cultivating now
 

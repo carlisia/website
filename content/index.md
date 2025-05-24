@@ -8,13 +8,13 @@ comments: false
 
 ## Hello 👋
 
-**[[Carlisia Campos|I AM]]** a software engineer with deep expertise in [[computer science/go/go|Go]], Kubernetes/Cloud Native technologies, and open source. As a former engineer and maintainer of the [Velero](https://github.com/vmware-tanzu/velero) and [Knative](https://github.com/knative) open source projects, I've led efforts to enhance scalability, resilience, and developer experience in complex distributed systems.
+**[[about/carlisia campos|I AM]]** a software engineer with deep expertise in [[computer science/go/go|Go]], Kubernetes/Cloud Native technologies, and open source. As a former engineer and maintainer of the [Velero](https://github.com/vmware-tanzu/velero) and [Knative](https://github.com/knative) open source projects, I've led efforts to enhance scalability, resilience, and developer experience in complex distributed systems.
 
 ## Why grok? 🔮
 
-Never before have the stakes been higher for failing to [[Grokking|grok]] what’s unfolding around us. 
+Never before have the stakes been higher for failing to [[grokking|grok]] what’s unfolding around us. 
 
-As increasingly complex systems emerge at accelerating speed, the divide will only widen between those who solely consume and those who actively pursue understanding and agency. Ultimately, the new generation of emergent systems we design (and the shifts they bring) will favor those who deeply [[Grokking|grok]] the essence, value, and purpose of both our human nature and the rising potential of non-human machine organisms.
+As increasingly complex systems emerge at accelerating speed, the divide will only widen between those who solely consume and those who actively pursue understanding and agency. Ultimately, the new generation of emergent systems we design (and the shifts they bring) will favor those who deeply [[grokking|grok]] the essence, value, and purpose of both our human nature and the rising potential of non-human machine organisms.
 
 I spend a lot of time thinking about how the future is being decided right now. We all have a chance to participate, influence, and even contribute to building it.
 
