@@ -14,8 +14,8 @@ tags:
 
 - [MCP: A Protocol to Watch (Even If You're Not Sure What to Do With It Yet)](https://ashley.dev/posts/mcp-a-protocol-to-watch/)
 - [A Critical Look at MCP - Raz Blog](https://raz.sh/blog/2025-05-02_a_critical_look_at_mcp)
-- [Is Model Context Protocol the New API? - The New Stack](https://thenewstack.io/is-model-context-protocol-the-new-api/?utm_campaign=trueanthem&utm_medium=social&utm_source=linkedin)
-- [Understanding MCP | LinkedIn](https://www.linkedin.com/pulse/understanding-mcp-craig-mcluckie-p4wxc/?trackingId=6g7ZoDVpQuqZpbpXMwm3yw%3D%3D)
+- [Is Model Context Protocol the New API? - The New Stack](https://thenewstack.io/is-model-context-protocol-the-new-api)
+- [Understanding MCP | LinkedIn](https://www.linkedin.com/pulse/understanding-mcp-craig-mcluckie-p4wxc)
 
 ## SDKs
 
@@ -28,6 +28,8 @@ Clients and servers.
 ## Tools
 
 - [stacklok/toolhive: Run and manage MCP servers easily and securely](https://github.com/stacklok/toolhive)
+- [StacklokLabs/mkp: MKP is a Model Context Protocol (MCP) server for Kubernetes](https://github.com/StacklokLabs/mkp)
+- [MCP Jam](https://www.mcpjam.com/)
 
 ## Learning
 
