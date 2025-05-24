@@ -49,14 +49,13 @@ export const defaultContentPageLayout: PageLayout = {
   ],
   left: [
     Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Search(),
+    Component.DesktopOnly(Component.Search()),
     Component.Flex({
       components: [
-        {
-          Component: Component.Darkmode(),
-        },
+        { Component: Component.MobileOnly(Component.Search()) },
+        { Component: Component.Darkmode() },
         { Component: Component.DesktopOnly(Component.ReaderMode()) },
+        { Component: Component.TagsLink() },
       ],
     }),
     Component.DesktopOnly(
@@ -91,14 +90,13 @@ export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
   left: [
     Component.PageTitle(),
-    Component.MobileOnly(Component.Spacer()),
-    Component.Search(),
+    Component.DesktopOnly(Component.Search()),
     Component.Flex({
       components: [
-        {
-          Component: Component.Darkmode(),
-        },
+        { Component: Component.MobileOnly(Component.Search()) },
+        { Component: Component.Darkmode() },
         { Component: Component.DesktopOnly(Component.ReaderMode()) },
+        { Component: Component.TagsLink() },
       ],
     }),
     Component.DesktopOnly(
