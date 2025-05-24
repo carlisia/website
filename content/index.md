@@ -18,7 +18,7 @@ As increasingly complex systems emerge at accelerating speed, the divide will on
 
 I spend a lot of time thinking about how the future is being decided right now. We all have a chance to participate, influence, and even contribute to building it.
 
-I hope you enjoy thinking with me in [[this site|this space]], which has been carefully crafted for idea discovery and a 2-way conversation.
+I hope you enjoy [[thoughts/index|thinking]] with me in [[this site|this space]], which has been carefully crafted for idea discovery and a 2-way conversation.
 
 ## Contact 📬
 
