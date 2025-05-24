@@ -1,5 +1,6 @@
 ---
 title: We Know Because We Experience
+created: 2024-10-07 (PT)
 tags:
   - consciousness
   - systems
