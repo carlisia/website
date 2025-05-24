@@ -51,6 +51,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.PageTitle(),
     Component.DesktopOnly(Component.Search()),
     Component.Flex({
+      wrap: "wrap",
       components: [
         { Component: Component.MobileOnly(Component.Search()) },
         { Component: Component.Darkmode() },
@@ -64,7 +65,6 @@ export const defaultContentPageLayout: PageLayout = {
         limit: 3,
         filter: (f) =>
           f.slug!.startsWith("thoughts/") && f.slug !== "thoughts/index",
-        linkToMore: "thoughts/" as SimpleSlug,
       }),
     ),
     Component.ConditionalRender({
@@ -92,6 +92,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.PageTitle(),
     Component.DesktopOnly(Component.Search()),
     Component.Flex({
+      wrap: "wrap",
       components: [
         { Component: Component.MobileOnly(Component.Search()) },
         { Component: Component.Darkmode() },
@@ -100,7 +101,7 @@ export const defaultListPageLayout: PageLayout = {
       ],
     }),
     Component.DesktopOnly(
-      // Without linkToMore (only for thoughts/index)
+      // 8 items for thoughts/index
       Component.ConditionalRender({
         component: Component.RecentNotes({
           title: "Recent Thinking",
@@ -109,13 +110,11 @@ export const defaultListPageLayout: PageLayout = {
         }),
         condition: (page) => page.fileData.slug === "thoughts/index",
       }),
-      // With linkToMore
       Component.ConditionalRender({
         component: Component.RecentNotes({
           title: "Recent Thinking",
           limit: 3,
           filter: (f) => f.slug!.startsWith("thoughts/") && f.slug !== "thoughts/index",
-          linkToMore: "thoughts/" as SimpleSlug,
         }),
         condition: (page) => page.fileData.slug !== "thoughts/index",
       }),

@@ -3,7 +3,11 @@ export default (() => {
     return (
       <nav class="tagslink-container">
           <div class="tags-link">
-          <a href="/tags/">🏷️ tags</a>
+            <a href="/tags/">🏷️ tags</a>
+          </div>
+
+          <div class="thoughts-link">
+            <a href="/thoughts/">🧠 thoughts</a>
           </div>
       </nav>
     )
