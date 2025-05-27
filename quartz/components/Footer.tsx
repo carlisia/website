@@ -24,8 +24,19 @@ export default ((opts?: Options) => {
         <ul>
           <li>
             <p></p>
-            <a href="#">
-            Scroll to top ↑
+            <a
+              href="#"
+              onclick={(e) => {
+                e.preventDefault()
+                const el = document.querySelector(".center")
+                if (el) {
+                  el.scrollTo({ top: 0, behavior: "smooth" })
+                } else {
+                  window.scrollTo({ top: 0, behavior: "smooth" })
+                }
+              }}
+            >
+              Scroll to top ↑
             </a>
           </li>
         </ul>
