@@ -1,5 +1,6 @@
 ---
 title: Carlisia Campos
+description: Carlisia Campos is a software engineer with experience in Go, distributed systems, and Cloud Native technologies. She is passionate about bridging the gap between complex technical concepts and intuitive mental models. Her work and research explore how ideas from biological and goal-directed systems can inform software design.
 aliases:
   - Carlisia
 tags:

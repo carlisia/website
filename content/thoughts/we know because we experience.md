@@ -4,6 +4,7 @@ created: 2024-10-07 (PT)
 tags:
   - consciousness
   - systems
+  - leadership
 ---
 
 > [!QUOTE]
@@ -36,6 +37,8 @@ His deep understanding of both technology and consciousness has been a profound 
 
 • How we impact our own reality 🌍
 
-Save his post below to read (or watch the video) later—you might just discover new insights that spark your imagination! 💡 💥
+Watch the video, you might just discover new insights that spark your imagination! 💡 💥
+
+[The Journey from Computers to Consciousness with Federico Faggin - YouTube](https://www.youtube.com/watch?v=8Vkgn3nTMIo)
 
 P.S. If you’re the same kind of nerd or on a similar journey or have thoughts on these topics, let's connect! 🤝
