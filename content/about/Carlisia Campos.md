@@ -13,23 +13,24 @@ comments: false
 
 ## 🌿 What I’m cultivating now
 
-- Researching, thinking and writing on the convergence of **AI**, **distributed systems**, and **consciousness**  
+- Researching, thinking and writing on the convergence of **AI**, **distributed systems**, and **consciousness**
 - Expanding this digital garden
-- Preparing for my [[gophercon 2025#goroutines-and-cells-lessons-in-goal-directed-systems|GopherCon presentation]] in NYC in August 2025
+- Preparing for my [[gophercon 2025#goroutines-and-cells-lessons-in-goal-directed-systems|GopherCon presentation]] in NYC on August 2025
 - Daring myself to experiment with communicating my ideas through video
 
-## 🧠 Tech 
+## 🧠 Tech
 
-I'm passionate about building with technology. I am particularly interested in questioning:
+I'm passionate about building with technology. And I am particularly interested in questioning:
 
 - are we building the right things?
-	- how do we know this is true?
+  - how do we know this is true?
 - if there was only 1 overriding "why" to justify a particular design/technology choice/direction, what would it be?
 
-I also appreciate the very meaningful and direct impact that the technology I help builds bring to the world.
+I also appreciate the very meaningful and direct impact that the technology I help build brings to the world.
 
 Most of all, I love creating opportunities for imagination and experimentation to flourish.
-## 🌀 Systems 
+
+## 🌀 Systems
 
 I enjoy thinking of systems as **living metaphors**.
 
@@ -42,7 +43,7 @@ Much of my curiosity lies at the intersection of **technology and consciousness*
 - why do we want the things we want?
 - what is sustainable?
 - do we always need a goal?
-- chaos, entropy, will-power... 
+- chaos, entropy, will-power...
 - what is true, and what is truth?
 - is truth immutable, or does it change according to the availability of time and space?
 - ...
@@ -61,11 +62,12 @@ In collaboration with other very caring people, I helped co-found [GoBridge](htt
 
 In 2023, I took a long sabbatical to reconnect with what matters most: myself, my family, and my purpose.
 
-I also built an AI app to explore the potential of large language models. 
+I also built an AI app to explore the potential of large language models.
 
 The overall experience supercharged my passion for building technology, deepened my systems thinking, and sparked new insights into how we can design and interact with emerging complex systems.
 
 ---
 
-> [!quote] 
+> [!quote]
 > Our most powerful contributions come from harmonious impact. -- Carlisia Campos
+

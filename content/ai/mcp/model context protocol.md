@@ -40,7 +40,7 @@ Clients and servers.
 ## Learning
 
 - [In-Depth MCP Tutorials for 2025 | egghead.io](https://egghead.io/q?q=mcp)
--
+- [Welcome to the 🤗 Model Context Protocol (MCP) Course - Hugging Face MCP Course](https://huggingface.co/learn/mcp-course/unit0/introduction)
 
 ## Discussions / interviews
 
@@ -51,4 +51,3 @@ Clients and servers.
 
 - [Reddit / Model Context Protocol (MCP)](https://www.reddit.com/r/mcp/)
 - [Awesome MCP servers | Glama](https://glama.ai/mcp/servers)
-

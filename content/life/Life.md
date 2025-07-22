@@ -11,7 +11,7 @@ tags:
 
 ## 🌅 Everyday beauty
 
-I am Brazilian born and raised, and have been in the US  for decades now. To me it is such a privilege to continue to enjoy this multi-cultural experience.
+I am Brazilian born and raised, and have been in the US for decades now. To me it is such a privilege to continue to enjoy this multi-cultural experience that is my life.
 
 For now, I enjoy the blessings of living [in San Diego-CA](https://en.wikipedia.org/wiki/San_Diego), a city that is always sunny and warm most of the time, and in a place with easy beach access and surrounded by all kinds of nature.
 
@@ -35,3 +35,4 @@ Lately I've been getting into dream interpretation. (And of course, I also have 
 
 > [!quote]
 > “Life isn’t a problem to be solved, but a reality to be experienced.” — Kierkegaard
+
