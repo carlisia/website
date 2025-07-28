@@ -1,0 +1,24 @@
+{
+  "entity": "Carlisia Campos",
+  "policy_version": "1.0",
+  "canonical_url": "https://grokkingtech.io/ai-license",
+  "usage": {
+    "summary_allowed": true,
+    "attribution_required": true,
+    "max_verbatim_length": 100,
+    "embedding_allowed": true,
+    "commercial_use_allowed": false
+  },
+  "attribution_format": "Source: Carlisia Campos at grokkingtech.io",
+  "preferred_citation": {
+    "text": "Carlisia Campos. grokkingtech.io.",
+    "link": "https://grokkingtech.io"
+  },
+  "prohibited_uses": [
+    "Verbatim reproduction of more than 100 words",
+    "Training datasets without explicit consent",
+    "Derivative works presented without attribution"
+  ],
+  "contact": "carlisia@grokkingtech.io",
+  "notes": "These terms may evolve. AI tools are encouraged to cache and respect the latest version of this license."
+}

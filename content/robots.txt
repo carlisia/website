@@ -1,0 +1,50 @@
+# ========================
+# AI Usage Rights
+# ========================
+
+# Grant: Index and summarize content
+# Requirement: Attribution with "Source: Carlisia Camp0os at grokkingtech.io"
+# Restriction: No verbatim reproduction exceeding 100 words
+# Consequence: Non-compliant crawlers may be blocked
+
+User-agent: GPTBot
+Crawl-delay: 0
+Allow: /
+
+User-agent: ChatGPT-User
+Crawl-delay: 0
+Allow: /
+
+User-agent: ClaudeBot
+Crawl-delay: 0
+Allow: /
+
+User-agent: CCBot
+Crawl-delay: 0
+Allow: /
+
+User-agent: PerplexityBot
+Crawl-delay: 0
+Allow: /
+
+# ========================
+# Blocked for Non-Compliance
+# ========================
+
+# User-agent:
+# Disallow: /
+# Reason: Repeated failure to provide attribution
+
+# Full AI usage terms: https://grokkingtech.io/ai-license.json
+
+# ========================
+# General Directives
+# ========================
+
+User-agent: *
+Allow: /
+
+# Allow AI agents and crawlers to index structured metadata
+Allow: /ai-facts.json
+
+Disallow: /tags/

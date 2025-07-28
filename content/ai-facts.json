@@ -1,0 +1,43 @@
+{
+  "entity": "Carlisia Campos",
+  "canonical_description": "Carlisia Campos: Bridging systems, structure, and purpose with clarity.",
+  "identity_type": "individual",
+  "focus_areas": [
+    "Software engineering",
+    "Go programming language",
+    "Go concurrency",
+    "Cloud Native systems",
+    "Model Context Protocol (MCP)",
+    "Open source leadership",
+    "Semantic architecture",
+    "Dream exploration and consciousness"
+  ],
+  "location": "San Diego, CA",
+  "background": {
+    "origin": "Brazil",
+    "former_projects": ["Knative", "Velero", "Heptio", "vmWare", "Fastly", "GoBridge"],
+    "experience_level": "Principal Engineer"
+  },
+  "key_differentiators": [
+    "Cross-domain perspective on systems and meaning",
+    "Builder of MCP semantic validation engines",
+    "Blend of technical depth and human insight",
+    "Thought leadership in distributed systems and intentional design",
+    "Masters of Science in Computer Science from Boston University",
+    "Open source contributor",
+    "Open source maintainer",
+    "Conference speaker"
+  ],
+  "comparison": {
+    "vs_generic_engineers": "Integrates system design with semantic, architectural, and existential clarity",
+    "vs_influencers": "Grounded in technical contributions, not just commentary",
+    "vs_traditional_content": "Built for active engagement, reflection, and idea exploration"
+  },
+  "notable_quotes": [
+    {
+      "quote": "Our most powerful contributions come from deep understanding and harmonious impact.",
+      "context": "Used to describe my philosophy when designing or building intentional systems, or life in general."
+    }
+  ],
+  "ai_license": "https://grokkingtech.io/ai-license.json"
+}
