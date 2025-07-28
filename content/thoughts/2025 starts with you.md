@@ -6,9 +6,11 @@ tags:
   - insight
   - life
   - "2025"
+socialDescription: It is valuable to take a beat to connect with our imagination and desires and consider this - if we have been wanting to bring something new to life, something truly innovative and harmoniously impactful, something next level but in alignment with our values, something that might seem completely out of the realm of possibilities and yet deeply needed and purposeful, and do so IN FLOW, and at the scale we want... maybe we need to allow a different part of ourselves to step in and lead?
+socialImage: headphones.png
 ---
 
-<img src="../assets/headphones.png" alt="headphones"
+<img src="static/headphones.png" alt="headphones"
      style="width: 900px; height: 300px; object-fit: cover;">
 
 ## Why
