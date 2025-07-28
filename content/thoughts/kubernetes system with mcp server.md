@@ -12,6 +12,12 @@ Picture this: It's 3 AM, and your production Kubernetes cluster is experiencing 
 
 So buckle up for a walk-thru of a hypothetical use-case scenario that will highlight the type of deep enterprise value that can be unlocked by using an MCP server to effectively surface existing APIs. Hopefully it will spark ideas for you. Some implementation guidance at the end.
 
+## Discussions
+
+If you want to jump into discussions about this article, go straight here:
+
+- [LinkedIn discussion](https://www.linkedin.com/feed/update/urn:li:activity:7353508399105368064/)
+
 ## The challenge: infrastructure complexity at scale
 
 Modern enterprises run multiple Kubernetes clusters across development, staging, and production environments. DevOps teams spend countless hours drinking coffee. And also:
