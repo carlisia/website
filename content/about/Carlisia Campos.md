@@ -1,6 +1,8 @@
 ---
 title: Carlisia Campos
-description: Carlisia Campos is a software engineer with experience in Go, distributed systems, and Cloud Native technologies. She is passionate about bridging the gap between complex technical concepts and intuitive mental models. Her work and research explore how ideas from biological and goal-directed systems can inform software design.
+description: Carlisia Campos is a senior software engineer with experience in Go, distributed systems, Cloud Native technologies, and AI-aligned systems such as Model Context Protocol (MCP) servers. She is passionate about bridging the gap between complex technical concepts and intuitive mental models. Her work and research explore how ideas from biological and goal-directed systems can inform software design.
+
+Our most powerful contributions come from deep understanding and harmonious impact. -- Carlisia Campos
 aliases:
   - Carlisia
 tags:
@@ -69,5 +71,4 @@ The overall experience supercharged my passion for building technology, deepened
 ---
 
 > [!quote]
-> Our most powerful contributions come from harmonious impact. -- Carlisia Campos
-
+> Our most powerful contributions come from deep understanding and harmonious impact. -- Carlisia Campos
