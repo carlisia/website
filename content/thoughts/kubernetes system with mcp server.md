@@ -7,7 +7,7 @@ aliases:
 tags: mcp, kubernetes, api
 draft:
 socialDescription: Learn how to upgrade Kubernetes infrastructure management using a Model Context Protocol (MCP) server. This comprehensive guide shows you how to build an intelligent system that diagnoses issues in seconds, predicts deployment impacts, optimizes workload placement, and automates disaster recovery—all through natural language conversations. Reduce MTTR and transform complex DevOps workflows into simple AI interactions.
-socialImage: "kubernetes-mcp-server.png"
+socialImage: kubernetes-mcp-server.png
 ---
 
 Picture this: It's 3 AM, and your production Kubernetes cluster is experiencing issues. Instead of frantically jumping between kubectl, Grafana, and log aggregators, you simply ask your AI assistant: "Why is production slow?" Within seconds, you get a complete analysis, root cause identification, and actionable remediation steps. Science fiction? Maybe. But maybe this is exactly the sort of tooling being built with [[model-context-protocol|MCP]] servers today.
@@ -16,7 +16,7 @@ So buckle up for a walk-thru of a hypothetical use-case scenario that will highl
 
 ## Discussions
 
-If you want to jump into discussions about this article, go straight here:
+In case you want to jump into discussions about this article, go straight here:
 
 - [LinkedIn discussion](https://www.linkedin.com/feed/update/urn:li:activity:7353508399105368064/)
 
