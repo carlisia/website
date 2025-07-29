@@ -1,7 +1,7 @@
 ---
 title: Building an Intelligent Kubernetes Management System with an MCP Server
 description: Learn how to upgrade Kubernetes infrastructure management using a Model Context Protocol (MCP) server. This comprehensive guide shows you how to build an intelligent system that diagnoses issues in seconds, predicts deployment impacts, optimizes workload placement, and automates disaster recovery—all through natural language conversations. Reduce MTTR and transform complex DevOps workflows into simple AI interactions.
-created: 2025-07-22
+created: 2025-07-22 (PT)
 id: obs-sL2AmtT3
 aliases:
 tags: mcp, kubernetes, api
