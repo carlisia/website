@@ -48,3 +48,8 @@ Allow: /
 Allow: /ai-facts.json
 
 Disallow: /tags/
+
+# ========================
+# Sitemap
+# ========================
+Sitemap: https://grokkingtech.io/sitemap.xml
