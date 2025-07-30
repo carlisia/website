@@ -14,6 +14,8 @@ tags:
 
 ## Writeups (external)
 
+- [MCP Protocol: a new AI dev tools building block](https://newsletter.pragmaticengineer.com/p/mcp?utm_source=substack&utm_campaign=post_embed&utm_medium=web) - The Pragmatic Engineer
+- [The Creators of Model Context Protocol - Latent.Space](https://www.latent.space/p/mcp?utm_source=substack&utm_campaign=post_embed&utm_medium=web)
 - [MCP: A Protocol to Watch (Even If You're Not Sure What to Do With It Yet)](https://ashley.dev/posts/mcp-a-protocol-to-watch/)
 - [A Critical Look at MCP - Raz Blog](https://raz.sh/blog/2025-05-02_a_critical_look_at_mcp)
 - [Is Model Context Protocol the New API? - The New Stack](https://thenewstack.io/is-model-context-protocol-the-new-api)
@@ -51,3 +53,4 @@ Clients and servers.
 
 - [Reddit / Model Context Protocol (MCP)](https://www.reddit.com/r/mcp/)
 - [Awesome MCP servers | Glama](https://glama.ai/mcp/servers)
+- [Composio MCP](https://mcp.composio.dev/) - connect to 100+ managed MCP servers with built-in Auth
