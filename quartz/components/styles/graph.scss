@@ -1,6 +1,8 @@
 @use "../../styles/variables.scss" as *;
 
 .graph {
+  flex: 0 0 auto;
+  
   & > h3 {
     font-size: 1rem;
     margin: 0;
@@ -10,7 +12,7 @@
     border-radius: 5px;
     border: 1px solid var(--lightgray);
     box-sizing: border-box;
-    height: 250px;
+    height: 200px;
     margin: 0.5em 0;
     position: relative;
     overflow: hidden;

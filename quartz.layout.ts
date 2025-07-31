@@ -61,19 +61,33 @@ export const defaultContentPageLayout: PageLayout = {
       ],
     }),
     Component.DesktopOnly(
-      Component.RecentNotes({
-        title: "Recent Thinking",
+      Component.ConditionalRender({
+       component: Component.RecentNotes({
+          title: "Recent Thinking",
+          limit: 8,
+          linkToMore: "thoughts",
+          filter: (f) =>
+            // Include all pages under thoughts/ but not the index page.
+            f.slug!.startsWith("thoughts/") && f.slug !== "thoughts/index",
+        }),
+        condition: (page) => page.fileData.slug.startsWith("thoughts/"),
+      }),
+    ),
+    Component.ConditionalRender({
+      component: Component.RecentNotes({
+        title: "Latest Thoughts",
         limit: 3,
+        linkToMore: "thoughts",
         filter: (f) =>
           f.slug!.startsWith("thoughts/") && f.slug !== "thoughts/index",
       }),
-    ),
+      condition: (page) => page.fileData.slug === "index",
+    }),
     Component.ConditionalRender({
      component: Component.Explorer({
         filterFn: (node) => {
           const slug = node.slug?.toLowerCase() ?? ""
-
-          return !slug.startsWith("thoughts/") && !slug.startsWith("assets/") && !slug.startsWith("tags/")
+          return !slug.startsWith("thoughts/") && !slug.startsWith("tags/")
         },
         }),
       condition: (page) => !page.fileData.slug.startsWith("thoughts/"),
@@ -101,33 +115,17 @@ export const defaultListPageLayout: PageLayout = {
         { Component: Component.TagsLink() },
       ],
     }),
-    Component.DesktopOnly(
-      // 8 items for thoughts/index
-      Component.ConditionalRender({
-        component: Component.RecentNotes({
-          title: "Recent Thinking",
-          limit: 8,
-          filter: (f) => f.slug!.startsWith("thoughts/") && f.slug !== "thoughts/index",
-        }),
-        condition: (page) => page.fileData.slug === "thoughts/index",
-      }),
-      Component.ConditionalRender({
-        component: Component.RecentNotes({
-          title: "Recent Thinking",
-          limit: 3,
-          filter: (f) => f.slug!.startsWith("thoughts/") && f.slug !== "thoughts/index",
-        }),
-        condition: (page) => page.fileData.slug !== "thoughts/index",
-      }),
-    ),
     Component.ConditionalRender({
      component: Component.Explorer({
+        // Only render an Explorer component on pages whose slug 
+        // starts with thoughts/ or tags/, and exclude content that starts 
+        // with thoughts/ or tags/ from the explorer list.
         filterFn: (node) => {
           const slug = node.slug?.toLowerCase() ?? ""
-          return !slug.startsWith("thoughts/") && !slug.startsWith("assets/") && !slug.startsWith("tags/")
+          return !slug.startsWith("thoughts/") && !slug.startsWith("tags/")
         },
         }),
-      condition: (page) => !page.fileData.slug.startsWith("thoughts/"),
+      condition: (page) => page.fileData.slug.startsWith("thoughts/")|| page.fileData.slug.startsWith("tags/"),
     }),
   ],
   right: [

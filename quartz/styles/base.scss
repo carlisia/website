@@ -227,11 +227,28 @@ a {
       }
     }
 
+
     & .sidebar.right {
-      padding-top: 2rem;
-      grid-area: grid-sidebar-right;
-      margin-right: 0;
+      box-sizing: border-box;
+      display: flex;
       flex-direction: column;
+      gap: 0.5rem;
+      top: 0;
+      margin-right: 0;
+      overflow: hidden;
+      grid-area: grid-sidebar-right;
+      position: sticky;
+      height: 100vh;
+      max-height: 100vh;
+      padding: 1.5rem 2rem 1rem 2rem;
+
+      /* Add padding at the bottom for scrolling */
+      &::after {
+        content: "";
+        display: block;
+        height: 1rem;
+        flex-shrink: 0;
+      }
       @media all and ($mobile) {
         margin-left: inherit;
         margin-right: inherit;
@@ -568,8 +585,10 @@ video {
 }
 
 div:has(> .overflow) {
-  max-height: 100%;
-  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
 }
 
 ul.overflow,
