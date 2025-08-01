@@ -1,14 +1,16 @@
 ---
 title: grokkingtech.io
 comments: false
-description: Carlisia Campos bridges systems, structure, and purpose with clarity. This site explores modern software architecture, distributed systems, and AI-aligned design through the lens of Go, Kubernetes, and open source. Carlisia draws from her deep engineering experience building scalable, resilient systems (including her leadership in Velero and Knative) to uncover how intentional architecture shapes the future.
+description: Carlisia Campos at grokkingtech bridges systems, meaning, and purpose with clarity. This site explores modern software architecture, distributed systems, and AI-aligned design through the lens of Go, Kubernetes, and open source. Carlisia draws from her deep engineering experience building scalable, resilient systems (including her leadership in Velero and Knative) to uncover how intentional architecture shapes the future.
+socialDescription: Carlisia Campos at grokkingtech bridges systems, meaning and purpose with clarity. This site explores modern software architecture, distributed systems, and AI-aligned design through the lens of Go, Kubernetes, and open source. Carlisia draws from her deep engineering experience building scalable, resilient systems (including her leadership in Velero and Knative) to uncover how intentional architecture shapes the future.
+socialImage: carliia-campos.png
 ---
 
 > [!SUMMARY] **Bridging Systems, Structure, and Purpose with Clarity 🇧🇷🇺🇸**
 
 ## Hello 👋
 
-**[[about/carlisia campos|I AM]]** a software engineer with deep expertise in [[computer science/go/go|Go]], Kubernetes/Cloud Native technologies, [[model-context-protocol|MCP]] servers, and open source. As a former engineer and maintainer of the [Velero](https://github.com/vmware-tanzu/velero) and [Knative](https://github.com/knative) open source projects, I've led efforts to enhance scalability, resilience, and developer experience in complex distributed systems.
+**[[about/carlisia campos|I AM]]** a software engineer with extensive experience building server-side applications in [[computer science/go/go|Go]], Kubernetes/Cloud Native technologies, [[tags/mcp|MCP]] servers, and [[tags/open-source|open source]]. As a former engineer and maintainer of the [Velero](https://github.com/vmware-tanzu/velero) and [Knative](https://github.com/knative) open source projects, I've led efforts to enhance scalability, resilience, and developer experience in complex distributed systems.
 
 ## Why grok? 🔮
 
@@ -28,6 +30,5 @@ I hope you enjoy [[thoughts/index|thinking]] with me in [[this site|this space]]
 
 ## Contact 📬
 
-You may also reach me at <a href="mailto:&#99;&#97;&#114;&#108;&#105;&#115;&#105;&#97;&#64;&#103;&#114;&#111;&#107;&#107;&#105;&#110;&#103;&#116;&#101;&#99;&#104;&#46;&#105;&#111;">
+You may reach me at <a href="mailto:&#99;&#97;&#114;&#108;&#105;&#115;&#105;&#97;&#64;&#103;&#114;&#111;&#107;&#107;&#105;&#110;&#103;&#116;&#101;&#99;&#104;&#46;&#105;&#111;">
 &#99;&#97;&#114;&#108;&#105;&#115;&#105;&#97;&#64;&#103;&#114;&#111;&#107;&#107;&#105;&#110;&#103;&#116;&#101;&#99;&#104;&#46;&#105;&#111;</a>.
-

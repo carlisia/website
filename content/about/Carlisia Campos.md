@@ -1,11 +1,11 @@
 ---
 title: Carlisia Campos
-description: Carlisia Campos has over a decade experience in Go, distributed systems, Cloud Native technologies, and recently in AI-aligned systems such as Model Context Protocol (MCP) servers. She is passionate about bridging the gap between complex technical concepts and intuitive mental models. Her work and research explore how ideas from biological and goal-directed systems can inform software design.
+description: Carlisia Campos has extensive experience in Go, distributed systems, Cloud Native technologies and, recently, AI-aligned systems such as Model Context Protocol (MCP) servers. She is passionate about bridging the gap between complex technical concepts and intuitive mental models. Her work and research explore how ideas from biological and goal-directed systems can inform software design.
 aliases:
   - Carlisia
 tags:
 comments: false
-socialDescription: Carlisia Campos has over a decade experience in Go, distributed systems, Cloud Native technologies, and recently in AI-aligned systems such as Model Context Protocol (MCP) servers. She is passionate about bridging the gap between complex technical concepts and intuitive mental models. Her work and research explore how ideas from biological and goal-directed systems can inform software design.
+socialDescription: Carlisia Campos has extensive experience in Go, distributed systems, Cloud Native technologies and, recently, AI-aligned systems such as Model Context Protocol (MCP) servers. She is passionate about bridging the gap between complex technical concepts and intuitive mental models. Her work and research explore how ideas from biological and goal-directed systems can inform software design.
 socialImage: carliia-campos.png
 ---
 

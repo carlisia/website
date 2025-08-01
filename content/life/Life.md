@@ -5,6 +5,7 @@ aliases:
 tags:
   - life
 decription: A deeply personal exploration of presence, perception, and becoming. Carlisia Campos reflects on everyday beauty, cultural identity, and inner transformation through a life rooted in nature, connection, and conscious experience. Neighborhood walks, transcendental moments in movement, dreams, and mundane musings, this page captures the poetic clarity of a practice of living with intention, the joys of imagination, and the imperfection of the path unfolding.
+socialDescription: A deeply personal exploration of presence, perception, and becoming. Carlisia Campos reflects on everyday beauty, cultural identity, and inner transformation through a life rooted in nature, connection, and conscious experience. Neighborhood walks, transcendental moments in movement, dreams, and mundane musings, this page captures the poetic clarity of a practice of living with intention, the joys of imagination, and the imperfection of the path unfolding.
 ---
 
 > [!quote]
