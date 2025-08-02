@@ -18,76 +18,46 @@ socialImage:
 
 As modern software engineers, we're trained in the agile way: ship fast, iterate based on feedback, let design emerge. We start minimal and evolve based on what we learn from users.
 
-But architecting robusts, performant, and useful MCP servers demands the opposite: with LLM in the loop, the system’s effectiveness is significantly improved by intentionally and explicitly defining constraints upfront. These constraints improve the predictability, discoverability, and usability of your tools. Why?
+But architecting robust, performant, and useful MCP servers demands the opposite: with LLMs in the loop, the system's effectiveness is significantly improved by intentionally and explicitly defining constraints upfront. These constraints improve the predictability, discoverability, and usability of our tools. Why?
 
 Because for an LLM to make reasonable choices, it must be carefully guided. They can't read between the lines, infer unstated intentions, or choose between multiple paths to the same goal. They work purely with (their interpretation of) what we explicitly provide. The context we give them becomes their entire universe of what's possible.
 
-And this fundamentally changes the cost of iteration. When we change a tool, we're not just updating its description or restructuring its parameters, we're potentially breaking every agent workflow that depends on it.
+> [!TIP] Because LLMs rely heavily on clarity, precision, and explicit structure, defining intentional constraints upfront is critical.
 
-### Impact
+This fundamentally shifts how we measure success. Instead of evaluating how fast we ship and iterate, now we prioritize testing how reliably our constraints allow LLMs to discover and effectively compose our tools.
 
-The disruption from tool changes manifests differently based on the type of MCP client.
-
-#### When there are only humans are in the loop
-
-- **We're competing for clarity in every interaction:** if our tool isn't defined with clear, consistent, and authoritative signals, LLMs will struggle to distinguish it from others or use it correctly.
-
-- **Every inconsistency becomes noise:** ambiguous descriptions, overlapping functionality, or unclear parameters make it exponentially harder for LLMs to reliably select and use our tools.
-
-- **User patterns crystallize around what works:** when users find tool definitions that produce consistent results, they build workflows, share prompts, and create automations based on that specific formulation.
-
-- **Trust compounds or erodes with each interaction:** consistent tool behavior builds user confidence, while unpredictable results drive them to use competing tools.
-
-#### When MCP clients are agents
-
-- **Failure modes become silent degradation:** agents can't course-correct when tools behave unexpectedly; they just propagate errors downstream
-
-  - Agents typically don't have robust error handling for tool selection failures
-  - They often make their "best guess" and continue rather than stopping
-
-- **Integration assumptions become permanent contracts:** agent developers hard-code expectations about our tool behavior into their systems.
-
-  - When developers build agent systems that use our MCP tools, they encode assumptions
-  - These get embedded in prompts, workflows, and agent architectures
-  - Changing our tools breaks these hard-coded expectations
-  - This is especially true for production systems where changes require extensive testing
-
-- **Latency and token usage increase significantly:** unclear tools force agents to make multiple attempts or defensive calls, compounding costs.
-
-  - Unclear tools do cause agents to use more tokens in decision-making
-  - Agents might make multiple attempts with different tools
-
-- **There's no forgiveness for ambiguity:** agents interpret our tools literally, without the human ability to infer intent from context.
-
-  - Agents can't use context clues the way humans do
-  - They interpret descriptions literally
-  - Ambiguous parameter names or descriptions lead to consistent misuse
-
-Evolution becomes disruption.
-
-> [!INFO] This creates our constraint paradox
-> Traditional software: constraints limit possibilities.
+> [!INFO] The Constraint Paradox
 >
-> MCP servers: constraints expand effectiveness.
+> - Traditional software development: minimize constraints, maximize flexibility
+> - MCP server development: maximize constraints, maximize flexibility
+>
+> The clearer our constraints, the more confidently LLMs can compose our tools into helpful solutions.
 
-The competitive landscape amplifies this need. As the ecosystem matures, LLMs will maintain context as they move between different tools and datasets. And that users can so trivially swap between MCP servers and tools is not reassuring either. Instead of measuring success by how quickly we can add features, now we prioritize testing how reliably agents can discover and compose our tools from day one.
+A competitive landscape amplifies this new reality. As the ecosystem matures, users will seamlessly switch between different servers and tools.
 
-But please 🙏 don't come at me 😱. Instead of thinking of this as me suggesting to abandon agile principles, I'd rather you saw it as a realization that building with AI in the loop has different rules. Where traditional software rewards emergent flexibility, MCP servers reward intentional constraints.
+Instead of thinking of this as me suggesting to abandon agile principles 😱, I'd rather 🙏 you saw it as a realization that building with AI in the loop has different rules. Where traditional software rewards emergent flexibility, MCP servers reward intentional constraints.
 
 Absolutely nothing wrong about yolo'ing your way thru your first MCP servers. I'm just wanting to tell you [when I did that](https://github.com/carlisia/mcp-factcheck), I had to reel myself back from a much deeper abyss than it was fun (or profitable) for me, all because I didn't have this guide that is now in front of your eyeballs! 👁👁
 
-This article is a playbook for how to use intentional design to mitigate for this paradox when architecting MCP servers.
+What follows is a practical framework for architecting MCP servers that embraces constraints and upfront intention as competitive advantages. I'll share concrete pointers for how to architect MCP servers intentionally enough to get considerable gains 💪 quickly, but not so much that it doesn't feel playful or experimental or productive.
+
+As my Gen Z kid says: "**Trust**."
+
+> [!TIP] PS:
+> The core principles I discuss here apply to agentic systems in general, not only MCP servers/tools.
 
 ## Why MCP makes clear intention so very critical, going deeper
 
-When we build an MCP server, our primary user is an LLM. This "user" must:
+When we build an MCP server, our primary users are LLMs. These "users" must:
 
 - Select appropriate tools from what a server provides based solely on tool metadata (name, description, and parameter schemas)
 - Reason about when and how to use them
 - Compose them into solutions
 - Work within context window limits
 
-Here's what LLMs actually see:
+### Tool metadata
+
+Here's a sample of what LLMs actually see:
 
 ```json
 {
@@ -109,6 +79,16 @@ Here's what LLMs actually see:
   }
 }
 ```
+
+The LLM uses:
+
+- **Tool name**: For identification and selection
+- **Description**: To understand the tool's purpose
+- **Parameter names and types**: To construct valid calls
+- **Parameter descriptions**: To understand how to use each parameter
+- **Conditions**: To know values that are required
+
+### Vague metadata
 
 This is why vague metadata at ANY level hurts LLM usage:
 
@@ -133,18 +113,52 @@ This is why vague metadata at ANY level hurts LLM usage:
 }
 ```
 
-If there is ONE THING that LLMs are terrible at, it's handling ambiguity. When humans encounter vague tools, we experiment, read docs, ask questions. When LLMs encounter vague tools, they either skip them entirely or misuse them, burning through context and degrading performance. They won't ask for clarification. They will... _confidently guess_.
+If there is ONE THING that LLMs are terrible at is this: handling ambiguity. When an LLM encounters this tool, how will it know what to do with it? How would any request lead to this tool being selected?
 
-## tl;dr
+## The impact of vague intentions
 
-This is all that I wanted to convince you of. This is the tl;dr:
+When developers encounter an unexpected behavior with a tool, we experiment, ask questions, read code, read the logs, read docs. I'm kidding!!! We never read the docs.
 
-- a
-- b
+When machines (you know, the regular kind) encounter unknown inputs, they follow their programming: retry, retry with different options, follow alternative logic paths, or fail gracefully with error codes. How deterministic of them.
 
-Beyond this point, I will share concrete pointers for how to architect an MCP server intentionally enough to get considerable gains 💪 quickly, but not so much that it doesn't feel playful or experimental or productive.
+When LLMs encounter a vaguely described tool with seemingly ambiguous parameters, they... are unhelpful at best, harmful (and costly) at worst. They will either bypass the intended tool entirely, or misuse it, potentially burning through tokens and derailing the entire process. In the absence of clear directions, they won't ask for clarification. They won’t raise warnings. They will... _confidently guess_.
 
-As my Gen Z kid says: "**Trust**."
+The impact from tools designed with vague intentions manifests differently based on the type of MCP client.
+
+#### When there are only humans in the loop
+
+- **Every interaction is a test of clarity:** if our tool isn't defined with clear, consistent, and authoritative signals, LLMs will struggle to distinguish it from others or use it correctly.
+
+- **Every inconsistency becomes noise:** ambiguous descriptions, overlapping functionality, or unclear parameters make it exponentially harder for LLMs to reliably select and use our tools.
+
+- **User patterns crystallize around what works:** when users find tool definitions that produce consistent results, they build workflows, share prompts, and create automations based on that specific formulation.
+
+- **Trust compounds or erodes with each interaction:** consistent tool behavior builds user confidence, while unpredictable results drive them to use competing tools.
+
+#### When MCP clients are agents
+
+- **Failure modes become silent degradation:** agents can't course-correct when tools behave unexpectedly; they just propagate errors downstream.
+
+  - Agents typically don't have robust error handling for tool selection failures
+  - They often make their "best guess" and continue rather than stopping
+
+- **Integration assumptions become permanent contracts:** some agent developers hard-code expectations about our tool behavior into their systems.
+
+  - When developers build agent systems that use our MCP tools, they encode assumptions
+  - These get embedded in prompts, workflows, and agent architectures
+  - Changing our tools breaks these hard-coded expectations
+  - This is especially true for production systems where changes require extensive testing
+
+- **Latency and token usage increase significantly:** unclear tools force agents to make multiple attempts or defensive calls, compounding costs.
+
+  - Unclear tools do cause agents to use more tokens in decision-making
+  - Agents might make multiple attempts with different tools
+
+- **There's no forgiveness for ambiguity:** agents interpret our tools literally, without the human ability to infer intent from context.
+
+  - Agents can't use context clues the way humans do
+  - They interpret descriptions literally
+  - Ambiguous parameter names or descriptions lead to consistent misuse
 
 ## Start with intention, not features
 
@@ -158,15 +172,17 @@ Maybe it's:
 
 - "I want to help myself manage my todo lists better"
 - "I want to help my team debug production issues faster"
-- "I want to see if LLMs can help with code reviews"
+- "I want to know if LLMs can help my code reviews"
 
-This is a hypothesis to test. But having this hypothesis—however rough—fundamentally changes how we experiment.
+This is a hypothesis to test. But having this hypothesis, however rough, fundamentally changes how we experiment.
+
+> [!TIP] Note: The devil is in the precision.
 
 ### The intention statement framework
 
 Before writing code, write this:
 
-```
+```markdown
 This MCP server helps [WHO] to [DO WHAT] with [WHAT CONSTRAINTS]
 so that [WHY THIS MATTERS]
 ```
@@ -175,18 +191,27 @@ Examples:
 
 - "This MCP server helps **individual developers** to **manage their personal notes** with **minimal friction** so that **context-switching doesn't kill productivity**"
 - "This MCP server helps **SREs** to **debug production issues** with **read-only access** so that **they can find root causes without risking further damage**"
-
-### The "Why Test"
+- "This MCP server helps **data analysts** to **explore CSV files** with **read-only safety** so that **they avoid costly accidental data corruption**
+- "[This MCP server](https://github.com/carlisia/mcp-factcheck) helps **developers and technical writers** to **validate any MCP-related content against official specifications** with **real-time accuracy checking** so that **they don't waste efforts and resources on misinformation**"
 
 Here's how to know if your intention is strong:
 
-**Weak intention**: "This server processes log files" (that's a WHAT, not a WHY)
-**Strong intention**: "This server helps SREs debug production issues" (clear value proposition)
+- **Weak intention**: "This server processes log files" (missing WHO and WHY)
+- **Strong intention**: "This server helps SREs to debug production issues faster so that they can reduce system downtime"
 
 **Test**: Can you measure if you're succeeding?
 
-- Processing log files → How do you measure success?
-- Helping SREs debug → Faster root cause identification? Fewer escalations? ✓
+- Processing log files → What does success look like? Who benefits? Why does it matter?
+- Helping SREs debug production issues → Measurable: time to root cause, escalation rates, downtime minutes ✓
+
+The strong intention clearly identifies:
+
+- WHO: SREs
+- WHAT: debug production issues faster
+- WHY: reduce system downtime
+
+> [!SUCCESS] Tip
+> I personally start with the WHY, then play with the WHAT and WHO interchangeably.
 
 ## A tale of two MCP servers
 
