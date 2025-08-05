@@ -18,9 +18,9 @@ socialImage: intention-agentic-systems.png
 
 As modern software engineers, we're trained in the agile way: ship fast, iterate based on feedback, let design emerge. We start minimal and evolve based on what we learn from users.
 
-But architecting robust, performant, and useful MCP servers demands the opposite: with LLMs in the loop, the system's effectiveness is significantly improved by intentionally and explicitly defining constraints upfront. These constraints improve the predictability, discoverability, and usability of our tools. Why?
+But architecting robust, performant, and useful [[model-context-protocol|MCP]] servers demands the opposite: with LLMs in the loop, the system's effectiveness is significantly improved by intentionally and explicitly defining constraints upfront. These constraints improve the predictability, discoverability, and usability of our tools. Why?
 
-Because for an LLM to make reasonable choices, it must be carefully guided. They can't read between the lines, infer unstated intentions, or choose between multiple paths to the same goal. They work purely with (their interpretation of) what we explicitly provide. The context we give them becomes their entire universe of what's possible.
+Because for an LLM to make reasonable choices, it must be carefully guided. They can't read between the lines, infer unstated intentions, or choose between multiple paths to the same goal. They work purely with (their interpretation of) what we explicitly provide. The [[context-engineering|context]] we give them becomes their entire universe of what's possible.
 
 > [!TIP] Because LLMs rely heavily on clarity, precision, and explicit structure, defining intentional constraints upfront is critical.
 
@@ -33,7 +33,7 @@ This fundamentally shifts how we measure success. Instead of evaluating how fast
 >
 > The clearer our constraints, the more confidently LLMs can compose our tools into helpful solutions.
 
-A competitive landscape amplifies this new reality. As the ecosystem matures, users will seamlessly switch between different servers and tools.
+A competitive landscape amplifies this new reality. Given the great usability that MCP provides, users are able to seamlessly switch between different servers and tools. And, as the ecosystem matures, they will have an increasing number of options from which to choose.
 
 ```mermaid
 graph TD
@@ -61,7 +61,10 @@ As my Gen Z kid says: "**Trust**."
 > No developer soul is meant to be hurt in the process of reading this article. While I know **no one** would architect a system in the way of some of the examples here, they are still very useful for the contrast needed to highlight the new (old?) thinking for building useful agentic systems.
 
 > [!TIP] PS 2:
-> This article helps developers design agentic systems/MCP servers that LLMs can use effectively. Security patterns are orthogonal to the usability patterns I'm covering here, they have a different intention (protecting systems from misuse) and deserve they own focused treatment, so they were left out on purpose.
+> This article helps developers design agentic systems/MCP servers that LLMs can use effectively. Security patterns are orthogonal to the usability patterns I'm covering here, they have a different intention (protecting systems from misuse) and deserve they own focused treatment. They were left out on purpose.
+
+> [!TIP] PS 3:
+> I don't show you in this article how to plug business logic and tool definitions into the MCP API handlers. It is out of scope for this article. I find it actually quite trivial (especially with SDKs) once you sort out what is business logic from what is "hook up" code.
 
 ## Why MCP makes clear intention so very critical
 
@@ -94,14 +97,14 @@ The unintended impact from tools designed with vague intentions manifests differ
 
 ### Tool metadata: what LLMs actually see
 
-When we build an MCP server, our primary users are LLMs. These "users" must:
+When we build an [[model-context-protocol|MCP]] server, our primary users are LLMs. These "users" must:
 
 - Select appropriate tools based solely on metadata
 - Reason about when and how to use them
 - Compose them into solutions
-- Work within context window limits
+- Work within [[context-engineering|context]] window limits
 
-If there is ONE THING that LLMs are terrible at, it's handling ambiguity. Clear metadata is what enables confident tool selection. Vague metadata, then, forces expensive experimentation.
+If there is ONE THING that LLMs are terrible at, it's handling ambiguity. Clear metadata is what enables confident tool selection. Vague metadata, then, forces expensive experimentation on the part of the LLMs.
 
 #### Clear metadata with intentional boundaries
 
@@ -158,7 +161,7 @@ The difference:
 
 ## The intention statement framework for agentic systems
 
-The beauty of MCP development is we can start with a single tool and grow from there. We don't need a 50-page specification. For maximum precision in your intention, I suggest using [[the-intention-statement-framework-for-agentic-systems|The Intention Statement Framework for Agentic Systems]] to define it more completely, and before you write any code:
+The beauty of MCP development is we can start with a single tool and grow from there. We don't need a 50-page specification (didn't I tell you to trust??!). For maximum precision in your intention, I suggest using [[the-intention-statement-framework-for-agentic-systems|The Intention Statement Framework for Agentic Systems]] to define it more completely, and before you write any code:
 
 ```markdown
 This MCP server helps [WHO] to [DO WHAT] with [WHAT CONSTRAINTS]
@@ -174,7 +177,7 @@ Examples:
 
 > [!TIP] Note: The devil is in the precision.
 
-> Here's how to know if your intention is strong:
+Here's how to know if your intention is strong:
 
 - **Weak intention**: "This server processes log files" (missing WHO and WHY)
 - **Strong intention**: "This server helps SREs to debug production issues faster so that they can reduce system downtime"
@@ -235,7 +238,7 @@ With unconstrained flexibility and ambiguous interface definitions, this design 
 
 • **Tool selection token burn** - With `Process`, `Execute`, and `Transform` all modifying text, LLMs waste tokens reasoning through which to use and explaining their choice to users
 
-• **Configuration discovery overhead** - `ProcessConfig map[string]any` forces trial-and-error. Each failed attempt adds request + error + retry reasoning to the context window
+• **Configuration discovery overhead** - `ProcessConfig map[string]any` forces trial-and-error. Each failed attempt adds request + error + retry reasoning to the [[context-engineering|context]] window
 
 • **Verbose operation explanations** - Since `OperationType` values like "enhance" have no clear meaning, LLMs burn tokens explaining what they _think_ might happen
 
@@ -429,7 +432,7 @@ The paradox: trying to be useful for everything makes you useful for nothing spe
 
 #### c) The composition breakdown
 
-Unclear intention sabotages tool composition, imo MCP's most powerful feature:
+Unclear intention sabotages tool composition, imo [[model-context-protocol|MCP]]'s most powerful feature:
 
 - **Monica**: Unpredictable outputs (`enhance` → ??? → `format` → ???)
 - **Bruno**: Excessive orchestration (4 calls for what should be one)
@@ -458,7 +461,7 @@ Every token counts, and unclear designs burn them recklessly:
 Unclear intention creates non-obvious coupling:
 
 - **Monica**: Runtime registration (`RegisterExtension` before `Process`) creates fragile dependencies
-- **Bruno**: Each call depends on previous results, filling context with intermediate state
+- **Bruno**: Each call depends on previous results, filling [[context-engineering|context]] with intermediate state
 - **Eduardo**: Every tool is self-contained and independently callable
 
 The real cost isn't the dependencies themselves, it's forcing LLMs to become more orchestration engines instead of problem solvers, burning tokens on state management rather than solutions.
@@ -951,7 +954,7 @@ And the difference really wasn't skill or effort, it was mindset and process.
 
 ### The path forward
 
-Building MCP servers with AI in the loop requires us to flip our hard-earned instincts. Before we minimized constraints to stay adaptive, to favor continuous flexibility through iteration. Now we maximize constraints upfront to maximize effectiveness.
+Building [[model-context-protocol|MCP]] servers with AI in the loop requires us to flip our hard-earned instincts. Before we minimized constraints to stay adaptive, to favor continuous flexibility through iteration. Now we maximize constraints upfront to maximize effectiveness.
 
 The process needed is relatively simple, but requires precision:
 
