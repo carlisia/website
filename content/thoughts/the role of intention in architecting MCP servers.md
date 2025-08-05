@@ -1,7 +1,7 @@
 ---
 title: The role of intention in architecting MCP servers
-description:
-created:
+description: While traditional software minimizes constraints to stay flexible, designing MCP servers flips that on its head. Now intention becomes the foundation for the architecture, the clearer it is, the more effective MCP tools become. This post unpacks the constraint paradox with real-world examples and introduces a practical framework for designing MCP servers that are discoverable, composable, and token-efficient. A must-read for anyone building AI-powered tools.
+created: 2025-08-05 (PT)
 id: obs-lbGlugLh
 aliases:
 tags:
@@ -10,8 +10,8 @@ tags:
   - intention
   - ai
 draft:
-socialDescription:
-socialImage:
+socialDescription: While traditional software minimizes constraints to stay flexible, designing MCP servers flips that on its head. Now intention becomes the foundation for the architecture, the clearer it is, the more effective MCP tools become. This post unpacks the constraint paradox with real-world examples and introduces a practical framework for designing MCP servers that are discoverable, composable, and token-efficient. A must-read for anyone building AI-powered tools.
+socialImage: intention-agentic-systems.png
 ---
 
 ## The paradox of building with AI in the loop
@@ -35,6 +35,17 @@ This fundamentally shifts how we measure success. Instead of evaluating how fast
 
 A competitive landscape amplifies this new reality. As the ecosystem matures, users will seamlessly switch between different servers and tools.
 
+```mermaid
+graph TD
+    A[Traditional Software] -->|Minimize Constraints| B[Maximize Flexibility]
+    C[MCP Servers] -->|Maximize Constraints| D[Maximize Flexibility]
+
+    style A fill:#ff6b6b,stroke:#c92a2a,color:#fff
+    style B fill:#2d5016,stroke:#fab005,color:#000
+    style C fill:#4dabf7,stroke:#1c7ed6,color:#fff
+    style D fill:#2d5016,stroke:#fab005,color:#000
+```
+
 Instead of thinking of this as me suggesting to abandon agile principles 😱, I'd rather 🙏 you saw it as a realization that building with AI in the loop has different rules. Where traditional software rewards emergent flexibility, MCP servers reward intentional constraints.
 
 Absolutely nothing wrong about yolo'ing your way thru your first MCP servers. I'm just wanting to tell you [when I did that](https://github.com/carlisia/mcp-factcheck), I had to reel myself back from a much deeper abyss than it was fun (or profitable) for me, all because I didn't have this guide that is now in front of your eyeballs! 👁👁
@@ -49,18 +60,47 @@ As my Gen Z kid says: "**Trust**."
 > [!WARNING]
 > No developer soul is meant to be hurt in the process of reading this article. While I know **no one** would architect a system in the way of some of the examples here, they are still very useful for the contrast needed to highlight the new (old?) thinking for building useful agentic systems.
 
-## Why MCP makes clear intention so very critical, going deeper
+## Why MCP makes clear intention so very critical
+
+When developers encounter an unexpected behavior with a tool, we experiment, ask questions, read code, read the logs, read docs. I'm kidding!!! We never read the docs.
+
+When machines (you know, the regular kind) encounter unknown inputs, they follow their programming: retry, retry with different options, follow alternative logic paths, or fail gracefully with error codes. How deterministic of them.
+
+When LLMs encounter a vaguely described tool with seemingly ambiguous parameters, they will either:
+
+- Bypass the tool entirely (missing its value)
+- Misuse it with wrong parameters (wasting tokens)
+- Chain it incorrectly with other tools (breaking workflows)
+
+### The impact varies by client type
+
+The unintended impact from tools designed with vague intentions manifests differently based on the type of MCP client.
+
+#### When humans are in the loop
+
+- Every interaction tests clarity: ambiguous tools lead to failed attempts and user frustration
+- Trust compounds or erodes with each use: consistent behavior builds confidence, unpredictability drives users away
+- Users develop workarounds for what works, building fragile patterns around specific tool quirks
+
+#### When MCP clients are agents
+
+- Failure modes cascade silently: agents propagate errors downstream without correction
+- Integration assumptions become permanent contracts: some agent developers might hard-code expectations that break with any change
+- Latency compounds dramatically: unclear tools trigger multiple attempts with different parameters, multiplying both time and token costs
+- There's no forgiveness: agents interpret tools literally, without human ability to infer intent
+
+### Tool metadata: what LLMs actually see
 
 When we build an MCP server, our primary users are LLMs. These "users" must:
 
-- Select appropriate tools from what a server provides based solely on tool metadata (name, description, and parameter schemas)
+- Select appropriate tools based solely on metadata
 - Reason about when and how to use them
 - Compose them into solutions
 - Work within context window limits
 
-### Tool metadata
+If there is ONE THING that LLMs are terrible at, it's handling ambiguity. Clear metadata is what enables confident tool selection. Vague metadata, then, forces expensive experimentation.
 
-Here's a simple sample metadata of a tool definition, which is what LLMs actually see:
+#### Clear metadata with intentional boundaries
 
 ```json
 {
@@ -75,6 +115,7 @@ Here's a simple sample metadata of a tool definition, which is what LLMs actuall
       },
       "searchIn": {
         "type": "string",
+        "enum": ["content", "title", "both"],
         "description": "Where to search"
       }
     },
@@ -83,20 +124,9 @@ Here's a simple sample metadata of a tool definition, which is what LLMs actuall
 }
 ```
 
-The LLM uses:
-
-- **Tool name**: For identification and selection
-- **Description**: To understand the tool's purpose
-- **Parameter names and types**: To construct valid calls
-- **Parameter descriptions**: To understand how to use each parameter
-- **Conditions**: To know values that are required
-
-### Vague tool metadata
-
-Here's a sample metadata of a tool definition with very vague metadata:
+#### Vague metadata that hurts LLM usage
 
 ```json
-// Bad: Ambiguous at every level
 {
   "name": "process", // Process what?
   "description": "Processes data", // How? What kind?
@@ -116,78 +146,16 @@ Here's a sample metadata of a tool definition with very vague metadata:
 }
 ```
 
-If there is ONE THING that LLMs are terrible at is this: handling ambiguity. When an LLM encounters this tool, how will it know what to do with it? How would any request lead to this tool being selected?
+The difference:
 
-> [!SUCCESS] Beyond this point, I will demonstrate how vague intention at ANY level hurts LLM usage on multiple fronts.
+- **Clear**: LLMs know exactly when to use `search_documents` and what parameters to provide
+- **Vague**: LLMs must guess what "process" does, what "modes" exist, and what "data" format is expected
 
-## The impact of vague intention
+> [!SUCCESS] Beyond this point, I will demonstrate how to use intention to define boundaries, enable composition, and guide evolution.
 
-When developers encounter an unexpected behavior with a tool, we experiment, ask questions, read code, read the logs, read docs. I'm kidding!!! We never read the docs.
+## The intention statement framework for agentic systems
 
-When machines (you know, the regular kind) encounter unknown inputs, they follow their programming: retry, retry with different options, follow alternative logic paths, or fail gracefully with error codes. How deterministic of them.
-
-When LLMs encounter a vaguely described tool with seemingly ambiguous parameters, they... are unhelpful at best, harmful (and costly) at worst. They will either bypass the intended tool entirely, or misuse it, potentially burning through tokens and derailing the entire process. In the absence of clear directions, they won't ask for clarification. They won’t raise warnings. They will... _confidently guess_.
-
-The unintended impact from tools designed with vague intentions manifests differently based on the type of MCP client.
-
-#### When there are only humans in the loop
-
-- **Every interaction is a test of clarity:** if our tool isn't defined with clear, consistent, and authoritative signals, LLMs will struggle to distinguish it from others or use it correctly.
-
-- **Every inconsistency becomes noise:** ambiguous descriptions, overlapping functionality, or unclear parameters make it exponentially harder for LLMs to reliably select and use our tools.
-
-- **User patterns crystallize around what works:** when users find tool definitions that produce consistent results, they build workflows, share prompts, and create automations based on that specific formulation.
-
-- **Trust compounds or erodes with each interaction:** consistent tool behavior builds user confidence, while unpredictable results drive them to use competing tools.
-
-#### When MCP clients are agents
-
-- **Failure modes become silent degradation:** agents can't course-correct when tools behave unexpectedly; they just propagate errors downstream.
-
-  - Agents typically don't have robust error handling for tool selection failures
-  - They often make their "best guess" and continue rather than stopping
-
-- **Integration assumptions become permanent contracts:** some agent developers hard-code expectations about our tool behavior into their systems.
-
-  - When developers build agent systems that use our MCP tools, they encode assumptions
-  - These get embedded in prompts, workflows, and agent architectures
-  - Changing our tools breaks these hard-coded expectations
-  - This is especially true for production systems where changes require extensive testing
-
-- **Latency and token usage increase significantly:** unclear tools force agents to make multiple attempts or defensive calls, compounding costs.
-
-  - Unclear tools do cause agents to use more tokens in decision-making
-  - Agents might make multiple attempts with different tools
-
-- **There's no forgiveness for ambiguity:** agents interpret our tools literally, without the human ability to infer intent from context.
-
-  - Agents can't use context clues the way humans do
-  - They interpret descriptions literally
-  - Ambiguous parameter names or descriptions lead to consistent misuse
-
-The stakes should be clear: vague intentions lead directly to unpredictable outcomes. To avoid these pitfalls, we need to shift our mindset entirely. Rather than starting from features or implementation details, the strongest foundation for reliable MCP tools is a clear and explicit intention.
-
-## Start with intention, not features
-
-The beauty of MCP development is we can start with a single tool and grow from there. We don't need a 50-page specification. We just need one sentence:
-
-"I want to help [someone] do [something]"
-
-That's it. That's our v0.0.1 intention.
-
-Maybe it's:
-
-- "I want to help myself manage my todo lists better"
-- "I want to help my team debug production issues faster"
-- "I want to know if LLMs can help my code reviews"
-
-This is a hypothesis to test. But having this hypothesis, however rough, fundamentally improves how we experiment.
-
-> [!TIP] Note: The devil is in the precision.
-
-### The intention statement framework for agentic systems
-
-For an even greater level of precision in your intention, I suggest using [[the-intention-statement-framework-for-agentic-systems|The Intention Statement Framework for Agentic Systems]] to define it more completely, and before you write any code:
+The beauty of MCP development is we can start with a single tool and grow from there. We don't need a 50-page specification. For maximum precision in your intention, I suggest using [[the-intention-statement-framework-for-agentic-systems|The Intention Statement Framework for Agentic Systems]] to define it more completely, and before you write any code:
 
 ```markdown
 This MCP server helps [WHO] to [DO WHAT] with [WHAT CONSTRAINTS]
@@ -201,7 +169,9 @@ Examples:
 - "This MCP server helps **data analysts** to **explore CSV files** with **read-only safety** so that **they avoid costly accidental data corruption**
 - "[This MCP server](https://github.com/carlisia/mcp-factcheck) helps **developers and technical writers** to **validate any MCP-related content against official specifications** with **strict adherence to official definitions on a per-version basis** so that **they can have high confidence that MCP-related content they read or write is free from misinformation**"
 
-Here's how to know if your intention is strong:
+> [!TIP] Note: The devil is in the precision.
+
+> Here's how to know if your intention is strong:
 
 - **Weak intention**: "This server processes log files" (missing WHO and WHY)
 - **Strong intention**: "This server helps SREs to debug production issues faster so that they can reduce system downtime"
@@ -210,13 +180,6 @@ Here's how to know if your intention is strong:
 
 - Processing log files → What does success look like? Who benefits? Why does it matter?
 - Helping SREs debug production issues → Measurable: time to root cause, escalation rates, downtime minutes ✓
-
-The strong intention clearly identifies:
-
-- WHO: SREs
-- WHAT: debug production issues faster
-  - ⚠️ pay close attention to this one, it will be relevant again later for a different purpose
-- WHY: reduce system downtime
 
 > [!SUCCESS] Tip
 > I personally always start with the WHY, then play with the WHAT and WHO interchangeably.
@@ -423,9 +386,7 @@ The key differences? Eduardo designed for agentic interaction. Monica designed f
 
 After seeing Eduardo, Monica, and Bruno's six-month outcomes, you might be ready to craft your own clear intention for your MCP servers and tools using [[the-intention-statement-framework-for-agentic-systems|The Intention Statement Framework for Agentic Systems]].
 
-Beyond this point I will show how to continue using that same intention to very tightly define MCP server boundaries and create tools optimized for composition.
-
-But if you're still unconvinced that unclear intentions create real problems, here I list specific pitfalls across three critical categories, side-by-side for maximum contrast, and using the [previous tales of 3 MCP servers](#a-tale-of-three-mcp-servers) as anchors. These aren't theoretical concerns, they're innevitable frustrations users, agents (and their LLMs) will face.
+But if you're still unconvinced that unclear intentions create real problems, here are specific pitfalls across three critical categories. These aren't theoretical concerns, they're inevitable challenges for LLMs.
 
 ### 1) LLM interaction pitfalls
 
@@ -433,73 +394,43 @@ But if you're still unconvinced that unclear intentions create real problems, he
 
 Without clear intention, developers swing between extremes:
 
-**Too granular** (Bruno's mistake):
+**Too granular** (Bruno): 50+ atomic tools force LLMs to orchestrate complex call sequences for simple requests.
 
-```go
-// LLM sees 50+ tools and thinks:
-// "Do I need WordCount + LineCount + CharCount... or just WordCount?"
-// "Should I call them in parallel? What if one fails?"
-// "The user wants 'analysis' - does that mean all metrics?"
+**Too broad** (Monica): Ambiguous mega-tools leave LLMs guessing about parameters, outputs, and chaining behavior.
+
+**Just right** (Eduardo): Each tool serves one specific need with clear boundaries.
+
+```mermaid
+graph LR
+    A[Monica<br/>FlexiServer] -->|Too Broad| B[One Mega-Tool<br/>Does Everything]
+    C[Eduardo<br/>DocQualityAdvisor] -->|Just Right| D[4-6 Focused Tools<br/>Clear Boundaries]
+    E[Bruno<br/>DocInspector] -->|Too Granular| F[50+ Atomic Tools<br/>Orchestration Hell]
+
+    style A fill:#ff6b6b,stroke:#c92a2a,color:#fff
+    style B fill:#ffa94d,stroke:#fd7e14,color:#000
+    style C fill:#51cf66,stroke:#2b8a3e,color:#fff
+    style D fill:#40c057,stroke:#2f9e44,color:#fff
+    style E fill:#ff6b6b,stroke:#c92a2a,color:#fff
+    style F fill:#ffa94d,stroke:#fd7e14,color:#000
 ```
-
-**Too broad** (Monica's mistake):
-
-```go
-// LLM sees Process() and thinks:
-// "Will 'analyze' mode return the same structure as 'transform'?"
-// "Can I chain Process→Process or will that break?"
-// "What happens if I use wrong config keys?"
-```
-
-Clear intention creates natural boundaries. Eduardo's tools hit the sweet spot because each serves a specific documentation quality need.
 
 #### b) The discovery paradox
 
-Vaguely boundaried MCP servers create a cruel irony: the more flexible the tools, the less discoverable they become.
+The more flexible the tools, the less discoverable they become:
 
-```go
-// Monica's FlexiServer
-"Process any text with any operation"
-// LLM: "When would I use this versus... every other text tool?"
+- Monica's "process any text" → When would an LLM choose this?
+- Bruno's "get any metric" → Which of 50 tools to call?
+- Eduardo's "find quality issues" → Clear purpose, obvious choice
 
-// Bruno's DocInspector
-"Get any metric about any document"
-// LLM: "I need 5 metrics... that's 5 sequential calls?"
-
-// Eduardo's DocQualityAdvisor
-"Find documentation quality issues"
-// LLM: "Perfect for the user asking about doc problems!"
-```
-
-The paradox: trying to be useful for everything makes the server useful for nothing specific.
+The paradox: trying to be useful for everything makes you useful for nothing specific.
 
 #### c) The composition breakdown
 
-This is where unclear intention sabotages what I consider MCP's most powerful feature: enabling LLMs to compose tools into solutions. LLMs can always chain tools together, but unpredictable outputs make this chaining less reliable and more token-intensive.
+Unclear intention sabotages tool composition, imo MCP's most powerful feature:
 
-**Why Monica's tools don't compose**:
-
-```go
-Process("text", "enhance", config) → ??? → Process(???, "format", ???)
-// What does enhance output? What should format expect?
-// LLM gives up and warns user about uncertainty
-```
-
-**Why Bruno's tools compose poorly**:
-
-```go
-WordCount() → LineCount() → ParagraphCount() → ReadingTime()
-// 4 network calls, 4 potential failures, 4x context usage
-// For what could have been one DocumentMetrics() call
-```
-
-**Why Eduardo's tools compose naturally**:
-
-```go
-AnalyzeQuality() → CheckLinks() → CalculateReadability()
-// Each output is predictable, structured, and independent
-// LLM can parallelize and handle partial failures
-```
+- **Monica**: Unpredictable outputs (`enhance` → ??? → `format` → ???)
+- **Bruno**: Excessive orchestration (4 calls for what should be one)
+- **Eduardo**: Natural chaining (structured outputs enable parallelization)
 
 Good composition requires:
 
@@ -513,55 +444,21 @@ Good composition requires:
 
 Every token counts, and unclear designs burn them recklessly:
 
-**Token waste in discovery**:
+**Discovery**: Bruno's 50+ tool definitions consume 5,000+ tokens before work begins. Monica's vague descriptions require lengthy explanations. Eduardo's focused tools need minimal description.
 
-- Bruno: 50+ tool definitions = 5,000+ tokens before work starts
-- Monica: Vague descriptions need lengthy explanations
-- Eduardo: Focused tools need minimal description
+**Execution**: Bruno needs 20 calls × 200 tokens = 4,000 tokens of orchestration. Monica multiplies tokens through failed attempts and retries. Eduardo uses single-purpose calls with predictable results.
 
-**Token waste in execution**:
-
-- Bruno: 20 calls × 200 tokens per call = 4,000 tokens of orchestration
-- Monica: Failed attempts + retries + error handling = token multiplication
-- Eduardo: Single-purpose calls with predictable results
-
-**Token waste in results**:
-
-- Bruno: Accumulating 20 small results in context
-- Monica: Explaining what ambiguous outputs mean
-- Eduardo: Structured results that speak for themselves
+**Results**: Bruno accumulates 20 small results. Monica requires explanation of ambiguous outputs. Eduardo's structured results speak for themselves.
 
 #### b) The hidden dependencies trap
 
-Unclear intention creates tools with non-obvious dependencies and coupling:
+Unclear intention creates non-obvious coupling:
 
-```go
-// Monica's runtime dependencies
-RegisterExtension("sentiment", handler) // Must happen before...
-Process("text", "sentiment", nil) // ...this works
-// What if the extension wasn't registered in this session?
+- **Monica**: Runtime registration (`RegisterExtension` before `Process`) creates fragile dependencies
+- **Bruno**: Each call depends on previous results, filling context with intermediate state
+- **Eduardo**: Every tool is self-contained and independently callable
 
-// Bruno's orchestration complexity
-// The LLM must track results across 20+ calls
-results := map[string]any{}
-results["words"] = WordCount(doc)
-results["lines"] = LineCount(doc)
-results["readTime"] = CalculateReadingTime(results["words"]) // Depends on previous
-// Context fills with intermediate results
-
-// Eduardo's independent tools
-report := AnalyzeQuality(doc) // Self-contained
-links := CheckLinks(doc) // No dependency on AnalyzeQuality
-metrics := CalculateReadability(doc) // Each tool stands alone
-```
-
-The "hidden" problems:
-
-- Tools that silently depend on setup or prior calls
-- Complex orchestration where the LLM must manage relationships
-- Context window bloat from accumulating intermediate results
-
-The real cost might not even be the dependencies themselves, it's the token overhead and user frustration when LLMs are required to act more as orchestration engines rather than problem solvers.
+The real cost isn't the dependencies themselves, it's forcing LLMs to become more orchestration engines instead of problem solvers, burning tokens on state management rather than solutions.
 
 ### 3) Evolution pitfalls
 
@@ -592,7 +489,6 @@ Result: 50+ endpoints, terrible UX
 1. "Add markdown-to-HTML conversion?" → No, that's transformation not quality analysis
 1. "Add auto-translation?" → No, that's content generation not quality checking
 1. "Add plagiarism detection?" → No, that's content verification not documentation quality
-1. "Can it fix the issues it finds?" → No, that's writing not analyzing
 1. "Add SEO optimization?" → No, that's marketing not documentation quality
 
 Result: Focused tools that excel at their purpose
@@ -601,7 +497,7 @@ Upfront, clear intention is our defense against the feature creep spiral. It giv
 
 ## Defining tighter boundaries using intention
 
-The [[the-intention-statement-framework-for-agentic-systems|The Intention Statement Framework for Agentic Systems]] can be used as a daily decision-making filter. If every choice we face flows through this framework, we will succeed in keeping our MCP servers (or agentic systems in general) focused and effective.
+The [[the-intention-statement-framework-for-agentic-systems|The Intention Statement Framework for Agentic Systems]] can be used as a daily decision-making filter. If every choice we face flows through this framework, we will succeed in keeping our MCP servers focused and effective.
 
 ### Scope boundaries
 
@@ -609,33 +505,23 @@ Before writing any code, our intention helps us define what belongs in our MCP s
 
 #### The Goldilocks test for server scope
 
-How to know if the intention itself is too broad, too narrow, or just right?
+**Too broad**: "Help with text processing"
 
-**Too broad**:
+- Can't list 10 specific tools without getting vague
+- LLMs can't determine when to use it
 
-- "Help with text processing"
-- Test: Can we list 10 specific tools? If we get vague ones like "ProcessText", too broad
-- LLMs can't determine when to use the MCP server
-- We'll build Monica's FlexiServer
+**Too narrow**: "Validate Python 3.11 async functions in .md files between 1-5KB"
 
-**Too narrow**:
+- Too specific to last 6 months
+- Not enough tools to justify a server
 
-- "Validate Python 3.11 async functions in .md files between 1-5KB"
-- Test: Will this serve users for > 6 months? If not, too narrow
-- Not enough tools to justify an MCP server
-- Won't evolve naturally
+**Just right**: "Help developers validate code examples in their documentation"
 
-**Just right**:
-
-- "Help developers validate code examples in their documentation"
-- Test: Clear tool ideas? Yes: ValidateCode, CheckImports, VerifyOutput
-- Test: Natural boundaries? Yes: Validation tools naturally group together
-- Test: Room to grow? Yes: More languages, more checks
-- LLMs understand when to use it
+- Clear tool ideas: ValidateCode, CheckImports, VerifyOutput
+- Natural boundaries between validation and fixing
+- Room to grow with more languages
 
 #### One server or many?
-
-Our intention can help decide when to split functionality:
 
 **Signs we need multiple servers**:
 
@@ -669,47 +555,32 @@ Three mismatches = separate server. DocQualityAdvisor finds problems, DocFixer s
 
 When requests arrive, we can also run them through the filter:
 
-**1) Request**: "Can DocQualityAdvisor fix the broken links it finds?"
-
-- WHO: ✓ Still developers
-- WHAT: ✗ Fixing isn't analyzing
-- CONSTRAINTS: ✗ Would need write permissions
-- WHY: ✗ Different outcome (fixing vs understanding)
-
-**Decision**: No, but great idea for a companion DocFixer MCP server
-
-**2) Request**: "Can DocQualityAdvisor check Python code examples in docs?"
+**Request**: "Can DocQualityAdvisor check Python code examples?"
 
 - WHO: ✓ Developers writing docs
 - WHAT: ✓ Quality includes working examples
 - CONSTRAINTS: ✓ Still read-only analysis
 - WHY: ✓ Reduces documentation issues
 
-**Decision**: Yes, add `ValidateCodeExamples` tool
+**Decision**: Yes, add `ValidateCodeExamples`
 
 ### Implementation boundaries
 
-Once we know our scope, intention guides how we structure our tools.
+Once we know our scope, intention also guides how we structure our tools.
 
 #### Tool granularity decisions
-
-Letting intention define natural tool edges:
 
 ```go
 // Intention: Help SREs debug production issues quickly and safely
 
 // Clear boundaries from intention
 func FindErrorPatterns(logs LogQuery) ([]ErrorPattern, error)
-// - Serves WHO: SREs need pattern recognition
-// - Enables WHAT: Find systemic issues
-// - Respects CONSTRAINTS: Read-only log analysis
-// - Advances WHY: Faster issue identification
+// Serves WHO (SREs), enables WHAT (find issues),
+// respects CONSTRAINTS (read-only), advances WHY (faster identification)
 
 // Would violate intention
 func AutoFixErrors(pattern ErrorPattern) error
-// - Different WHAT: Fixing vs debugging
-// - Violates CONSTRAINTS: Modifies production
-// - Different WHY: Prevention vs understanding
+// Different WHAT (fixing vs debugging), violates CONSTRAINTS (modifies production)
 ```
 
 #### Parameter design choices
@@ -717,25 +588,15 @@ func AutoFixErrors(pattern ErrorPattern) error
 **Choice**: Return all metrics in one call vs separate tools?
 
 - One call serves "quick overview" (aligns with WHY: fast understanding)
-- Separate tools serves "detailed analysis" (aligns with WHAT: thorough checking)
+- Separate tools serve "detailed analysis" (aligns with WHAT: thorough checking)
 
 **Decision**: Both: `GetOverview` for quick checks, individual tools for deep dives
-
-**Choice**: Support markdown only vs multiple formats?
-
-- WHO uses what formats?
-- Does multi-format serve core WHAT?
-- What's the complexity CONSTRAINT?
-
-**Decision**: Start with markdown (80% of WHO), add formats only if WHO expands
 
 ### Communication boundaries
 
 Clear communication helps LLMs understand and use our tools effectively.
 
 #### Writing tool descriptions
-
-Writing descriptions that reflect the intention clearly:
 
 ```go
 // Weak: Generic description
@@ -749,9 +610,7 @@ including broken examples, missing parameters, and unclear descriptions"
 // - Clear WHY: reduce frustration
 ```
 
-#### Error messages that guide
-
-Leveraging error messages as guide toward the intention:
+#### Error message as guide
 
 ```go
 // Weak: Technical error
@@ -766,14 +625,12 @@ Supported languages: Python, JavaScript, Go"
 
 ## Composition patterns that work
 
-One of MCP's most powerful features is enabling LLMs to combine tools into solutions. But as we saw with Monica and Bruno, poor design breaks this capability. On the other hand, Eduardo's tools compose naturally. In this section I want to give you ideas for how to craft patterns you can use.
+One of MCP's most powerful features is enabling LLMs to combine tools into solutions. In this section I want to give you ideas for how to craft effective composition patterns.
 
-### Why Eduardo's tools compose naturally
-
-Eduardo's tools work well together because they follow three principles:
+### Three principles for composable tools
 
 **1. Predictable contracts**
-Each tool has clear inputs and outputs. When `AnalyzeDocumentationQuality` returns a `QualityReport`, we know exactly what fields it contains. It can confidently access `.Issues` or `.Score` without uncertainty about what the tool returned.
+Each tool has clear inputs and outputs. When `AnalyzeDocumentationQuality` returns a `QualityReport`, the LLM knows exactly what fields it contains and can confidently access `.Issues` or `.Score`.
 
 **2. Independent operation**
 `CheckLinkValidity` doesn't need `AnalyzeDocumentationQuality` to run first. Each tool is self-contained, taking a document path and returning complete results.
@@ -805,7 +662,17 @@ ExtractDocumentStructure(doc)
 → CalculateCodeCoverage(validation_results)
 ```
 
-**Why it works**: Each step narrows focus based on previous discoveries. The LLM can explain its reasoning: "I found Python and JavaScript examples, so I'll validate those languages specifically."
+```mermaid
+graph LR
+    A[Analyze Quality] --> B[Check Links in<br/>Problem Areas]
+    B --> C[Generate Report]
+
+    style A fill:#4dabf7,stroke:#1c7ed6,color:#fff
+    style B fill:#69db7c,stroke:#37b24d,color:#000
+    style C fill:#ff6b6b,stroke:#fab005,color:#000
+```
+
+Each step narrows focus based on previous discoveries, allowing LLMs to explain their reasoning clearly.
 
 ### Parallel patterns
 
@@ -833,81 +700,37 @@ For each code example in parallel:
 └── CheckComplexity(example)
 ```
 
-**Why it works**: No tool depends on another's output. If one fails, others still provide value. The LLM can optimize for speed without worrying about ordering.
+```mermaid
+graph TB
+    A[Analyze Quality]
+    B[Check Links]
+    C[Calculate Readability]
+    D[Extract Structure]
+    A & B & C & D --> E[Combine Results]
+
+    style A fill:#4dabf7,stroke:#1c7ed6,color:#fff
+    style B fill:#4dabf7,stroke:#1c7ed6,color:#fff
+    style C fill:#4dabf7,stroke:#1c7ed6,color:#fff
+    style D fill:#4dabf7,stroke:#1c7ed6,color:#fff
+    style E fill:#ff6b6b,stroke:#fab005,color:#000
+```
+
+No tool depends on another's output. If one fails, others still provide value, allowing LLMs to optimize for speed without worrying about ordering.
 
 ### The role of structured outputs
 
-Structured outputs are the secret to reliable composition. Here's why:
+Structured outputs enable reliable composition. When tools return structured data:
 
-**Typed contracts enable chaining**
+- LLMs know what fields are available
+- Results can be filtered intelligently
+- Tools can be chained predictably
 
 ```go
+// Structured output with clear fields for downstream consumption
 type QualityReport struct {
     Score           float64
     Issues          []Issue
     MissingSections []string
-}
-
-type Issue struct {
-    Type        string
-    Severity    string
-    Location    string
-    Suggestion  string
-}
-```
-
-When tools return structured data, the LLM knows:
-
-- What fields are available
-- How to extract specific information
-- How to combine results meaningfully
-
-**Contrast with poor structure**
-
-```go
-// Monica's approach - composition nightmare
-type ProcessResult struct {
-    Data any    // Could be string, map, array...
-    Type string // LLM must interpret this
-}
-
-// Bruno's approach - composition overhead
-WordCount() int         // Need 20 calls
-CharacterCount() int    // to get full picture
-LineCount() int         // Each adds round-trip latency
-```
-
-**Structured outputs enable intelligent filtering**
-
-```go
-// LLM can reason: "Show only high-severity issues"
-report := AnalyzeDocumentationQuality(doc)
-criticalIssues := filter(report.Issues, severity="high")
-
-// Versus Monica's approach where LLM must guess
-result := Process(doc, "analyze", config)
-// How to filter unknown structure?
-```
-
-### Composition best practices
-
-**1. Design tools that transform, not just extract**
-
-- Possible: `GetWordCount() int`
-- Better: `AnalyzeReadability() ReadabilityReport`
-
-The second provides rich data that feeds naturally into next steps.
-
-You're right - a concrete example of tool chaining would be helpful. Here's a better one:
-
-**2. Organize outputs for easy filtering and chaining**
-
-Instead of returning flat data, structure it for common use cases:
-
-```go
-// Flat output - harder to use
-type LinkReport struct {
-    BrokenLinks []BrokenLink  // Just one big list
 }
 
 // Organized output - ready for composition
@@ -918,23 +741,24 @@ type LinkReport struct {
 }
 ```
 
-What this format makes possible for composition:
-
-```
-CheckLinks() → returns LinkReport with broken links by section
-PrioritizeFixesForSection("api-docs") → uses report.BySection["api-docs"]
-GenerateFixPlan() → uses report.BySeverity["critical"] for urgent fixes
-```
-
 Each tool can efficiently access the exact subset of data it needs:
 
 - The MCP client asks: "What critical links need fixing in the API docs?"
 - LLM combines: `report.BySection["api-docs"]` ∩ `report.BySeverity["critical"]`
 - No filtering through hundreds of links needed
 
-The principle: Anticipate how the output will be used and structure it accordingly.
+### Composition best practices
+
+**1. Design tools that transform, not just extract**
+
+- `AnalyzeReadability() ReadabilityReport` provides rich data for next steps
+  - Better than simple `GetWordCount() int`
+
+**2. Organize outputs for easy filtering**
+Pre-group data by common use cases (by section, by severity) so downstream tools can efficiently access what they need.
 
 **3. Provide both summary and detail**
+Let LLMs choose the appropriate level for their current task.
 
 ```go
 type QualityReport struct {
@@ -944,31 +768,17 @@ type QualityReport struct {
 }
 ```
 
-LLMs can choose the appropriate level for their current task.
-
 **4. Use consistent identification**
+All tools should use the same parameter names and types for common inputs like file paths.
 
-```go
-// All tools use same document identification
-func AnalyzeQuality(docPath string) ...
-func CheckLinks(docPath string) ...
-func ValidateExamples(docPath string) ...
-
-// Not: different parameter names/types
-func AnalyzeQuality(file string) ...
-func CheckLinks(documentURI URI) ...
-func ValidateExamples(doc Document) ...
-```
-
-Consistent interfaces reduce composition friction.
-
-Useful composition doesn't happen by stacking iterations, it emerges from clear intentions, predictable contracts, and structured thinking about how tools work together.
+> [!TIP]
+> Useful composition doesn't happen by stacking iterations, it emerges from [[the-intention-statement-framework-for-agentic-systems|clear intentions]], predictable contracts, and precise thinking about how tools can work together.
 
 ## When intention meets reality, aka iterations
 
-Our users will surprise us. The question is: how do we evolve without losing focus? How do we adapt to real needs without becoming Monica's FlexiServer?
+How do we evolve without losing sight of the intention we started out with? How do we adapt to real needs without becoming Monica's FlexiServer?
 
-### Evolution without losing focus
+### Evolving without losing focus
 
 The key to healthy evolution is treating our intention as a compass, not a cage. It guides direction while allowing for growth. Every successful MCP server evolves, but the ones that thrive do so deliberately.
 
@@ -986,11 +796,11 @@ The key to healthy evolution is treating our intention as a compass, not a cage.
 - We're adding parameters to make tools do double duty
 - LLMs hedge when describing what the server does
 
-### The three patterns: Deepen, Fork, Pivot
+### The three patterns for evolution: Deepen, Fork, Pivot
 
 #### **1. Deepen (most common)**
 
-Our intention stays the same, but we serve it better:
+Intention stays the same, but we serve it better:
 
 ```go
 // V1: Help developers understand code
@@ -1010,7 +820,7 @@ Deepening feels natural because:
 
 #### **2. Fork (when users pull in new directions)**
 
-Our users want something adjacent but different:
+Users want something adjacent but different:
 
 ```go
 // Original: DocQualityAdvisor - helps understand docs
@@ -1043,6 +853,20 @@ Pivoting requires honesty:
 - Define a new, clearer intention
 - Potentially rename/rebrand
 - Communicate the change clearly
+
+```mermaid
+graph TD
+    A[Original Intention] --> B{Evolution Decision}
+    B -->|Same users<br/>Same purpose| C[DEEPEN<br/>Add capabilities]
+    B -->|Adjacent need<br/>Different purpose| D[FORK<br/>New server]
+    B -->|Wrong assumption<br/>Missed the mark| E[PIVOT<br/>Redefine intention]
+
+    style A fill:#4dabf7,stroke:#1c7ed6,color:#fff
+    style B fill:#ff4565,stroke:#fab005,color:#000
+    style C fill:#51cf66,stroke:#2b8a3e,color:#000
+    style D fill:#69db7c,stroke:#37b24d,color:#000
+    style E fill:#ff8787,stroke:#f03e3e,color:#fff
+```
 
 ### Version evolution example
 
@@ -1083,7 +907,7 @@ Each version deepened value for the original use case without losing focus.
 
 ### When to say no
 
-The hardest part of evolution is saying no to good ideas that don't fit. Here's a framework:
+The hardest part of evolution might be saying no to good ideas that don't fit. Here's some guidance:
 
 **Immediate no:**
 
@@ -1104,107 +928,43 @@ The hardest part of evolution is saying no to good ideas that don't fit. Here's 
 - Respects all constraints
 - Natural extension of current capabilities
 
-**Real example: Eduardo's decisions**
+**Real example: Eduardo's evolution decisions**
 
-```
-Request: "Add spell checking"
-Filter check:
-- WHO: ✓ Still developers
-- WHAT: ✗ Spelling != documentation quality
-- WHY: ✗ Grammar != functional correctness
-Decision: No, that's a different concern
+Remember Eduardo's decision to keep "fixing" separate from "analysis"?
+Here's how he applied the same filter to feature requests:
 
-Request: "Add API example validation"
-Filter check:
-- WHO: ✓ Developers writing docs
-- WHAT: ✓ Code quality is documentation quality
-- WHY: ✓ Reduces confusion from broken examples
-Decision: Yes, deepen with ValidateAPIExamples
+```markdown
+Request: "Add README template generator" → No, generating != analyzing
+Request: "Add API example validation" → Yes, code quality IS documentation quality
 ```
 
-Remember: Every "no" protects the clarity that makes our server valuable. Every "yes" should make our intention stronger, not weaker. When in doubt, preserve focus—our users chose us for what we do well, not for doing everything.
+The filter works consistently: features that serve the core intention get deepened, others get redirected.
 
 ## Conclusion: trust the process
 
-This avoids repetition while building naturally on your examples. The composition section specifically can reference back to why Eduardo's design enables it while the others don't.
+We've seen three developers, three approaches, three outcomes. Monica chased flexibility and created confusion. Bruno mapped existing APIs and created fragmentation. Eduardo started with intention and created clarity.
 
----
+And the difference really wasn't skill or effort, it was mindset and process.
 
-## OLD
+### The path forward
 
----
+Building MCP servers with AI in the loop requires us to flip our hard-earned instincts. Before we minimized constraints to stay adaptive, to favor continuous flexibility through iteration. Now we maximize constraints upfront to maximize effectiveness.
 
-## When intention meets reality, aka iterations
+The process needed is relatively simple, but requires precision:
 
-Your users will surprise you. The question is: how do you evolve without losing focus?
+1. **Start with clear intention:** before writing code, write the WHO, WHAT, CONSTRAINTS, and WHY
+2. **Let intention guide every decision:** server and tool boundaries, feature requests, error messages
+3. **Intentional composition through clarity:** predictable tools with structured outputs work together naturally
+4. **Evolve deliberately:** deepen to serve better, fork to serve different, pivot when necessary
 
-### The three evolution patterns
+### Your turn
 
-#### **1. Deepen (most common)**
+The next time you sit down to build an MCP server (or any agentic system):
 
-Your intention stays the same, but you serve it better:
-
-```go
-// V1: Help developers understand code
-func ExplainFunction(name string) (string, error) { }
-
-// V2: Same intention, deeper capability
-func ExplainFunction(name string, detail Level) (Explanation, error) { }
-func VisualizeCallGraph(name string) (GraphData, error) { }
-func ExplainWithExamples(name string) (ExplanationWithCode, error) { }
-```
-
-#### **2. Fork (when users pull you in new directions)**
-
-Your users want something adjacent but different:
-
-```go
-// Original: DocAnalyzer - helps understand docs
-// Users want: "Can it fix the broken links it finds?"
-
-// Wrong: Add fixing to DocAnalyzer (breaks read-only constraint)
-// Right: Create DocFixer as a sibling server
-```
-
-#### **3. Pivot (rare, when your intention was wrong)**
-
-Only when you discover your original intention missed the mark entirely:
-
-```go
-// Started: "Help developers write better commit messages"
-// Discovered: They actually needed "Help developers understand what changed"
-// Pivot: Refocus on change analysis, not message writing
-```
-
-### Evolution in practice
-
-#### Version 1.0: Personal use
-
-#### Version 2.0: Team collaboration
-
-#### Version 3.0: Enterprise scale
-
-Each version deepens the same core intention for an expanding audience.
-
-## Constraints as superpowers
-
-In the MCP world, constraints aren't limitations—they're superpowers:
-
-- **Clarity**: LLMs can reason confidently about your tools
-- **Trust**: Users know exactly what your server will and won't do
-- **Focus**: You can say no to feature creep with confidence
-- **Quality**: You can deeply optimize for your specific use case
-
-When someone asks "Can you add X?" and X doesn't serve your intention, "No" becomes a complete sentence.
-
-## Next steps
-
-1. **Write your intention statement** before your next commit
+1. **Write your [[the-intention-statement-framework-for-agentic-systems|intention statement]]** before your next commit
 2. **Put it in your README** as the first thing users see
 3. **Use it to evaluate every decision**: "Does this serve our intention?"
-4. **Let it guide your evolution**: Deepen rather than broaden
-
-Remember: In a world where LLMs are your users, the most powerful thing you can do is be brilliantly narrow. Your intention isn't a constraint—it's your compass.
+4. **Let it guide your evolution**: deepen rather than broaden
 
 ---
 
