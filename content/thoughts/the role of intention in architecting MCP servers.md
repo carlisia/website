@@ -60,6 +60,9 @@ As my Gen Z kid says: "**Trust**."
 > [!WARNING]
 > No developer soul is meant to be hurt in the process of reading this article. While I know **no one** would architect a system in the way of some of the examples here, they are still very useful for the contrast needed to highlight the new (old?) thinking for building useful agentic systems.
 
+> [!TIP] PS 2:
+> This article helps developers design agentic systems/MCP servers that LLMs can use effectively. Security patterns are orthogonal to the usability patterns I'm covering here, they have a different intention (protecting systems from misuse) and deserve they own focused treatment, so they were left out on purpose.
+
 ## Why MCP makes clear intention so very critical
 
 When developers encounter an unexpected behavior with a tool, we experiment, ask questions, read code, read the logs, read docs. I'm kidding!!! We never read the docs.
