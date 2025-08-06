@@ -28,7 +28,7 @@ socialImage:
 - Requires ongoing but minimal time investment (< 5% of project time)
 - Must be revisitable and adjustable as learning occurs
 
-**WHY**: Achieve higher adoption rates for agentic tools and reduce chances of major pivots after development starts by catching misalignment early, when changes cost minutes instead of months.
+**WHY**: Achieve higher adoption rates for agentic tools and reduce chances of major pivots after development starts by evaluating and catching misalignment early. Define clear constraints to: maximize discoverability, usability (focused tools are intuitive), and efficiency (precise boundaries means fewer tokens wasted on clarification or error recovery).
 
 **ALIGNMENT**: 2-4 hours of upfront intention crafting plus 15-minute weekly reviews prevents weeks of wasted development, failed launches, and abandoned projects, delivering 100x ROI on time invested for individuals and teams that would otherwise face even one major pivot.
 
