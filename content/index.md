@@ -6,7 +6,7 @@ socialDescription: Carlisia Campos at grokkingtech bridges systems, meaning and 
 socialImage: carliia-campos.png
 ---
 
-> [!SUMMARY] **Bridging Systems, Structure, and Purpose with Clarity 🇧🇷🇺🇸**
+> [!SUMMARY] **Bridging Systems, Meaning, and Purpose with Clarity 🇧🇷🇺🇸**
 
 ## Hello 👋
 
