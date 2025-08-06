@@ -161,7 +161,7 @@ The difference:
 
 ## The intention statement framework for agentic systems
 
-The beauty of MCP development is we can start with a single tool and grow from there. We don't need a 50-page specification (didn't I tell you to trust??!). For maximum precision in your intention, I suggest using [[the-intention-statement-framework-for-agentic-systems|The Intention Statement Framework for Agentic Systems]] to define it more completely, and before you write any code:
+The beauty of MCP development is we can start with a single tool and grow from there. We don't need a 50-page specification (didn't I tell you to trust??!). For maximum precision in your intention, I suggest using [[the-intention-statement-framework-for-agentic-systems|The agentic intention framework]] to define it more completely, and before you write any code:
 
 ```markdown
 This MCP server helps [WHO] to [DO WHAT] with [WHAT CONSTRAINTS]
@@ -384,13 +384,13 @@ With intentional constraints and boundaries, this design optimizes for LLM effic
 - Integrated into 4 major documentation platforms
 - Pull request: "This is exactly what we needed, each tool does one thing perfectly!"
 - Featured in MCP showcase: "Example of thoughtful MCP server design that LLMs love"
-- Community fork expanded it following the same easy to follow [[the-intention-statement-framework-for-agentic-systems|Intention Statement Framework for Agentic Systems]]
+- Community fork expanded it following the same easy to follow [[the-intention-statement-framework-for-agentic-systems|The agentic intention framework]]
 
 The key differences? Eduardo designed for agentic interaction. Monica designed for flexibility. Bruno designed for API reuse.
 
 ## The pitfalls of unclear intention
 
-After seeing Eduardo, Monica, and Bruno's six-month outcomes, you might be ready to craft your own clear intention for your MCP servers and tools using [[the-intention-statement-framework-for-agentic-systems|The Intention Statement Framework for Agentic Systems]].
+After seeing Eduardo, Monica, and Bruno's six-month outcomes, you might be ready to craft your own clear intention for your MCP servers and tools using [[the-intention-statement-framework-for-agentic-systems|The agentic intention framework]].
 
 But if you're still unconvinced that unclear intentions create real problems, here are specific pitfalls across three critical categories. These aren't theoretical concerns, they're inevitable challenges for LLMs.
 
@@ -503,7 +503,7 @@ Upfront, clear intention is our defense against the feature creep spiral. It giv
 
 ## Defining tighter boundaries using intention
 
-The [[the-intention-statement-framework-for-agentic-systems|The Intention Statement Framework for Agentic Systems]] can be used as a daily decision-making filter. If every choice we face flows through this framework, we will succeed in keeping our MCP servers focused and effective.
+The [[the-intention-statement-framework-for-agentic-systems|The agentic intention framework]] can be used as a daily decision-making filter. If every choice we face flows through this framework, we will succeed in keeping our MCP servers focused and effective.
 
 ### Scope boundaries
 
