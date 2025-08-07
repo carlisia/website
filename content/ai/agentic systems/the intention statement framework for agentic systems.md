@@ -48,7 +48,7 @@ In this context, please think of an agent as a set of 1.n tools/other agents tha
 
 This document makes a case that designing agentic systems with clear intention upfront is crucial. It provides a framework to transform vague AI agent ideas into precise, measurable workflow definitions, plus guidance on how to validate them.
 
-If you'd like to see a comprehensive walkthrough of use cases demonstrating why this is crucial for agentic systems, tradeoffs of designing and implementing agents in alternative ways, examples of how to do it down to code examples, guidance for pitfalls to avoid, and how to design very tight boundaries for agents (as a collections) or MCP servers, as well as individual tools, check out the comprehensive article [[the-role-of-intention-in-architecting-mcp-servers|The role of intention in architecting mcp servers]] (the core concepts covered also apply to agentic systems in general, not only MCP servers).
+If you'd like to see a comprehensive walkthrough of use cases demonstrating why this is crucial for agentic systems, tradeoffs of designing and implementing agents in alternative ways, examples of how to do it down to code examples, guidance for pitfalls to avoid, and how to design very tight boundaries for agents (as a collections) or MCP servers, as well as individual tools, check out the comprehensive article [[./thoughts/the-role-of-intention-in-architecting-mcp-servers|The role of intention in architecting MCP servers]]] (the core concepts covered also apply to agentic systems in general, not only MCP servers).
 
 > [!TIP] Note: The devil is in the precision.
 
