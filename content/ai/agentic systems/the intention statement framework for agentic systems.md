@@ -137,8 +137,11 @@ Strong alignment means demonstrating that limited resources (time, talent, budge
 The key questions to answer:
 
 - Can we quantify the exact impact delivered to our primary users?
-- Does the effort-to-impact ratio justify choosing this over other projects?
+- Does the capacity-to-impact ratio justify choosing this over other projects?
 - Will the concentrated impact be sufficient to sustain long-term investment?
+
+> [!NOTE]
+> If you can justify that building an agent is worth the investment, keep in mind that if capacity can be increased or impact scope can be reduced, the ratio will change favorably.
 
 Without clear answers to these questions, even technically brilliant agents become stale. The following section provides formulas, templates, and examples to make this math crystal clear.
 
@@ -167,7 +170,7 @@ If any answer is "no," reapply the framework with more precise answers.
 
 ## Alignment deep dive: making the math work
 
-### The effort-to-impact formula
+### The capacity-to-impact formula
 
 For any agent project, calculate:
 
@@ -345,7 +348,7 @@ Here are three patterns can help us evolve agentic systems without losing focus.
 
 Keep the same intention but serve it more powerfully. Instead of adding adjacent features, enhance the core workflow with richer capabilities, better accuracy, or faster performance.
 
-For example, an agent that "explains Python functions" might evolve to provide interactive examples, visualize call graphs, or trace execution paths—all deepening the original explanation goal without changing the fundamental intention.
+For example, an agent that "explains Python functions" might evolve to provide interactive examples, visualize call graphs, or trace execution paths, all deepening the original explanation goal without changing the fundamental intention.
 
 Signs we should deepen:
 
@@ -381,4 +384,4 @@ Signs we should pivot:
 
 This framework helps us maintain that precision through the entire lifecycle of agents, from initial idea through production evolution.
 
-If you believe that a sharp intention that serves 20 users excellently beats a vague intention that serves 2,000 users poorly, this is for you. use it, modify it, maybe build agentic workflows to use it for validation. Pass it around. Because with agentic AI, precision is power (and profit).
+If you believe that a sharp intention that serves 20 users excellently beats a vague intention that serves 2,000 users poorly, this is for you. Use it, modify it, maybe build agentic workflows to use it for validation. Pass it around. Because with agentic AI, precision is power (and profit).
