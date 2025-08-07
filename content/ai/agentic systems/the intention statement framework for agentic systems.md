@@ -132,18 +132,18 @@ The specificity test: Can you measure this outcome within 30 days of deployment?
 
 This question helps to determine whether the agent idea justifies the investment. For production systems, alignment is not only the difference between a promoted project and a cancelled one, but it goes to the very reputation and success of the enterprise.
 
-Strong alignment means demonstrating that limited resources (time, talent, budget) will deliver concentrated impact that far exceeds the investment. Think in terms of transforming specific workflows for specific users so dramatically that the ROI becomes undeniable.
+Strong alignment means demonstrating that limited capacity (time, talent, budget) will deliver concentrated impact that far exceeds the investment. Think in terms of transforming specific workflows for specific users so dramatically that the ROI becomes undeniable.
 
 The key questions to answer:
 
 - Can we quantify the exact impact delivered to our primary users?
-- Does the capacity-to-impact ratio justify choosing this over other projects?
+- Does the capacity-to-impact ratio justify choosing this over othe<D-z>r projects?
 - Will the concentrated impact be sufficient to sustain long-term investment?
 
 > [!NOTE]
-> If you can justify that building an agent is worth the investment, keep in mind that if capacity can be increased or impact scope can be reduced, the ratio will change favorably.
+> If you can't justify that building an agent is worth the investment, keep in mind that if capacity can be increased or impact scope can be reduced, the ratio will change favorably.
 
-Without clear answers to these questions, even technically brilliant agents become stale. The following section provides formulas, templates, and examples to make this math crystal clear.
+Without clear answers to these questions, even technically brilliant agents become stale. The [Alignment deep dive](#alignment-deep-dive-making-the-math-work) section provides formulas, templates, and examples to make this math crystal clear.
 
 ## Intention checkpoints
 
@@ -165,7 +165,7 @@ If any answer is "no," reapply the framework with more precise answers.
 - **Vague outcomes**: "better", "easier", "improved"
 - **Missing constraints**: No boundaries = infinite scope
 - **Everyone problems**: "all developers" = no one's specific need
-- **Shallow payoff**: "slight improvement" = resource sink
+- **Shallow payoff**: "slight improvement" = capacity sink
 - **Mismatched ambition**: Grand vision with shoestring capacity
 
 ## Alignment deep dive: making the math work
@@ -197,7 +197,7 @@ Why this seems smart but isn't: While technical debt tracking is important and a
 
 ### The concentration principle
 
-Strong alignment concentrates resources where they matter most:
+Strong alignment concentrates capacity where they matter most:
 
 Concentration Score = (Value to Primary Users / Total Users) × (Core Features / Total Features)
 
@@ -382,6 +382,6 @@ Signs we should pivot:
 
 ### The power of precision
 
-This framework helps us maintain that precision through the entire lifecycle of agents, from initial idea through production evolution.
+This framework helps us maintain intentional precision through the entire lifecycle of agents, from initial idea through production evolution.
 
-If you believe that a sharp intention that serves 20 users excellently beats a vague intention that serves 2,000 users poorly, this is for you. Use it, modify it, maybe build agentic workflows to use it for validation. Pass it around. Because with agentic AI, precision is power (and profit).
+If you believe that a sharp intention that serves 20 users excellently beats a vague intention that serves 2,000 users poorly, this framework is for you. Use it, modify it, maybe implement it as agentic workflows and use it to efficiently validate design ideas. Pass it around. Because with agentic AI, intention is power (and profit).
