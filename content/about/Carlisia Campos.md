@@ -13,9 +13,20 @@ socialImage: carliia-campos.png
 
 ...trying to live [[life]] in the most meaningful, fun, genuine, and helpful way possible.
 
+## ➡️ Most used emojis
+
+😬
+🙏
+❤️
+🔥
+😂
+😭
+🙄
+🧨
+
 ## 🌿 What I’m cultivating now
 
-- Researching, thinking and writing on the convergence of **AI**, **distributed systems**, and **consciousness**
+- Researching, thinking and writing on the convergence of **AI** (agentic systems), **distributed systems**, cognitive systems, collective intelligence, and **consciousness**
 - Expanding this digital garden
 - Preparing for my [[gophercon 2025#goroutines-and-cells-lessons-in-goal-directed-systems|GopherCon presentation]] in NYC on August 2025
 - Daring myself to experiment with communicating my ideas through video
