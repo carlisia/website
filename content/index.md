@@ -3,7 +3,7 @@ title: grokkingtech.io
 comments: false
 description: Carlisia Campos at grokkingtech bridges systems, meaning, and purpose with clarity. This site explores modern software architecture, distributed systems, and AI-aligned design through the lens of Go, Kubernetes, and open source. Carlisia draws from her deep engineering experience building scalable, resilient systems (including her leadership in Velero and Knative) to uncover how intentional architecture shapes the future.
 socialDescription: Carlisia Campos at grokkingtech bridges systems, meaning and purpose with clarity. This site explores modern software architecture, distributed systems, and AI-aligned design through the lens of Go, Kubernetes, and open source. Carlisia draws from her deep engineering experience building scalable, resilient systems (including her leadership in Velero and Knative) to uncover how intentional architecture shapes the future.
-socialImage: carliia-campos.png
+socialImage: carlisia-campos.png
 ---
 
 > [!SUMMARY] **Bridging Systems, Meaning, and Purpose with Clarity 🇧🇷🇺🇸**
