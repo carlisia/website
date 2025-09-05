@@ -41,6 +41,9 @@ Clients and servers.
 
 ## Learning
 
+- [Building Agents with Model Context Protocol - Full Workshop with Mahesh Murag of Anthropic - YouTube](https://www.youtube.com/watch?v=kQmXtrmQ5Zg&t=1s)
+- [MCP: Build Rich-Context AI Apps with Anthropic - DeepLearning.AI](https://www.deeplearning.ai/short-courses/mcp-build-rich-context-ai-apps-with-anthropic/)
+- [Microsoft Full Course (Lessons 1-11) MCP for Beginners - YouTube](https://www.youtube.com/watch?v=VfZlglOWWZw)
 - [In-Depth MCP Tutorials for 2025 | egghead.io](https://egghead.io/q?q=mcp)
 - [Welcome to the 🤗 Model Context Protocol (MCP) Course - Hugging Face MCP Course](https://huggingface.co/learn/mcp-course/unit0/introduction)
 
