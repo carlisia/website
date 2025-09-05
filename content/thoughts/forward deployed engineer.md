@@ -6,7 +6,6 @@ id: obs-iYcSp3vc
 aliases:
 tags: career
 socialDescription: Exploring how AI startups can reimagine engineering leadership to bridge the adoption gap for developers new to AI. Why the Forward Deployed Engineer model needs evolution for startups targeting potential customers, and how a Chief AI Decision Officer role embedded in engineering can drive both internal alignment and external credibility while turning developer uncertainty into confident AI adoption decisions.
-socialImage:
 ---
 
 I am in conversation with two AI (agentic stuff) startups, both small, one very early stage. They are each independently sensing they need a specific type of role, sorta engineer, sorta not, and I've been cracking my head open trying to find the words and ideas to convey what I think that role should be and do for them, more precisely than what they have already figured.
