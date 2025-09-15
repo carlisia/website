@@ -1,0 +1,197 @@
+version: "3"
+
+vars:
+  PROJECT_NAME: claudefiles
+
+tasks:
+  default:
+    desc: Show available tasks
+    cmds:
+      - task --list
+    silent: true
+
+  # Markdown linting tasks
+  lint:md:
+    desc: Lint all markdown files and check links
+    silent: true
+    cmds:
+      - echo "=== Checking markdown formatting ==="
+      - npx markdownlint --config ~/.markdownlint.json '**/*.md' --ignore node_modules
+      - echo ""
+      - echo "=== Checking links ==="
+      - find . -name "*.md" -not -path "./node_modules/*" -print0 | xargs -0 npx markdown-link-check --quiet 2>/dev/null || true
+
+  lint:md:uncommitted:
+    desc: Lint all uncommitted markdown files (modified, staged, and untracked)
+    silent: true
+    preconditions:
+      - sh: git rev-parse --git-dir 2>/dev/null
+        msg: "Not in a git repository"
+    cmds:
+      - |
+        # Collect all uncommitted markdown files
+        # Using a simpler approach that handles spaces properly
+
+        # Get all modified, staged, and untracked markdown files
+        FILES=$(
+          {
+            git diff --name-only --diff-filter=ACMR '*.md' 2>/dev/null || true
+            git diff --cached --name-only --diff-filter=ACMR '*.md' 2>/dev/null || true
+            git ls-files --others --exclude-standard '*.md' 2>/dev/null || true
+          } | sort -u
+        )
+
+        if [ -z "$FILES" ]; then
+          echo "✅ No uncommitted markdown files to check"
+          exit 0
+        fi
+
+        echo "Checking uncommitted markdown files:"
+        echo "$FILES" | sed 's/^/  • /'
+        echo ""
+
+        echo "=== Checking formatting ==="
+        # Handle files with spaces using proper quoting
+        if [ -n "$FILES" ]; then
+          echo "$FILES" | xargs -I {} npx markdownlint --config ~/.markdownlint.json "{}"
+        fi
+        echo ""
+        echo "=== Checking links ==="
+        if [ -n "$FILES" ]; then
+          echo "$FILES" | xargs -I {} npx markdown-link-check --quiet "{}" 2>/dev/null || true
+        fi
+
+  lint:md:fix:
+    desc: Auto-fix markdown issues in all files
+    silent: true
+    cmds:
+      - npx markdownlint --fix --config ~/.markdownlint.json '**/*.md' --ignore node_modules
+      - echo "✅ Auto-fix complete. Run 'task lint:md' to verify remaining issues."
+
+  lint:md:fix:uncommitted:
+    desc: Auto-fix markdown issues in all uncommitted files (modified, staged, and untracked)
+    silent: true
+    preconditions:
+      - sh: git rev-parse --git-dir 2>/dev/null
+        msg: "Not in a git repository"
+    cmds:
+      - |
+        # Collect all uncommitted markdown files
+        # Using a simpler approach that handles spaces properly
+
+        # Get all modified, staged, and untracked markdown files
+        FILES=$(
+          {
+            git diff --name-only --diff-filter=ACMR '*.md' 2>/dev/null || true
+            git diff --cached --name-only --diff-filter=ACMR '*.md' 2>/dev/null || true
+            git ls-files --others --exclude-standard '*.md' 2>/dev/null || true
+          } | sort -u
+        )
+
+        if [ -z "$FILES" ]; then
+          echo "✅ No uncommitted markdown files to fix"
+          exit 0
+        fi
+
+        echo "Auto-fixing uncommitted markdown files:"
+        echo "$FILES" | sed 's/^/  • /'
+        echo ""
+
+        # Handle files with spaces using xargs -I
+        if [ -n "$FILES" ]; then
+          echo "$FILES" | xargs -I {} npx markdownlint --fix --config ~/.markdownlint.json "{}"
+        fi
+        echo ""
+        echo "✅ Auto-fix complete. Run 'task lint:md:uncommitted' to verify remaining issues."
+
+  # Alias tasks for convenience
+  lint:
+    desc: Lint all markdown files (alias for lint:md)
+    cmds:
+      - task: lint:md
+
+  fix:
+    desc: Auto-fix markdown issues in all files (alias for lint:md:fix)
+    cmds:
+      - task: lint:md:fix
+
+  # Git-related utilities
+  status:
+    desc: Show git status
+    silent: true
+    cmds:
+      - git status --short
+
+  status:md:
+    desc: Show uncommitted markdown files
+    silent: true
+    cmds:
+      - |
+        git status --porcelain | while IFS= read -r line; do
+          filename="${line:3}"
+
+          # Strip quotes if present
+          [[ "$filename" == \"*\" ]] && filename="${filename:1:-1}"
+
+          # Check for .md extension
+          if [[ "$filename" == *.md ]]; then
+            echo "$filename"
+          fi
+        done
+
+  git:analyze:
+    desc: Analyze git changes for commit planning
+    silent: true
+    cmds:
+      - echo "=== Git Status ==="
+      - git status --short --branch
+      - echo ""
+      - echo "=== Staged Changes ==="
+      - git diff --cached --stat
+      - git diff --cached --name-status
+      - echo ""
+      - echo "=== Unstaged Changes ==="
+      - git diff --stat
+      - git diff --name-status
+      - echo ""
+      - echo "=== Untracked Files ==="
+      - git ls-files --others --exclude-standard
+
+  diff:
+    desc: Show uncommitted changes
+    cmds:
+      - git diff
+
+  # Cleanup tasks
+  clean:
+    desc: Clean temporary files
+    cmds:
+      - rm -f *.log
+      - rm -f .DS_Store
+      - find . -name "*.swp" -delete 2>/dev/null || true
+      - find . -name "*~" -delete 2>/dev/null || true
+      - echo "✅ Cleaned temporary  ggfiles"
+
+  # Installation tasks
+  install:tools:
+    desc: Install required tools
+    cmds:
+      - |
+        echo "Installing required tools..."
+
+        # Note: markdownlint is used via npx, no global install needed
+        echo "✓ markdownlint will be run via npx"
+
+        echo ""
+        echo "✅ All tools installed successfully"
+
+  # Check tasks
+  check:
+    desc: Run all checks (markdown linting)
+    cmds:
+      - task: lint:md
+
+  check:uncommitted:
+    desc: Check only uncommitted files
+    cmds:
+      - task: lint:md:uncommitted
