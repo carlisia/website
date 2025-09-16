@@ -1,11 +1,12 @@
 ---
-title: Large language model
+title: Large language model - LLM
 description:
 created:
 id: obs-zJwsM5go
 aliases: LLM, llm
 tags: ai
 socialDescription:
+socialImage: llm.png
 ---
 
 ![llm](static/llm.png)
@@ -14,65 +15,73 @@ A large language model (LLM) is a type of AI model trained on massive amounts of
 
 ## Key characteristics
 
-• **Generative capability** – Produces coherent text, code, or structured outputs from prompts
+- **Generative capability** – Produces coherent text, code, or structured outputs from prompts
+- **Instruction following** – Can understand and execute complex, multi-part instructions
+- **Tool-use capability** – Can decide which tools to call and format requests (though cannot execute them)
+- **Statistical foundation** – Learns patterns from billions of words in training data
+- **Versatility** – Can be applied to domains from writing to programming to planning
+- **Context sensitivity** – Uses a prompt + context window to shape its outputs
+- **Few/zero-shot adaptability** – Performs new tasks with little or no task-specific training
+- **Emergent behavior** – Exhibits surprising generalization (e.g., chain-of-thought reasoning)
 
-• **Statistical foundation** – Learns patterns from billions of words in training data
+LLMs are the **foundational intelligence** layer of modern [[ai system|AI systems]], but by themselves they lack memory, persistence, [[ai tool|tool]] access, or governance.
 
-• **Versatility** – Can be applied to domains from writing to programming to planning
+## Understanding the relationships
 
-• **Context sensitivity** – Uses a prompt + context window to shape its outputs
+### LLM vs. AI agent vs. AI system
 
-• **Few/zero-shot adaptability** – Performs new tasks with little or no task-specific training
+- **LLM = Foundation**: The raw intelligence/reasoning engine
+- **[[AI agent|AI agent]] = LLM + Agency**: Adds goal-seeking, decision-making, and tool orchestration
+- **[[ai system|AI system]] = Complete Stack**: Adds infrastructure, memory, persistence, governance
 
-• **Emergent behavior** – Exhibits surprising generalization (e.g., chain-of-thought reasoning)
+```text
+AI System
+    ↑
+AI Agent
+    ↑
+  LLM
+```
 
-LLMs are the foundational intelligence layer of modern AI systems, but by themselves they lack memory, persistence, tool access, or governance.
+#### What LLMs can do alone
 
-## LLM vs. AI agent: understanding the relationship
+- Generate text, code, and structured outputs from prompts
+- Reason through problems and follow multi-step instructions
+- Decide which tools to use and format tool calls (function calling)
+- Transform and analyze content within their context window
+- Answer questions based on training data and provided context
 
-• LLM = raw generative engine (“predict the next word”).
-• Agent = wraps an LLM to pursue goals, make decisions, and call tools.
+#### What LLMs cannot do alone
 
-### What LLMs can do alone
+- Execute tool or API calls (need orchestration infrastructure)
+- Maintain long-term memory or state across sessions
+- Access real-time data or external systems directly
+- Implement retries, complex workflows, or observability
+- Enforce runtime policies or permissions
+- Persist information between conversations
 
-• Write an essay from a prompt
-• Translate a sentence into another language
-• Generate code from an instruction
-• Answer a factual question (within training limits)
-
-### What LLMs cannot do alone
-
-• Decide which tool or API to call
-• Maintain long-term goals or state
-• Handle retries, workflows, or observability
-• Enforce policies or permissions
-
-**Key distinction:** An LLM is not an [[ai agent|agent]] or an [[ai system|AI system]], it is the core model that those higher layers build on.
+**Key distinction:** An LLM is not an [[AI agent|AI agent]] or an [[ai system|AI system]], it is the core model that those higher layers build on.
 
 ## Examples
 
-- Text generation – Drafting essays, stories, or articles from prompts
-- Code generation – Writing snippets, functions, or even full programs
-- Language translation – Converting text between natural languages
-- Summarization – Condensing long articles or documents into key points
-- Question answering – Responding to factual queries based on training data
-- Conversation – Engaging in natural-sounding dialogue or roleplay
-- Classification – Categorizing text (e.g., sentiment analysis, topic labeling)
+- **Text generation** – Drafting essays, stories, or articles from prompts
+- **Code generation** – Writing snippets, functions, or even full programs
+- **Tool selection** – Analyzing user intent and choosing appropriate tools/functions
+- **Language translation** – Converting text between natural languages
+- **Summarization** – Condensing long articles or documents into key points
+- **Question answering** – Responding to factual queries based on training data
+- **Conversation** – Engaging in natural-sounding dialogue or roleplay
+- **Classification** – Categorizing text (e.g., sentiment analysis, topic labeling)
 
 > [!NOTE] Key point: An LLM is a predictive text model—powerful for generation and reasoning-like tasks, but not inherently able to use tools, maintain state, or coordinate workflows.
 
 ## Non-examples
 
-- **AI agents** – Agents use LLMs for reasoning but add decision-making, tool calls, and adaptation.
+- **[[AI agent|AI agents]]** – Agents use [[large language model (llm)|LLMs]] for reasoning but add decision-making, [[ai tool|tool]] calls, and adaptation.
+- **[[agentic system|Agentic systems]]** – Full systems with infrastructure (clients, servers, [[orchestration layer|orchestration]]) built around one or more agents.
+- **MCP components** – [[MCP client|Clients]], [[MCP server|servers]], and [[MCP host|hosts]] that provide access and runtime, not generative capability.
+- **[[ai tool|Tools]]** – External capabilities (e.g., APIs, databases) invoked by agents; not predictive models.
+- **[[orchestration layer|Orchestration layer]]** – Workflow management and reliability mechanisms; does not generate text or predictions.
 
-- **Agentic systems** – Full systems with infrastructure (clients, servers, orchestration) built around one or more agents.
-
-- **MCP components** – Clients, servers, and hosts that provide access and runtime, not generative capability.
-
-- **Tools** – External capabilities (e.g., APIs, databases) invoked by agents; not predictive models.
-
-- **Orchestration layer** – Workflow management and reliability mechanisms; does not generate text or predictions.
-  
 **Key point:** An LLM is the **raw generative core** of modern AI, not the reasoning, action, or coordination layer.
 
 > [!TIP] The LLM is the language engine, but it needs interfaces, memory, tools, and orchestration logic to become something users can actually interact with productively.
