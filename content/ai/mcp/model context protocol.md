@@ -5,55 +5,118 @@ aliases:
   - Model Context Protocol
 tags:
   - mcp
+  - ai
+  - protocol
+description: Open protocol standardizing AI system access to external tools, data, and resources
+created: 2025-01-01
+socialDescription: MCP enables standardized communication between AI systems and external resources through interoperable components
 ---
 
-## Documentation
+The **Model Context Protocol** (MCP) is an open protocol that standardizes how [[AI system|AI systems]] and [[AI agent|AI agents]] access external [[AI tool|tools]], data, and resources.
 
-- [Introduction - Model Context Protocol](https://modelcontextprotocol.io/introduction)
-- [Specification - Model Context Protocol](https://modelcontextprotocol.io/specification/2025-03-26)
+**Quick links:** [[mcp protocol]] \* [[ai/mcp/resources]]
 
-## Writeups (external)
+## Key characteristics
 
-- [MCP Protocol: a new AI dev tools building block](https://newsletter.pragmaticengineer.com/p/mcp?utm_source=substack&utm_campaign=post_embed&utm_medium=web) - The Pragmatic Engineer
-- [The Creators of Model Context Protocol - Latent.Space](https://www.latent.space/p/mcp?utm_source=substack&utm_campaign=post_embed&utm_medium=web)
-- [MCP: A Protocol to Watch (Even If You're Not Sure What to Do With It Yet)](https://ashley.dev/posts/mcp-a-protocol-to-watch/)
-- [A Critical Look at MCP - Raz Blog](https://raz.sh/blog/2025-05-02_a_critical_look_at_mcp)
-- [Is Model Context Protocol the New API? - The New Stack](https://thenewstack.io/is-model-context-protocol-the-new-api)
-- [Understanding MCP | LinkedIn](https://www.linkedin.com/pulse/understanding-mcp-craig-mcluckie-p4wxc)
+- **Standardized communication** – Defines how tools and data are described, invoked, and returned
+- **Interoperability** – Works across different agents, clients, servers, and hosts
+- **Discoverability** – Lets clients list available tools and capabilities from connected servers
+- **Separation of concerns** – Distinguishes between reasoning (agent), access (client), and capability (server)
+- **Security & governance** – Hosts can enforce permissions, authentication, and policies consistently
+- **Scalability** – Tools exposed once via servers can be reused by many agents and systems
 
-## SDKs
+MCP provides the plumbing that makes tool usage consistent, reliable, **and portable**.
 
-Clients and servers.
+For notes on MCP protocol (the "P" in MCP), see: [[mcp protocol|MCP protocol]].
 
-### [[computer science/go/go|Go]]
+## MCP Components
 
-- WIP Official SDK: [modelcontextprotocol/go-sdk](https://github.com/modelcontextprotocol/go-sdk)
-- [mark3labs/mcp-go: A Go implementation of the Model Context Protocol (MCP), enabling seamless integration between LLM applications and external data sources and tools.](https://github.com/mark3labs/mcp-go)
-- [metoro-io/mcp-golang: Write Model Context Protocol servers in few lines of go code. Docs at https://mcpgolang.com](https://github.com/metoro-io/mcp-golang)
-  - [Introduction - mcp-golang](https://mcpgolang.com/introduction)
+- [[MCP client]] – The access layer that discovers and invokes tools
+- [[MCP server]] – The supply side that exposes tools and data in a standard format
+- [[MCP host]] – The runtime environment that runs the agent and client, and mediates secure connections to servers
+- Tools
+- Resources
+- Prompts
 
-## Tools
+Together, these components form the MCP ecosystem.
 
-- [stacklok/toolhive: Run and manage MCP servers easily and securely](https://github.com/stacklok/toolhive)
-- [StacklokLabs/mkp: MKP is a Model Context Protocol (MCP) server for Kubernetes](https://github.com/StacklokLabs/mkp)
-- [MCP Jam](https://www.mcpjam.com/)
-- [mcp-use/mcp-use: mcp-use is the easiest way to interact with mcp servers with custom agents](https://github.com/mcp-use/mcp-use)
+## MCP vs custom integrations
 
-## Learning
+- **Custom integrations** - Each agent must be hand-wired to each tool → brittle and hard to scale
+- **MCP** - A universal connector → tools are exposed once and can be reused across many agents and hosts
 
-- [Building Agents with Model Context Protocol - Full Workshop with Mahesh Murag of Anthropic - YouTube](https://www.youtube.com/watch?v=kQmXtrmQ5Zg&t=1s)
-- [MCP: Build Rich-Context AI Apps with Anthropic - DeepLearning.AI](https://www.deeplearning.ai/short-courses/mcp-build-rich-context-ai-apps-with-anthropic/)
-- [Microsoft Full Course (Lessons 1-11) MCP for Beginners - YouTube](https://www.youtube.com/watch?v=VfZlglOWWZw&list=PLlrxD0HtieHjYfVUpGl_-ai7D6FRBjV-d)
-- [In-Depth MCP Tutorials for 2025 | egghead.io](https://egghead.io/q?q=mcp)
-- [Welcome to the 🤗 Model Context Protocol (MCP) Course - Hugging Face MCP Course](https://huggingface.co/learn/mcp-course/unit0/introduction)
+## Novel contributions of MCP
 
-## Discussions / interviews
+### Standardized AI context exchange
 
-- [The Creators of Model Context Protocol - YouTube](https://www.youtube.com/watch?v=m2VqaNKstGc)
-- [The Model Context Protocol (MCP) - YouTube](https://www.youtube.com/watch?v=CQywdSdi5iA)
+MCP introduces the first standardized approach to:
 
-## Resources
+- Defining how AI applications access external context
+- Structuring tool capabilities for AI consumption
+- Managing resource metadata for AI understanding
+- Templating prompts for consistent AI interactions
 
-- [Reddit / Model Context Protocol (MCP)](https://www.reddit.com/r/mcp/)
-- [Awesome MCP servers | Glama](https://glama.ai/mcp/servers)
-- [Composio MCP](https://mcp.composio.dev/) - connect to 100+ managed MCP servers with built-in Auth
+### Dual transport architecture
+
+MCP's innovative transport design:
+
+- **Local optimization**: stdio for zero-latency local processes
+- **Remote capability**: HTTP+SSE for distributed systems
+- **Unified interface**: Same data layer across both transports
+
+### AI-native primitives
+
+Unlike general-purpose protocols, MCP defines AI-specific concepts:
+
+- Tools with JSON Schema definitions for AI understanding
+- Resources with contextual metadata for AI consumption
+- Prompts with templating for AI interaction patterns
+- Sampling for AI model integration
+
+## Evolutionary and revolutionary
+
+### Evolutionary aspects
+
+- Builds on proven JSON-RPC foundation
+- Leverages existing HTTP infrastructure
+- Uses standard authentication mechanisms
+- Follows established client-server patterns
+
+### Revolutionary aspects
+
+- First standardized AI context protocol
+- Novel semantic primitive definitions
+- AI-specific lifecycle management
+- Unified local/remote transport model
+
+MCP represents a **specialized evolution** of existing communication patterns tailored specifically for AI applications. While MCP builds upon established foundations like JSON-RPC 2.0 and HTTP, it introduces novel semantic layers and AI-specific primitives that distinguish it from both traditional communication protocols and other AI agent protocols.
+
+## Protocol interoperability
+
+### MCP integration patterns
+
+- Can coexist with traditional APIs
+- Complements A2A for complete agent ecosystems
+- Integrates with existing development tools
+- Supports standard authentication schemes
+
+### Cross-protocol communication
+
+- MCP servers can expose traditional HTTP APIs
+- A2A agents can use MCP for context access
+- Traditional systems can implement MCP servers
+- Hybrid architectures are possible and encouraged
+
+### Standardization benefits
+
+- Reduces integration complexity for AI applications
+- Enables ecosystem of interoperable tools
+- Provides consistent developer experience
+- Facilitates rapid AI application development
+
+### Market positioning
+
+- MCP: AI-to-system integration standard
+- A2A: Agent-to-agent communication standard
+- Traditional APIs: General-purpose data exchange
+- Combined: Complete AI ecosystem infrastructure

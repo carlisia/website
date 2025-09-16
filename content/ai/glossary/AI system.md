@@ -4,6 +4,7 @@ description:
 created:
 id: obs-xa3wxZYO
 aliases:
+  - AI systems
 tags: ai
 socialDescription:
 socialImage: ai-system.png

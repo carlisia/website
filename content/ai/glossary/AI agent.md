@@ -4,6 +4,7 @@ description:
 created:
 id: obs-orousE2G
 aliases:
+  - AI agents
 tags: ai
 socialDescription:
 socialImage: ai-agent.png

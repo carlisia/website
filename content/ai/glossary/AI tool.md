@@ -5,6 +5,8 @@ created:
 id: obs-8sN2jJAP
 aliases:
   - tool
+  - AI tools
+  - tools
 tags: ai
 socialDescription:
 socialImage: ai-tool.png
