@@ -12,7 +12,7 @@ socialImage: mcp-host.png
 ---
 
 ![mcp-host](static/mcp-host.png)
-An [[model context protocol|MCP]] host is the runtime environment where the [[AI agent|AI agent]] and the [[MCP client|MCP client]] operate. It provides the context in which the agent reasons, invokes [[ai tool|tools]] through clients, and connects to [[MCP server|MCP servers]]. The host is responsible for mediating these interactions, applying permissions, and ensuring that the system runs within a controlled environment.
+An **MCP host** is the runtime environment where the [[AI agent|AI agent]] and the [[MCP client|MCP client]] operate. It provides the context in which the agent reasons, invokes [[AI tool|tools]] through clients, and connects to [[MCP server|MCP servers]]. The host is responsible for mediating these interactions, applying permissions, and ensuring that the system runs within a controlled environment.
 
 ## Key characteristics
 
@@ -28,7 +28,7 @@ The host is not itself an agent. Instead, it is the container or platform that e
 
 ## Understanding the relationships
 
-### MCP host vs. [[AI agent|AI agent]]:
+### MCP host vs. [[AI agent|AI agent]]
 
 - **AI Agent** - Makes reasoning decisions and tool choices (powered by an LLM).
 - **Host** - Provides the environment and infrastructure where those decisions can be executed safely.

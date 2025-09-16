@@ -11,7 +11,7 @@ socialImage: ai-system.png
 
 ![ai-system](static/ai-system.png)
 
-An **AI system** is the comprehensive integration of components that collectively deliver artificial intelligence-powered functionality. It combines the generative capabilities of [[large language model (llm)|LLM]], the reasoning and decision-making processes of [[AI agent|agents]], the action-enabling capabilities of [[ai tool|tools]], and the reliability mechanisms of the [[orchestration layer|orchestration layer]]. Additional infrastructure components, such as integration layers, plugin frameworks, or standardized protocols like the [[model context protocol|Model Context Protocol (MCP)]], enhance these systems' portability, scalability, and interoperability.
+An **AI system** is the comprehensive integration of components that collectively deliver artificial intelligence-powered functionality. It combines the generative capabilities of [[large language model (llm)|LLM]], the reasoning and decision-making processes of [[AI agent|agents]], the action-enabling capabilities of [[AI tool|tools]], and the reliability mechanisms of the [[orchestration layer|orchestration layer]]. Additional infrastructure components, such as integration layers, plugin frameworks, or standardized protocols like the [[model context protocol|Model Context Protocol (MCP)]], enhance these systems' portability, scalability, and interoperability.
 
 ## Key characteristics
 
@@ -29,7 +29,7 @@ An AI system represents the **end-to-end assembly** that enables reasoning, acti
 
 - **[[large language model (llm)|LLM]]** – The generative core component
 - **[[AI agent|Agent]]** – The reasoning and decision-making layer
-- **[[ai tool|Tool]]** – External capabilities that extend model functionality
+- **[[AI tool|Tool]]** – External capabilities that extend model functionality
 - **Integration layers** – Custom connectors, plugin frameworks, or standardized protocols such as MCP
 - **[[orchestration layer|Orchestration layer]]** – Ensures workflows, retries, logging, and guardrails
 

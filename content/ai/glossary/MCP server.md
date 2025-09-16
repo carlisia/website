@@ -12,11 +12,11 @@ socialImage: mcp-server.png
 ---
 
 ![mcp-server](static/mcp-server.png)
-An MCP server is the component of the [[model context protocol|Model Context Protocol (MCP)]] that exposes [[ai tool|tools]], data, or resources in a standardized format so they can be consumed by an [[MCP client|MCP client]] and used by an [[AI agent|AI agent]]. It makes capabilities discoverable, interoperable, and reusable across different [[ai system|AI systems]] without custom integration code.
+An **MCP server** is the component of the [[model context protocol|Model Context Protocol (MCP)]] that exposes [[AI tool|tools]], data, or resources in a standardized format so they can be consumed by an [[MCP client|MCP client]] and used by an [[AI agent|AI agent]]. It makes capabilities discoverable, interoperable, and reusable across different [[AI system|AI systems]] without custom integration code.
 
 ## Key characteristics
 
-- **Tool exposure** – Publishes [[ai tool|tools]], APIs, or data sources in a consistent schema
+- **Tool exposure** – Publishes [[AI tool|tools]], APIs, or data sources in a consistent schema
 - **Discoverability** – Advertises available tools and their metadata to [[MCP client|clients]]
 - **Standardized responses** – Returns outputs in a predictable format
 - **Reusability** – Enables the same resource to be used by multiple [[AI agent|AI agents]] or [[MCP host|hosts]]
@@ -62,6 +62,6 @@ Agents running in different hosts can all access these resources via their MCP c
 - The **[[MCP client|MCP client]]** – Invokes tools, but does not publish or serve them.
 - **The [[MCP host|MCP host]]** – Provides the runtime environment, but does not expose tools.
 - **The [[orchestration layer]]** – Coordinates workflows and reliability, but does not make tools available.
-- **A [[ai tool|tool]] by itself** – A capability (e.g., database API) is not an MCP server until it is exposed through the protocol.
+- **A [[AI tool|tool]] by itself** – A capability (e.g., database API) is not an MCP server until it is exposed through the protocol.
 
 > [!TIP] An MCP server is the supply side of MCP: it publishes tools and data for clients to consume, but does not reason, decide, or execute requests itself.

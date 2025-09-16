@@ -13,11 +13,11 @@ socialImage: mcp-client.png
 
 ![mcp-client](static/mcp-client.png)
 
-An MCP client is the component of the [[model context protocol|Model Context Protocol (MCP)]] that allows [[AI agent|AI agents]] or [[ai system|AI systems]] to discover and invoke tools or resources in a standardized way. Instead of relying on custom integrations, the MCP client provides a common interface so that agents can call tools exposed by [[MCP server|MCP servers]] dynamically and consistently.
+An **MCP client** is the component of the [[model context protocol|Model Context Protocol (MCP)]] that allows [[AI agent|AI agents]] or [[AI system|AI systems]] to discover and invoke tools or resources in a standardized way. Instead of relying on custom integrations, the MCP client provides a common interface so that agents can call tools exposed by [[MCP server|MCP servers]] dynamically and consistently.
 
 ## Key characteristics
 
-- **Tool discovery** – Lists available [[ai tool|tools]] and their capabilities from connected servers
+- **Tool discovery** – Lists available [[AI tool|tools]] and their capabilities from connected servers
 - **Standardized invocation** – Calls tools using a common protocol rather than ad-hoc APIs
 - **Protocol translation** – Converts [[AI agent|agent]]'s tool requests into MCP protocol format
 - **Interoperability** – Works across multiple servers without custom plumbing

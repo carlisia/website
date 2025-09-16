@@ -12,13 +12,13 @@ socialImage: agentic-system.png
 
 ![agentic-system](static/agentic-system.png)
 
-An **agentic system** is an [[AI system]] built around one or more [[AI agent]] that autonomously pursue goals through reasoning, planning, and [[ai tool|tool]] use. While an AI agent represents a **single reasoning entity**, an agentic system includes the supporting infrastructure such as tool interfaces, integration layers (including [[MCP client]] and [[MCP server]]), [[MCP host|hosts]], and the [[orchestration layer|orchestration layer]]. These components enable agents to operate reliably, persistently, and at scale. Unlike a general AI system, which may simply generate outputs or provide predictions (such as a classifier, translator, or recommender), an agentic system exhibits proactive, goal-directed behavior that unfolds across multiple steps and adapts over time.
+An **agentic system** is an [[AI system]] built around one or more [[AI agent]] that autonomously pursue goals through reasoning, planning, and [[AI tool|tool]] use. While an AI agent represents a **single reasoning entity**, an agentic system includes the supporting infrastructure such as tool interfaces, integration layers (including [[MCP client]] and [[MCP server]]), [[MCP host|hosts]], and the [[orchestration layer|orchestration layer]]. These components enable agents to operate reliably, persistently, and at scale. Unlike a general AI system, which may simply generate outputs or provide predictions (such as a classifier, translator, or recommender), an agentic system exhibits proactive, goal-directed behavior that unfolds across multiple steps and adapts over time.
 
 ## Key characteristics
 
 - **Goal orientation** – Pursues explicit objectives across multiple steps
 - **Multi-step reasoning** – Plans and executes sequences of actions iteratively
-- **Tool integration** – Can invoke [[ai tool|tools]] through custom connectors, plugins, or standardized protocols such as the Model Context Protocol ([[model context protocol|MCP]])
+- **Tool integration** – Can invoke [[AI tool|tools]] through custom connectors, plugins, or standardized protocols such as the Model Context Protocol ([[model context protocol|MCP]])
 - **Adaptivity** – Adjusts strategy when conditions change or tools fail
 - **Persistence** – Maintains state or memory across actions and sessions
 - **System-level reliability** – Depends on [[orchestration layer|orchestration]] for retries, guardrails, and monitoring
@@ -43,7 +43,7 @@ All agentic systems are AI systems, but not all AI systems are agentic. Many AI 
 ## Non-examples
 
 - A single [[AI agent|AI agent]] running in isolation without supporting infrastructure
-- An [[large language model (llm)|LLM]] with function calling that makes one-off [[ai tool|tool]] calls without persistent goals or multi-step planning
+- An [[large language model (llm)|LLM]] with function calling that makes one-off [[AI tool|tool]] calls without persistent goals or multi-step planning
 - A classifier or translator that produces outputs but does not pursue goals or coordinate tools
 - A basic chatbot that answers queries without planning or adaptation
 

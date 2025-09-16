@@ -170,7 +170,7 @@ tasks:
       - rm -f .DS_Store
       - find . -name "*.swp" -delete 2>/dev/null || true
       - find . -name "*~" -delete 2>/dev/null || true
-      - echo "✅ Cleaned temporary  ggfiles"
+      - echo "✅ Cleaned temporary files"
 
   # Installation tasks
   install:tools:

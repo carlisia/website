@@ -10,7 +10,7 @@ socialImage: ai-agent.png
 ---
 
 ![ai agent](static/ai-agent.png)
-An **AI agent** is a type of [[ai system|AI system]] that uses a [[large language model (llm)|LLM]] for reasoning and autonomously pursues goals by making decisions, invoking [[ai tool|tools]], and adapting to feedback. Agents add **goal-directed behavior** on top of raw model outputs, enabling systems to act in dynamic and flexible ways. Agents can use different mechanisms to access tools, including direct integrations, plugin architectures, or standardized approaches such as the [[model context protocol|Model Context Protocol (MCP)]].
+An **AI agent** is a type of [[AI system|AI system]] that uses a [[large language model (llm)|LLM]] for reasoning and autonomously pursues goals by making decisions, invoking [[AI tool|tools]], and adapting to feedback. Agents add **goal-directed behavior** on top of raw model outputs, enabling systems to act in dynamic and flexible ways. Agents can use different mechanisms to access tools, including direct integrations, plugin architectures, or standardized approaches such as the [[model context protocol|Model Context Protocol (MCP)]].
 
 ## Key characteristics
 
@@ -27,13 +27,13 @@ While agents can be built using various AI approaches (e.g., reinforcement learn
 
 ## Understanding relationships
 
-### AI agent vs. [[ai system|AI system]]
+### AI agent vs. [[AI system|AI system]]
 
 All AI agents are AI systems, but not all AI systems are agents.
 
 ### AI Agent vs. [[agentic system|Agentic system]]
 
-An **agent** is a single reasoning entity. An **agentic system** is the larger AI system built around one or more agents, along with supporting infrastructure such as [[ai tool|tool]] interfaces, integration layers (e.g., [[MCP client|MCP clients]] and [[MCP server|MCP servers]]), [[MCP host|hosts]], and the [[orchestration layer|orchestration layer]].
+An **agent** is a single reasoning entity. An **agentic system** is the larger AI system built around one or more agents, along with supporting infrastructure such as [[AI tool|tool]] interfaces, integration layers (e.g., [[MCP client|MCP clients]] and [[MCP server|MCP servers]]), [[MCP host|hosts]], and the [[orchestration layer|orchestration layer]].
 
 #### AI systems that are NOT agents
 

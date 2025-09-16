@@ -10,7 +10,8 @@ socialImage: ai-orchestration.png
 ---
 
 ![ai-orchestration](static/ai-orchestration.png)
-An orchestration layer is the coordinating logic that connects [[large language model (llm)|LLMs]], [[AI agent|AI agents]], and external components into a reliable [[ai system|AI system]]. It ensures that [[ai tool|tool]] calls, workflows, and results flow in the right order, with the right safeguards, so the overall system behaves predictably at scale.
+
+An **orchestration layer** is the coordinating logic that connects [[large language model (llm)|LLMs]], [[AI agent|AI agents]], and external components into a reliable [[AI system|AI system]]. It ensures that [[AI tool|tool]] calls, workflows, and results flow in the right order, with the right safeguards, so the overall system behaves predictably at scale.
 
 ## Key characteristics
 

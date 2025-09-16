@@ -11,7 +11,7 @@ socialImage: llm.png
 
 ![llm](static/llm.png)
 
-A large language model (LLM) is a type of AI model trained on massive amounts of text data to predict the most likely next token in a sequence. This simple mechanism enables LLMs to generate fluent text, translate languages, write code, answer questions, and perform a wide variety of reasoning-like tasks.
+A **large language model** (LLM) is a type of AI model trained on massive amounts of text data to predict the most likely next token in a sequence. This simple mechanism enables LLMs to generate fluent text, translate languages, write code, answer questions, and perform a wide variety of reasoning-like tasks.
 
 ## Key characteristics
 
@@ -24,7 +24,7 @@ A large language model (LLM) is a type of AI model trained on massive amounts of
 - **Few/zero-shot adaptability** – Performs new tasks with little or no task-specific training
 - **Emergent behavior** – Exhibits surprising generalization (e.g., chain-of-thought reasoning)
 
-LLMs are the **foundational intelligence** layer of modern [[ai system|AI systems]], but by themselves they lack memory, persistence, [[ai tool|tool]] access, or governance.
+LLMs are the **foundational intelligence** layer of modern [[AI system|AI systems]], but by themselves they lack memory, persistence, [[AI tool|tool]] access, or governance.
 
 ## Understanding the relationships
 
@@ -32,7 +32,7 @@ LLMs are the **foundational intelligence** layer of modern [[ai system|AI system
 
 - **LLM = Foundation**: The raw intelligence/reasoning engine
 - **[[AI agent|AI agent]] = LLM + Agency**: Adds goal-seeking, decision-making, and tool orchestration
-- **[[ai system|AI system]] = Complete Stack**: Adds infrastructure, memory, persistence, governance
+- **[[AI system|AI system]] = Complete Stack**: Adds infrastructure, memory, persistence, governance
 
 ```text
 AI System
@@ -59,7 +59,7 @@ AI Agent
 - Enforce runtime policies or permissions
 - Persist information between conversations
 
-**Key distinction:** An LLM is not an [[AI agent|AI agent]] or an [[ai system|AI system]], it is the core model that those higher layers build on.
+**Key distinction:** An LLM is not an [[AI agent|AI agent]] or an [[AI system|AI system]], it is the core model that those higher layers build on.
 
 ## Examples
 
@@ -76,10 +76,10 @@ AI Agent
 
 ## Non-examples
 
-- **[[AI agent|AI agents]]** – Agents use [[large language model (llm)|LLMs]] for reasoning but add decision-making, [[ai tool|tool]] calls, and adaptation.
+- **[[AI agent|AI agents]]** – Agents use [[large language model (llm)|LLMs]] for reasoning but add decision-making, [[AI tool|tool]] calls, and adaptation.
 - **[[agentic system|Agentic systems]]** – Full systems with infrastructure (clients, servers, [[orchestration layer|orchestration]]) built around one or more agents.
 - **MCP components** – [[MCP client|Clients]], [[MCP server|servers]], and [[MCP host|hosts]] that provide access and runtime, not generative capability.
-- **[[ai tool|Tools]]** – External capabilities (e.g., APIs, databases) invoked by agents; not predictive models.
+- **[[AI tool|Tools]]** – External capabilities (e.g., APIs, databases) invoked by agents; not predictive models.
 - **[[orchestration layer|Orchestration layer]]** – Workflow management and reliability mechanisms; does not generate text or predictions.
 
 **Key point:** An LLM is the **raw generative core** of modern AI, not the reasoning, action, or coordination layer.

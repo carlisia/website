@@ -12,7 +12,7 @@ socialImage: ai-tool.png
 
 ![ai tool](static/ai-tool.png)
 
-A **tool** is a capability beyond an [[large language model (llm)|LLM]]'s native text generation that an [[AI agent|AI agent]] can invoke to access data, perform actions, or integrate with services. Tools can be connected in different ways: through direct API calls, plugin frameworks, or standardized protocols such as the [[model context protocol|Model Context Protocol (MCP)]].
+An **AI tool** is a capability beyond an [[large language model (llm)|LLM]]'s native text generation that an [[AI agent|AI agent]] can invoke to access data, perform actions, or integrate with services. Tools can be connected in different ways: through direct API calls, plugin frameworks, or standardized protocols such as the [[model context protocol|Model Context Protocol (MCP)]].
 
 ## Key characteristics
 
@@ -30,7 +30,7 @@ Also:
 - **Specialized** - Built for particular use cases or domains
 - **Variable predictability** - Range from deterministic to highly variable outputs
 
-A tool is not itself intelligent. Its power comes from being combined with [[AI agent|AI agents]], [[orchestration layer|orchestration]], and [[large language model (llm)|models]] into larger [[agentic system|agentic]] or [[ai system|AI systems]].
+A tool is not itself intelligent. Its power comes from being combined with [[AI agent|AI agents]], [[orchestration layer|orchestration]], and [[large language model (llm)|models]] into larger [[agentic system|agentic]] or [[AI system|AI systems]].
 
 ## Tool behavior spectrum
 
@@ -72,7 +72,7 @@ A tool is not itself intelligent. Its power comes from being combined with [[AI 
 
 ## Examples
 
-In a travel-planning [[ai system|AI system]]:
+In a travel-planning [[AI system|AI system]]:
 
 1. The **[[large language model (llm)|LLM]]** processes the user's request: "Find me a flight to Paris next week"
 2. The **[[AI agent|AI agent]]** (powered by the LLM) reasons: "I need to search for flight availability to Paris for next week"

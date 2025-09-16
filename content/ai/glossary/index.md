@@ -14,7 +14,7 @@ We've all seen articles about "an AI system", but what does that actually mean? 
 
 Without clear terminology, teams build brittle integrations, set wrong expectations, and misplace trust—expecting intelligence where there's really just plumbing.
 
-> [!TLDR] Scroll further down for a list of glossary tems.
+> [!TLDR] Scroll further down for a list of glossary terms.
 
 ## Why terminology matters
 
