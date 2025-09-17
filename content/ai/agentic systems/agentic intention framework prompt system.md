@@ -4,7 +4,7 @@ description:
 created:
 id: obs-EVDPRgft
 aliases:
-tags:
+tags: framework, prompt
 socialDescription:
 socialImage:
 ---
