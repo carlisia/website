@@ -12,7 +12,7 @@ socialImage: agentic-system.png
 
 ![agentic-system](static/agentic-system.png)
 
-An **agentic system** is an [[AI system]] built around one or more [[AI agent]] that autonomously pursue goals through reasoning, planning, and [[AI tool|tool]] use. While an AI agent represents a **single reasoning entity**, an agentic system includes the supporting infrastructure such as tool interfaces, integration layers (including [[MCP client]] and [[MCP server]]), [[MCP host|hosts]], and the [[orchestration layer|orchestration layer]]. These components enable agents to operate reliably, persistently, and at scale. Unlike a general AI system, which may simply generate outputs or provide predictions (such as a classifier, translator, or recommender), an agentic system exhibits proactive, goal-directed behavior that unfolds across multiple steps and adapts over time.
+An **agentic system** is an [[AI system]] built around one or more [[AI agent|AI agents]] that autonomously pursues goals through reasoning, planning, and [[AI tool|tool]] use. While an AI agent represents a **single reasoning entity**, an agentic system includes the supporting infrastructure such as tool interfaces, integration layers (including [[MCP client]] and [[MCP server]]), [[MCP host|hosts]], and the [[orchestration layer|orchestration layer]]. These components enable agents to operate reliably, persistently, and at scale. Unlike a general AI system, which may simply generate outputs or provide predictions (such as a classifier, translator, or recommender), an agentic system exhibits proactive, goal-directed behavior that unfolds across multiple steps and adapts over time.
 
 ## Key characteristics
 
