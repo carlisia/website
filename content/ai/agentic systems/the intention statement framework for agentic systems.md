@@ -4,7 +4,7 @@ description:
 created:
 id: obs-zgBYxqdT
 aliases:
-tags: methodology, intention, ai
+tags: framework, intention, ai
 socialDescription:
 socialImage:
 ---

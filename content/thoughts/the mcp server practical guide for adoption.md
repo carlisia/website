@@ -6,7 +6,7 @@ id: obs-jkVT7rDz
 aliases:
   - The MCP server practical guide for adoption
 tags:
-  - mcp
+  - mcp, framework
 socialDescription: Should you adopt MCP servers? This decision framework helps you evaluate 8 critical constraints to make the right choice for your AI infrastructure
 socialImage: mcp-adoption-guide.png
 ---
