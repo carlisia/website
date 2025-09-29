@@ -2,6 +2,7 @@
 title: Engineering software for unpredictability
 description: How routing layers that silently switch between AI models are forcing better MCP server design. Engineering strategies for when your API calls hit different models with wildly different capabilities.
 created: 2025-09-04 (PT)
+updated: 2025-09-04 (PT)
 id: obs-NF4mSTxd
 aliases:
 tags: ai, design, strategy

@@ -1,10 +1,13 @@
 ---
 title: We Know Because We Experience
+description: Exploring the intersection of quantum physics, consciousness, and distributed systems through Federico Faggin's insights. A journey into understanding reality as a distributed system and what it means for leadership and human experience.
 created: 2024-10-07 (PT)
+updated: 2024-10-07 (PT)
 tags:
   - consciousness
   - systems
   - leadership
+socialDescription: Federico Faggin's journey from inventing the microprocessor to exploring consciousness offers profound insights on technology, reality, and what it means to be human in an interconnected world.
 ---
 
 > [!QUOTE]

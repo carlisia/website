@@ -2,6 +2,7 @@
 title: Forward deployed engineer
 description: Exploring how AI startups can reimagine engineering leadership to bridge the adoption gap for developers new to AI. Why the Forward Deployed Engineer model needs evolution for startups targeting potential customers, and how a Chief AI Decision Officer role embedded in engineering can drive both internal alignment and external credibility while turning developer uncertainty into confident AI adoption decisions.
 created: 2025-08-14 (PT)
+updated: 2025-08-14 (PT)
 id: obs-iYcSp3vc
 aliases:
 tags: career

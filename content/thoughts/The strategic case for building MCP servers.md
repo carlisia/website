@@ -8,6 +8,7 @@ aliases:
 tags:
   - mcp
 socialDescription: MCP transforms how we build AI integrations. Learn why developers should adopt this protocol for creating standardized, composable servers that AI systems can understand and use effectively.
+socialImage: building-mcp-servers.png
 ---
 
 ![building mcp servers](static/building-mcp-servers.png)

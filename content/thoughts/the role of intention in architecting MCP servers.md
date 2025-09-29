@@ -2,6 +2,7 @@
 title: The role of intention in architecting MCP servers
 description: While traditional software minimizes constraints to stay flexible, designing MCP servers flips that on its head. Now intention becomes the foundation for the architecture, the clearer it is, the more effective MCP tools become. This post unpacks the constraint paradox with real-world examples and introduces a practical framework for designing MCP servers that are discoverable, composable, and token-efficient. A must-read for anyone building AI-powered tools.
 created: 2025-08-05 (PT)
+updated: 2025-08-05 (PT)
 id: obs-lbGlugLh
 aliases:
 tags:

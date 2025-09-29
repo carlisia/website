@@ -1,11 +1,13 @@
 ---
 title: 2025, Tough Times
-description: Inspired by Arnold Schwarzenegger’s reflections on mindset and responsibility, this post explores the intersection of power, surrender, and leadership. In these tough times, may we (individuals, families, teams, and organizations). find grounded, centered ways to move forward and lead with clarity and purpose.
+description: Inspired by Arnold Schwarzenegger's reflections on mindset and responsibility, this post explores the intersection of power, surrender, and leadership. In these tough times, may we (individuals, families, teams, and organizations). Find grounded, centered ways to move forward and lead with clarity and purpose.
 created: 2025-05-29 (PT)
+updated: 2025-05-29 (PT)
 id: obs-VzWmDUvS
-aliases: 
+aliases:
 tags: leadership, 2025
-draft: 
+draft:
+socialDescription: Finding center in tough times is a reflection on power, surrender, and leadership inspired by Arnold Schwarzenegger's thoughts on victim mindset and the martial art of working with gravity rather than against it.
 ---
 
 I really, really like Arnold Schwarzenegger. I find him sensible and kind, and I like the type of impact he aims to make. There is something that shines brighter about people who have earned multiple wins in life.
@@ -24,6 +26,7 @@ I agree with his observation that currently there seems to be collective mania a
 If you are feeling powerless right now, please take good care of yourself. Let your feeling guide you towards identifying your unmet needs and true desires. And remember that feelings come and go, they’re not your identity.
 
 I don't so much agree with his take that the way out is thru only these two options:
+
 > Do you whine and complain? Or do you make the most of it?
 
 Sometimes, “making the most of it,” or “training yourself to accept,” as Arnold puts it, doesn’t have to look on the outside like anything heroic. It can be as simple as not judging the situation for a few moments. Just long enough to find your breath, to find your center, to tune into your inner intelligence.
@@ -57,6 +60,7 @@ Because the mind being called into action won’t be the same one we have today.
 I am hoping we, me, you, families, teams, companies, find ways to move forward and lead well in these new times, rooted clearly and firmly in our center. Less heroic acts and busy, unintentional work or disempowered conversations, more deep breaths, mindful and centered connections, and harmonious impact.
 
 And Arnold is right:
+
 > [!quote]
 > "The gym is the ultimate classroom for learning to terminate the victim mind." -- Schwarzenegger
 
@@ -67,4 +71,3 @@ Adding to it, here are more places where we can practice developing a connection
 - the dance floor
 
 What is your preferred spot?
-
