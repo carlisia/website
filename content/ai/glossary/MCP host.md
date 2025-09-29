@@ -4,6 +4,12 @@ description:
 created:
 id: obs-TuYfFqzY
 aliases:
+  - MCP hosts
+  - host
+  - hosts
+  - Host
+  - Hosts
+  - MCP Hosts
 tags:
   - ai
   - mcp

@@ -5,6 +5,10 @@ created:
 id: obs-IJ6EOfnq
 aliases:
   - MCP servers
+  - Server
+  - server
+  - Servers
+  - servers
 tags:
   - ai
   - mcp

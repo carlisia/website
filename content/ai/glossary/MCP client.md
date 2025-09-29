@@ -4,6 +4,11 @@ description:
 created:
 id: obs-jXMSeUhc
 aliases:
+  - MCP clients
+  - client
+  - clients
+  - Client
+  - Clients
 tags:
   - ai
   - mcp
