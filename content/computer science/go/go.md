@@ -11,12 +11,14 @@ aliases:
 ---
 
 ## Documentation
+
 - [Release History - The Go Programming Language](https://go.dev/doc/devel/release)
 - [Documentation (User Manual) - The Go Programming Language](https://go.dev/doc/)
 - [Standard library - Go Packages](https://pkg.go.dev/std)
 - [Effective Go - The Go Programming Language](https://go.dev/doc/effective_go)
 
 ### A must for newcomers
+
 - [A Tour of Go](https://go.dev/tour/welcome/1)
 - [Go by Example](https://gobyexample.com/)
 - [Guided learning journeys - The Go Programming Language](https://go.dev/learn/#guided-learning-journeys)
@@ -24,6 +26,7 @@ aliases:
 - [The Gotip Playground](https://gotipplay.golang.org/)
 
 ## Community
+
 - [golang-nuts - Google Groups](https://groups.google.com/g/golang-nuts)
 - [golang-dev - Google Groups](https://groups.google.com/g/golang-dev)
 - [Online/offline communities maintained by GoBridge](https://gobridge.org/Communities)

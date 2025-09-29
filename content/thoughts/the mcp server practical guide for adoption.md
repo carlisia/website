@@ -1,7 +1,8 @@
 ---
 title: The MCP server practical guide for adoption
 description: A practical 8-point framework to evaluate if Model Context Protocol servers fit your use case, covering performance, security, costs, and operational constraints
-created:
+created: 2025-09-15 (PT)
+updated: 2025-09-15 (PT)
 id: obs-jkVT7rDz
 aliases:
   - The MCP server practical guide for adoption
