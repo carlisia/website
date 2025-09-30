@@ -49,13 +49,22 @@ Think of this article as your map of the terrain, while the adoption guide is th
 
 ## Why now: core challenges of building servers for AI
 
-The emergence of MCP is a direct response to the pain points in modern AI development. If you build servers for AI systems, you likely face these challenges:
+The emergence of MCP is a direct response to the pain points in modern AI development. If you build servers for AI systems, you likely face these challenges. More importantly, you'll encounter specific architectural decisions around each of these areas when implementing MCP servers:
 
 - **Integration Fragmentation:** Major AI frameworks require different server interfaces, forcing developers to create multiple implementations of the same functionality.
-- **Context Delivery Chaos:** AI sistems often request irrelevant data or misuse server capabilities, leading to poor performance and wasted resources.
+	→ This drives integration architecture decisions about abstraction layers, code reuse patterns, and platform compatibility strategies.
+
+- **Context Delivery Chaos:** [[AI system|AI systems]] often request irrelevant data or misuse server capabilities, leading to poor performance and wasted resources.
+	→ This requires context optimization decisions about data filtering, token management, and information scoping strategies.
+
 - **Tool Interface Drift:** Minor API changes can break dependent AI systems, creating brittle and hard-to-maintain integrations.
+	→ This necessitates API design decisions about versioning strategies, backward compatibility, and interface stability patterns.
+
 - **Security and Compliance Gaps:** The lack of standardized [[mcp consent|consent]] and audit mechanisms in custom server implementations creates significant compliance risks.
+	→ This demands security boundary decisions about access control, audit logging, and governance framework implementation.
+
 - **Deployment Complexity:** Managing server implementations across different AI environments requires custom integration work for each platform, increasing maintenance overhead.
+	→ This involves deployment architecture decisions about packaging, distribution, configuration management, and environment consistency.
 
 > [!Note]
 > MCP's introduction in late 2024 by Anthropic benefits from lessons learned from earlier AI integration attempts. Developers adopting it now can shape its evolution and establish best practices.
@@ -79,7 +88,7 @@ While this may work for small projects, it is unsustainable for multi-vendor AI 
 - **Built-in Governance:** [[mcp consent|Consent]], capability negotiation, and [[mcp provenance|provenance]] are designed into the protocol, simplifying compliance and enhancing trust.
 
 > [!Tip]
-> By providing a common language, MCP elevates AI development from a fragmented approach to a standardized, scalable, and secure paradigm.
+> These advantages translate into specific architectural patterns and design decisions when building MCP servers, patterns we'll explore in detail in the next article on robust server architecture.
 
 ## The MCP client-server interaction model
 
@@ -227,15 +236,19 @@ The protocol's rich primitive model allows developers to express complex capabil
 
 **Best Practice**: Focus on doing one thing well rather than trying to be everything to everyone. Let AI systems orchestrate across multiple servers.
 
-## Where MCP server fits: your implementation journey
+## What's Next: From Strategy to Architecture
 
-Understanding the strategic case for MCP is just the beginning. Real value comes from systematic implementation that ships features, reduces operational complexity, and creates trust in AI-driven workflows.
+This article covered the strategic foundations of MCP: what it is, why it matters, and how it works. But strategy alone doesn’t ship robust servers. The next article moves into the architectural decisions that define real implementations.
+
+You’ll face questions like: How do you optimize context without overwhelming AI? Design integrations that work across platforms? Structure multi-step workflows while preserving security and governance? These are the concrete challenges that decide whether your MCP server becomes a strategic asset or an abandoned project.
+
+## Your implementation journey
 
 The next article in this series, **"To Implementation and Beyond: Your MCP Server Development Journey,"** provides the practical roadmap you need. It introduces five pillars of MCP development and maps them to three interconnected pathways designed to address specific friction points.
 
-You can start anywhere based on your most urgent pain points, but the principles compound, each solved problem creates momentum for the next.
+In that journey, you can start anywhere based on your most urgent pain points. But the principles compound: each solved problem creates momentum for the next.
 
 Stay tuned!
 
-> [!Note] > **Protocol Status:**
+> [!Note] > **Protocol Status**
 > MCP uses version 2025-06-18 as the current specification. While core architecture is stable, some features like Elicitation are newly introduced and may evolve in future versions. Verify technical details against the official specification at modelcontextprotocol.io.
