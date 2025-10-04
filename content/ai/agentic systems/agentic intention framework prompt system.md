@@ -1,11 +1,11 @@
 ---
 title: Agentic intention framework prompt system
-description:
+description: Interactive validation system that transforms vague AI agent ideas into precise workflow definitions through guided questions. Validates answers against the Agentic Intention Framework with graduated feedback and ROI calculations.
 created:
 id: obs-EVDPRgft
 aliases:
 tags: framework, prompt
-socialDescription:
+socialDescription: Copy-paste prompt system that validates your AI agent design through 4-5 critical questions. Prevents failed launches by catching misalignment early - includes Impact Score calculator for production teams.
 socialImage:
 ---
 

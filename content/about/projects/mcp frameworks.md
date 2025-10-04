@@ -5,6 +5,8 @@ created:
 id: obs-wnP43bl7
 aliases:
 tags:
+  - mcp
+  - framework
 socialDescription: Original frameworks for MCP adoption - from strategic evaluation to server design. Includes quantitative decision tools and implementation guides for engineering leaders building AI systems.
 ---
 

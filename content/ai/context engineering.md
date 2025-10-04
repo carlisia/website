@@ -1,11 +1,12 @@
 ---
 title: Context Engineering
-description:
+description: The art and science of filling the AI context window with the right information at the right time. Goes beyond prompt engineering to optimize entire context design, orchestration, and information flow.
 created:
 id: obs-Jf57mJiB
 aliases: context engineering
 tags:
   - ai
+socialDescription: Context engineering is the new paradigm - designing what information goes into the AI context window and when. Essential for effective AI coding assistants and agent systems.
 draft:
 ---
 

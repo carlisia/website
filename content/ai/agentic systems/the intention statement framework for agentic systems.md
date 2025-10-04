@@ -1,6 +1,6 @@
 ---
 title: The agentic intention framework
-description:
+description: A structured framework using 5 critical questions (WHO, WHAT, CONSTRAINTS, WHY, ALIGNMENT) to transform vague agent ideas into precise, measurable workflows. Includes ROI formulas, concentration scores, and evolution patterns for maintaining focus.
 created:
 id: obs-zgBYxqdT
 aliases:
@@ -8,7 +8,7 @@ aliases:
 tags:
   - framework
   - ai
-socialDescription:
+socialDescription: Define AI agent intention with precision using WHO/WHAT/CONSTRAINTS/WHY/ALIGNMENT. Sharp intention serving 20 users beats vague intention serving 2000 poorly. Includes Impact Score > 10 threshold and concentration metrics.
 socialImage:
 ---
 
