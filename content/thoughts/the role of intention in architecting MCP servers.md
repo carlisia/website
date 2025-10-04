@@ -5,6 +5,7 @@ created: 2025-08-05 (PT)
 updated: 2025-08-05 (PT)
 id: obs-lbGlugLh
 aliases:
+  - The role of intention in architecting MCP servers
 tags:
   - mcp
   - system-design
