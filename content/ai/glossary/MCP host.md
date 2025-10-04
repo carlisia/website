@@ -1,6 +1,6 @@
 ---
 title: MCP host
-description:
+description: The runtime environment where agents and MCP clients operate. Manages transport protocols, connections to servers, security boundaries, and provides the infrastructure for controlled agent execution.
 created:
 id: obs-TuYfFqzY
 aliases:
@@ -13,7 +13,7 @@ aliases:
 tags:
   - ai
   - mcp
-socialDescription:
+socialDescription: MCP hosts are the platform layer - they provide the runtime, manage connections and transport, enforce security, and enable agents to function within defined guardrails.
 socialImage: mcp-host.png
 ---
 

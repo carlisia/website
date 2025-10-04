@@ -1,6 +1,6 @@
 ---
 title: MCP client
-description:
+description: The MCP component that allows agents to discover and invoke tools in a standardized way. Executes agent decisions through protocol-compliant calls, providing consistent access without custom integrations.
 created:
 id: obs-jXMSeUhc
 aliases:
@@ -12,7 +12,7 @@ aliases:
 tags:
   - ai
   - mcp
-socialDescription:
+socialDescription: MCP clients are the execution layer - agents decide what tool to use, clients handle how to call it. Enables dynamic discovery and standardized access without hardcoded integrations.
 socialImage: mcp-client.png
 ---
 

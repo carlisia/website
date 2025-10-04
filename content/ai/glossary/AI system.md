@@ -1,12 +1,12 @@
 ---
 title: AI system
-description:
+description: The complete integration of LLM, agents, tools, and orchestration that delivers AI functionality. Combines generative capabilities, reasoning, external actions, and reliability into a unified architecture.
 created:
 id: obs-xa3wxZYO
 aliases:
   - AI systems
 tags: ai
-socialDescription:
+socialDescription: An AI system is the full stack - model + agent + tools + orchestration. No single component alone constitutes a complete system. Understanding the layers is key to building reliably.
 socialImage: ai-system.png
 ---
 

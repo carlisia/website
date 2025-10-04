@@ -1,6 +1,6 @@
 ---
 title: AI tool
-description:
+description: A capability beyond an LLM's native text generation that agents can invoke to access data, perform actions, or integrate with services. Tools execute what LLMs can only decide or describe.
 created:
 id: obs-8sN2jJAP
 aliases:
@@ -8,7 +8,7 @@ aliases:
   - AI tools
   - tools
 tags: ai
-socialDescription:
+socialDescription: Tools are action-enablers - they query databases, call APIs, and perform operations LLMs can't do directly. Not intelligent themselves, but powerful when combined with agents and orchestration.
 socialImage: ai-tool.png
 ---
 

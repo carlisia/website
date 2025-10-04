@@ -1,12 +1,12 @@
 ---
 title: Agentic system
-description:
+description: An AI system built around autonomous agents that pursue goals through multi-step reasoning and tool use. Includes supporting infrastructure like MCP components, hosts, and orchestration for reliable operation at scale.
 created:
 id: obs-M7jvlr11
 aliases:
 tags:
   - ai
-socialDescription:
+socialDescription: Agentic systems are AI systems with autonomy - they plan, adapt, and persist across multiple steps. Requires agents plus infrastructure, not just an LLM with function calling.
 socialImage: agentic-system.png
 ---
 

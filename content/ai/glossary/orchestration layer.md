@@ -1,11 +1,11 @@
 ---
 title: Orchestration layer
-description:
+description: The coordination logic that connects LLMs, agents, and tools into reliable AI systems. Manages workflows, retries, observability, and policy enforcement - ensuring decisions execute safely at scale.
 created:
 id: obs-5EaYpLMN
 aliases:
 tags: ai
-socialDescription:
+socialDescription: Orchestration doesn't decide what to do - it ensures what the agent decides actually happens, with retries, logging, and guardrails. The reliability layer of AI systems.
 socialImage: ai-orchestration.png
 ---
 

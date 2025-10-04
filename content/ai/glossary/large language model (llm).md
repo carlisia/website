@@ -1,11 +1,11 @@
 ---
 title: Large language model - LLM
-description:
+description: An AI model trained to predict text tokens, enabling generation, reasoning, and tool selection. The foundational intelligence layer of AI systems, but lacks execution, memory, or persistence capabilities.
 created:
 id: obs-zJwsM5go
 aliases: LLM, llm
 tags: ai
-socialDescription:
+socialDescription: LLMs are the reasoning engine - they generate text and choose tools, but can't execute actions or maintain state. Understanding what they can and can't do is crucial for AI system design.
 socialImage: llm.png
 ---
 

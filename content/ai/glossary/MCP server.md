@@ -1,6 +1,6 @@
 ---
 title: MCP server
-description:
+description: The MCP component that exposes tools, data, and resources in a standardized format for agents to consume via MCP clients. Enables discoverability, reusability, and interoperability across AI systems.
 created:
 id: obs-IJ6EOfnq
 aliases:
@@ -12,7 +12,7 @@ aliases:
 tags:
   - ai
   - mcp
-socialDescription:
+socialDescription: MCP servers are the supply side - they publish capabilities once for any agent to consume. Tools become discoverable and reusable without custom integration work.
 socialImage: mcp-server.png
 ---
 

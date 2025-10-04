@@ -1,11 +1,11 @@
 ---
 title: AI glossary
-description:
+description: Clear definitions for AI terminology - from LLMs and agents to orchestration and MCP components. Understand what each component does and how they work together in modern AI systems.
 created:
 id: obs-m4d8zxh6
 aliases:
 tags:
-socialDescription:
+socialDescription: Precise AI terminology guide covering LLMs, agents, tools, orchestration, and MCP components. Essential vocabulary for building reliable AI systems.
 socialImage: ai-glossary.png
 ---
 

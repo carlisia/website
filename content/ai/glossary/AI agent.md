@@ -1,12 +1,12 @@
 ---
 title: AI agent
-description:
+description: An AI system that uses an LLM for reasoning and autonomously pursues goals through decision-making, tool invocation, and adaptation. Adds goal-directed behavior and memory on top of raw model outputs.
 created:
 id: obs-orousE2G
 aliases:
   - AI agents
 tags: ai
-socialDescription:
+socialDescription: Agents add autonomy to LLMs - they maintain state, pursue goals, and adapt strategies. Not all AI systems are agents; agency requires goal-directed behavior, not just input-output processing.
 socialImage: ai-agent.png
 ---
 
