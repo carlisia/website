@@ -4,7 +4,10 @@ description:
 created:
 id: obs-zgBYxqdT
 aliases:
-tags: framework, intention, ai
+  - The agentic intention framework
+tags:
+  - framework
+  - ai
 socialDescription:
 socialImage:
 ---
