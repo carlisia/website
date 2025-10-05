@@ -6,6 +6,9 @@ id: obs-HmrfrKXj
 aliases:
   - MCP consent
 tags:
+  - mcpAcademy
+  - mcp
+  - security
 socialDescription: How MCP handles consent and authorization - granular delegation, revocable permissions, and distributed enforcement for AI agents
 ---
 

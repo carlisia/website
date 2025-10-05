@@ -7,6 +7,7 @@ id: obs-jkVT7rDz
 aliases:
   - The MCP server practical guide for adoption
 tags:
+  - mcpAcademy
   - mcp
   - framework
 socialDescription: Should you adopt MCP servers? This decision framework helps you evaluate 8 critical constraints to make the right choice for your AI infrastructure
@@ -197,7 +198,7 @@ For each constraint, assess your requirements as **Low**, **Medium**, or **High*
 
 - How well does an [[MCP server]] fit your existing architecture?
 - Do you have existing API integrations that work? (Don't fix what ain't broken)
-- What's your team's expertise with protocols [[mcp protocol|protocol]] in general?
+- What's your team's expertise with [[model context protocol|protocols]] in general?
 - How much technical debt can you accept?
 
 **Assessment:**

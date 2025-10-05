@@ -5,6 +5,7 @@ created:
 id: obs-M7jvlr11
 aliases:
 tags:
+  - mcpAcademy
   - ai
 socialDescription: Agentic systems are AI systems with autonomy - they plan, adapt, and persist across multiple steps. Requires agents plus infrastructure, not just an LLM with function calling.
 socialImage: agentic-system.png

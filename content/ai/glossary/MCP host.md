@@ -11,8 +11,9 @@ aliases:
   - Hosts
   - MCP Hosts
 tags:
-  - ai
+  - mcpAcademy
   - mcp
+  - ai
 socialDescription: MCP hosts are the platform layer - they provide the runtime, manage connections and transport, enforce security, and enable agents to function within defined guardrails.
 socialImage: mcp-host.png
 ---

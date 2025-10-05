@@ -4,7 +4,10 @@ description: 15 strategies to manage AI routing unpredictability - prompt engine
 created:
 id: obs-QoBpAo2n
 aliases:
-tags: ai, prompt, strategy
+tags:
+  - ai
+  - prompt
+  - strategy
 socialDescription: 15 strategies to manage AI routing unpredictability - prompt engineering, validation patterns, caching, monitoring & architectural solutions for stable AI systems.
 socialImage: ai-routing.png
 ---

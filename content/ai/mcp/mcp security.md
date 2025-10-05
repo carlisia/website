@@ -6,6 +6,9 @@ id: obs-UxzIRUuo
 aliases:
   - MCP security
 tags:
+  - mcpAcademy
+  - mcp
+  - security
 socialDescription: MCP security essentials - OAuth 2.1 flows, token validation, consent enforcement, and defending against AI-specific threats
 ---
 

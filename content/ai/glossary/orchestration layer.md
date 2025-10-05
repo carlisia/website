@@ -4,7 +4,9 @@ description: The coordination logic that connects LLMs, agents, and tools into r
 created:
 id: obs-5EaYpLMN
 aliases:
-tags: ai
+tags:
+  - mcpAcademy
+  - ai
 socialDescription: Orchestration doesn't decide what to do - it ensures what the agent decides actually happens, with retries, logging, and guardrails. The reliability layer of AI systems.
 socialImage: ai-orchestration.png
 ---

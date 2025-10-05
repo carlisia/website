@@ -4,7 +4,9 @@ description: An AI model trained to predict text tokens, enabling generation, re
 created:
 id: obs-zJwsM5go
 aliases: LLM, llm
-tags: ai
+tags:
+  - mcpAcademy
+  - ai
 socialDescription: LLMs are the reasoning engine - they generate text and choose tools, but can't execute actions or maintain state. Understanding what they can and can't do is crucial for AI system design.
 socialImage: llm.png
 ---

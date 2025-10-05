@@ -7,6 +7,7 @@ id: obs-lbGlugLh
 aliases:
   - The role of intention in architecting MCP servers
 tags:
+  - mcpAcademy
   - mcp
   - system-design
   - intention

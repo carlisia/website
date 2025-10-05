@@ -6,6 +6,7 @@ id: obs-zgBYxqdT
 aliases:
   - The agentic intention framework
 tags:
+  - mcpAcademy
   - framework
   - ai
 socialDescription: Define AI agent intention with precision using WHO/WHAT/CONSTRAINTS/WHY/ALIGNMENT. Sharp intention serving 20 users beats vague intention serving 2000 poorly. Includes Impact Score > 10 threshold and concentration metrics.

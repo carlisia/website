@@ -5,7 +5,9 @@ created:
 id: obs-orousE2G
 aliases:
   - AI agents
-tags: ai
+tags:
+  - mcpAcademy
+  - ai
 socialDescription: Agents add autonomy to LLMs - they maintain state, pursue goals, and adapt strategies. Not all AI systems are agents; agency requires goal-directed behavior, not just input-output processing.
 socialImage: ai-agent.png
 ---

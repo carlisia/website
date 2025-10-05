@@ -7,7 +7,9 @@ aliases:
   - tool
   - AI tools
   - tools
-tags: ai
+tags:
+  - mcpAcademy
+  - ai
 socialDescription: Tools are action-enablers - they query databases, call APIs, and perform operations LLMs can't do directly. Not intelligent themselves, but powerful when combined with agents and orchestration.
 socialImage: ai-tool.png
 ---

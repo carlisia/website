@@ -6,6 +6,9 @@ id: obs-P44n5SAc
 aliases:
   - MCP provenance
 tags:
+  - mcpAcademy
+  - mcp
+  - security
 socialDescription: MCP provenance explained - tracking data origins, AI decision trails, and building trust through transparency and accountability
 ---
 

@@ -10,8 +10,9 @@ aliases:
   - Client
   - Clients
 tags:
-  - ai
+  - mcpAcademy
   - mcp
+  - ai
 socialDescription: MCP clients are the execution layer - agents decide what tool to use, clients handle how to call it. Enables dynamic discovery and standardized access without hardcoded integrations.
 socialImage: mcp-client.png
 ---

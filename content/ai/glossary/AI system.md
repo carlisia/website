@@ -5,7 +5,9 @@ created:
 id: obs-xa3wxZYO
 aliases:
   - AI systems
-tags: ai
+tags:
+  - mcpAcademy
+  - ai
 socialDescription: An AI system is the full stack - model + agent + tools + orchestration. No single component alone constitutes a complete system. Understanding the layers is key to building reliably.
 socialImage: ai-system.png
 ---

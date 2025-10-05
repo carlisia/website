@@ -6,7 +6,9 @@ updated: 2025-09-17 (PT)
 id: obs-maLZ0oq2
 aliases:
 tags:
+  - mcpAcademy
   - mcp
+  - strategy
 socialDescription: MCP transforms how we build AI integrations. Learn why developers should adopt this protocol for creating standardized, composable servers that AI systems can understand and use effectively.
 socialImage: building-mcp-servers.png
 ---

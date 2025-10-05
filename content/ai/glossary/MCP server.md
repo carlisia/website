@@ -10,8 +10,9 @@ aliases:
   - Servers
   - servers
 tags:
-  - ai
+  - mcpAcademy
   - mcp
+  - ai
 socialDescription: MCP servers are the supply side - they publish capabilities once for any agent to consume. Tools become discoverable and reusable without custom integration work.
 socialImage: mcp-server.png
 ---
